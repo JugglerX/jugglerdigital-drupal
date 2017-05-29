@@ -28,7 +28,6 @@ regions:
   top: Top
   header: Header
   sub_header: 'Sub Header'
-  global_search: 'Global Search'
   hero: Hero
   highlighted: Highlighted
   breadcrumb: Breadcrumb
@@ -38,9 +37,6 @@ regions:
   sidebar_second: 'Sidebar second'
   canyon: 'Canyon'
   footer: 'Footer'
-  footer_first: 'Footer First'
-  footer_middle: 'Footer Middle'
-  footer_last: 'Footer Last'
   bottom: 'Bottom'
 
 

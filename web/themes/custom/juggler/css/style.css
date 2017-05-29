@@ -3,7 +3,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,Open+Sans:300,400,700");
 html, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, acronym, address, big, cite, code,
@@ -474,7 +474,7 @@ body.sidebar-second .region-sidebar-second {
 }
 
 .layout-footer {
-  font-family: "artifakt-legend", "Lato", "helvetica", "arial";
+  font-family: "Montserrat", "helvetica", "arial";
   clear: both;
   background-color: #f6f5f2;
 }
@@ -749,7 +749,7 @@ body.sidebar-second .region-sidebar-second {
   padding-bottom: 20px;
   border-top: 1px solid #ffffff;
   background-color: #ffffff;
-  font-family: "artifakt-legend", "Lato", "helvetica", "arial";
+  font-family: "Montserrat", "helvetica", "arial";
 }
 
 @media only screen and (max-width: 767px) {
@@ -883,21 +883,19 @@ p {
 }
 
 h1,
-.h1,
-.block-machine-views-block-homepage-block-1 .field--name-field-hero-heading {
+.h1 {
   margin-top: 0;
   font-size: 40px;
   margin-bottom: 20px;
   font-weight: 200;
-  font-family: "artifakt-legend", "Lato", "helvetica", "arial";
+  font-family: "Montserrat", "helvetica", "arial";
 }
 
 h2,
-.h2,
-.block-machine-views-block-homepage-block-1 .field--name-field-hero-subheading {
+.h2 {
   margin-top: 0;
   font-size: 20px;
-  font-family: "artifakt-legend", "Lato", "helvetica", "arial";
+  font-family: "Montserrat", "helvetica", "arial";
   font-weight: 400;
   margin-bottom: 20px;
 }
@@ -4080,28 +4078,45 @@ span.ext {
   background-size: cover;
 }
 
-.block-machine-views-block-homepage-block-1 .field--name-field-hero-heading {
-  text-align: center;
-  margin: 0;
-  padding-top: 120px;
+.block-machine-views-block-homepage-block-1 .view-content {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 1200px;
+}
+
+.block-machine-views-block-homepage-block-1 .view-content:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.block-machine-views-block-homepage-block-1 .views-row {
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+.block-machine-views-block-homepage-block-1 .field--name-body {
+  padding-top: 100px;
+}
+
+.block-machine-views-block-homepage-block-1 .field--name-body h2 {
   color: #FFF;
-  font-weight: 600;
+  font-size: 46px;
 }
 
-.block-machine-views-block-homepage-block-1 .field--name-field-hero-subheading {
-  text-align: center;
-  margin: 0;
-  padding-top: 10px;
+.block-machine-views-block-homepage-block-1 .field--name-body p {
   color: #FFF;
-  font-weight: 200;
 }
 
-.block-machine-views-block-homepage-block-1 .node--view-mode-hero div:last-child {
-  padding-bottom: 150px;
-}
-
-.block-machine-views-block-homepage-block-1 .node--view-mode-hero .contextual {
-  padding-bottom: 0 !important;
+.node:after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 .node--unpublished {
@@ -4156,6 +4171,54 @@ span.ext {
   line-height: 34px;
 }
 
+.node--type-portfolio.node--view-mode-full {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 1200px;
+}
+
+.node--type-portfolio.node--view-mode-full:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.node--type-portfolio.node--view-mode-full .group-left {
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 25%;
+}
+
+.node--type-portfolio.node--view-mode-full .group-right {
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 75%;
+}
+
+.node--type-portfolio.node--view-mode-full .field--name-field-logo {
+  max-width: 200px;
+}
+
+.node--type-portfolio.node--view-mode-full .field--name-field-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.node--type-portfolio.node--view-mode-full .field--name-node-title {
+  margin-bottom: 10px;
+}
+
+.node--type-portfolio.node--view-mode-full .field--name-node-title h2 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 34px;
+}
+
 body.path-frontpage h1 {
   margin-top: 100px;
   text-align: center;
@@ -4169,6 +4232,10 @@ body.path-frontpage h1 {
   body.path-frontpage h1 {
     font-size: 36px;
   }
+}
+
+body.path-frontpage .field--name-title {
+  display: none;
 }
 
 body.path-frontpage .field--name-body {
@@ -4254,6 +4321,11 @@ body:after {
     background: blue;
     content: "extra-large - 1441px, 5000px";
   }
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

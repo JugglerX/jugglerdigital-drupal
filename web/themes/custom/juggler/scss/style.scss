@@ -60,6 +60,7 @@
 
 @import 'node/node';
 @import 'node/node-page-view-mode-full';
+@import 'node/node-portfolio-view-mode-teaser';
 
 @import 'page/path-frontpage';
 
@@ -79,3 +80,9 @@ body {
 body {
   @include display-breakpoint;
 }
+
+
+  img {
+    width: 100%;
+    height: auto;
+  }

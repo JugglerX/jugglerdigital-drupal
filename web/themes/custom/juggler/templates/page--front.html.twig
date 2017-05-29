@@ -54,9 +54,7 @@
   {% if page.top %}
     <div class="layout layout-top">
       <div class="row">
-
         {{ page.top }}
-
       </div>
     </div>
   {% endif %}
@@ -67,14 +65,6 @@
 
         {{ page.header }}
 
-      </div>
-    </div>
-  {% endif %}
-
-  {% if page.global_search %}
-    <div class="layout layout-global-search">
-      <div class="row">
-        {{ page.global_search }}
       </div>
     </div>
   {% endif %}
@@ -99,74 +89,16 @@
     <div class="layout layout-highlighted">
       {{ page.highlighted }}
     </div>
-    {% endif %}
+  {% endif %}
 
   <div class="layout layout-content">
-
-    {% if page.breadcrumb %}
-      <div class="row">
-        <div class="small-12 column">
-          {{ page.breadcrumb }}
-        </div>
-      </div>
-    {% endif %}
-
-    {% if page.above_content %}
-      <div class="row">
-        <div class="small-12 column">
-          {{ page.above_content }}
-        </div>
-      </div>
-    {% endif %}
-
-    <div class="row">
-      {% if page.sidebar_first %}
-        {{ page.sidebar_first }}
-      {% endif %}
-
-      {{ page.content }}
-
-      {#<div class="row">#}
-      {#<div class="box small-12 small-medium-6 medium-6 large-6 columns">#}
-      {#<img src="/themes/custom/juggler/images/BioNano_Phi_X-05.jpg">#}
-      {#<div class="poster-overlay">#}
-      {#<div class="box-inner">#}
-      {#<h3 class="box-title"><a href="/user/register">Become a Provider</a></h3>#}
-      {#<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultricies, nisl sed porta scelerisque.</p>#}
-      {#</div>#}
-      {#</div>#}
-      {#</div>#}
-      {#<div class="box small-12 small-medium-6 medium-6 large-6 columns">#}
-      {#<img src="/themes/custom/juggler/images/BioNano_Phi_X-04.jpg">#}
-      {#<div class="poster-overlay">#}
-      {#<div class="box-inner">#}
-      {#<h3 class="box-title"><a href="/providers">Find a Provider</a></h3>#}
-      {#<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultricies, nisl sed porta scelerisque.</p>#}
-      {#</div>#}
-      {#</div>#}
-      {#</div>#}
-      {#</div>#}
-
-      {% if page.sidebar_second %}
-        {{ page.sidebar_second }}
-      {% endif %}
-    </div>
+    {{ page.content }}
   </div>
 
-  {% if (page.footer_first or page.footer_middle or page.footer_last) %}
+  {% if page.footer %}
     <div class="layout layout-footer">
-      <div class="top">
-        <div class="row" data-equalizer="">
-          {#<div class="small-12 columns">#}
-            {{ page.footer_first }}
-          {#</div>#}
-          {#<div class="small-12 medium-3 large-2 columns">#}
-            {{ page.footer_middle }}
-          {#</div>#}
-          {#<div class="small-12 columns">#}
-            {{ page.footer_last }}
-          {#</div>#}
-        </div>
+      <div class="row">
+        {{ page.footer }}
       </div>
     </div>
   {% endif %}
