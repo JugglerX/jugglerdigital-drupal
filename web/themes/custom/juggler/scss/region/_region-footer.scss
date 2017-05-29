@@ -1,0 +1,635 @@
+.layout-footer {
+  font-family: $custom-font;
+  clear: both;
+  background-color: rgb(246, 245, 242);
+
+  h2 {
+    font-size: 16px;
+    color: #777777;
+    font-weight: 400;
+    line-height: 1.1875;
+    margin: 0 0 10px;
+    a {
+      &:link, &:visited {
+        color: #777777;
+      }
+      &:hover, &:focus {
+        color: #444444;
+      }
+    }
+  }
+   
+  span{
+    &.footer_title_desc {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 200;
+      font-style: italic;
+      margin: 8px 0;
+      display: block;
+
+     @media #{$small-only}{
+       display: none;
+     }
+    }
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      &#facebook_menu {
+        &:before {
+          font-family: 'Autodesk-Icon-Font';
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          width: 24px;
+          height: 24px;
+          font-size: 24px;
+          vertical-align: middle;
+          margin-right: 6px;
+          content: "\e61a";
+          color: #333333;
+        }
+      }
+      &#twitter_menu {
+        &:before {
+          font-family: 'Autodesk-Icon-Font';
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          width: 24px;
+          height: 24px;
+          font-size: 24px;
+          vertical-align: middle;
+          margin-right: 6px;
+          content: "\e61c";
+          color: #333333;
+        }
+      }
+      &#youtube_menu {
+        &:before {
+          font-family: 'Autodesk-Icon-Font';
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          width: 24px;
+          height: 24px;
+          font-size: 24px;
+          vertical-align: middle;
+          margin-right: 6px;
+          content: "\e61b";
+          color: #333333;
+        }
+      }
+      &#linkedin_menu {
+        &:before {
+          font-family: 'Autodesk-Icon-Font';
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          width: 24px;
+          height: 24px;
+          font-size: 24px;
+          vertical-align: middle;
+          margin-right: 6px;
+          content: "\e625";
+          color: #333333;
+        }
+      }
+      &#instagram_menu {
+        &:before {
+          font-family: 'Autodesk-Icon-Font';
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          width: 24px;
+          height: 24px;
+          font-size: 24px;
+          vertical-align: middle;
+          margin-right: 6px;
+          content: "\e61f";
+          color: #333333;
+        }
+      }
+      &#google_menu {
+        &:before {
+          font-family: 'Autodesk-Icon-Font';
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          width: 24px;
+          height: 24px;
+          font-size: 24px;
+          vertical-align: middle;
+          margin-right: 6px;
+          content: "\e620";
+          color: #333333;
+        }
+      }
+      
+      a {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 200;
+        &:link, &:visited {
+          color: #777777;
+        }
+        &:hover, &:focus {
+          color: #444444;
+        }
+      }
+    }
+  }
+
+  .top {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #dadada;
+    .row {
+      .region-footer-first {
+        margin-left: 15px;
+        @media #{$large-up} {
+          width: 192px;
+          float: left;
+        }
+        .block {
+          width: 100%;
+          .block-menu {
+            display: block;
+          }
+        }
+        ul.menu {
+          margin-right: 20px;
+        }
+      }
+      .region-footer-middle {
+        margin-left: 15px;
+        @media #{$small-only} {
+          margin-top: 20px;
+          margin-left: 15px;
+          margin-bottom: 0;
+        }
+        .columns {
+          .block-menu {
+            padding-left: 15px;
+            padding-right: 15px;
+            ul {
+              @media #{$small-only} {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      .columns {
+        border-right: 1px solid #dadada;
+        @media #{$medium-only}{
+          min-height: 348px;
+        }
+        &:first-child {
+          @media #{$medium-only}{
+            min-height: inherit;
+            padding-bottom: 20px;
+          }
+          //@media #{$small-only}{
+          //  margin-bottom: 20px;
+          //}
+        }
+        &:last-child, &.norightborderworkaround {
+          border-right: 0;
+          @media #{$small-only}{
+            margin-bottom: 0;
+          }
+        }
+        //.block-content {
+        //  @media #{$small-only} {
+        //    display: none;
+        //  }
+        //}
+      }
+    }
+  }
+
+  div[class*='block-machine-footerautodesk'], div[class*='block-machine-footerfollowautodesk'] {
+    .menu {
+      li {
+        @media #{$medium-only}{
+          display: inline-block;
+          margin-right: 12px;
+        }
+      }
+    }
+  }
+
+  .block-menu {
+    float: left;
+    display: block;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style: none;
+      }
+    }
+  }
+}
+
+.layout-footer .row {
+
+  //background-color: #f6f5f2;
+  //border-top: 1px solid #ffffff;
+  //padding: 26px 0 16px 32px;
+
+
+    //ul.menu {
+    //  margin-right: 20px;
+  //    li {
+  //      a {
+  //        padding-left: 25px;
+  //        display: block;
+  //        font-size: .75em;
+  //        line-height: 1.8em;
+  //        color: #666666;
+  //        padding-top: 1px;
+  //        text-decoration: none;
+  //
+  //        @media (max-width: 568px) {
+  //          padding-left: 47px;
+  //          display: block;
+  //          font-size: 1em;
+  //          line-height: 2.8em;
+  //          color: #999999;
+  //        }
+  //        &.facebook {
+  //          background: transparent url(../images/footer-menu/footer-facebook.png) no-repeat 0 50%;
+  //          min-height: 16px;
+  //          @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  //          only screen and (min--moz-device-pixel-ratio: 2),
+  //          only screen and (-o-min-device-pixel-ratio: 2/1),
+  //          only screen and (min-device-pixel-ratio: 2),
+  //          only screen and (min-resolution: 192dpi),
+  //          only screen and (min-resolution: 2dppx) {
+  //            background: url(../images/footer-menu/footer-facebook.png) no-repeat left;
+  //            background-size: 16px;
+  //          }
+  //          @media (max-width: 568px) {
+  //            background-size: 30px;
+  //          }
+  //          @media (max-width: 1024px) {
+  //            background-size: 32px 32px;
+  //          }
+  //        }
+  ////
+  ////        &.linkedin {
+  ////          background: transparent url(../images/standard/footer-linkedin.png) no-repeat 0 50%;
+  ////          min-height: 16px;
+  ////          @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  ////          only screen and (min--moz-device-pixel-ratio: 2),
+  ////          only screen and (-o-min-device-pixel-ratio: 2/1),
+  ////          only screen and (min-device-pixel-ratio: 2),
+  ////          only screen and (min-resolution: 192dpi),
+  ////          only screen and (min-resolution: 2dppx) {
+  ////            background: url(../images/retina/footer-linkedin.png) no-repeat left;
+  ////            background-size: 16px;
+  ////          }
+  ////          @media (max-width: 568px) {
+  ////            background-size: 30px;
+  ////          }
+  ////          @media (max-width: 1024px) {
+  ////            background-size: 32px 32px;
+  ////          }
+  ////        }
+  ////
+  ////        &.twitter {
+  ////          background: transparent url(../images/standard/footer-twitter.png) no-repeat 0 50%;
+  ////          min-height: 16px;
+  ////          @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  ////          only screen and (min--moz-device-pixel-ratio: 2),
+  ////          only screen and (-o-min-device-pixel-ratio: 2/1),
+  ////          only screen and (min-device-pixel-ratio: 2),
+  ////          only screen and (min-resolution: 192dpi),
+  ////          only screen and (min-resolution: 2dppx) {
+  ////            background: url(../images/retina/footer-twitter.png) no-repeat left;
+  ////            background-size: 16px;
+  ////          }
+  ////          @media (max-width: 568px) {
+  ////            background-size: 30px;
+  ////          }
+  ////          @media (max-width: 1024px) {
+  ////            background-size: 32px 32px;
+  ////          }
+  ////        }
+  ////
+  ////        &.xing {
+  ////          background: transparent url(../images/standard/xing-logo_updated.png) no-repeat 0 50%;
+  ////          min-height: 16px;
+  ////          @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  ////          only screen and (min--moz-device-pixel-ratio: 2),
+  ////          only screen and (-o-min-device-pixel-ratio: 2/1),
+  ////          only screen and (min-device-pixel-ratio: 2),
+  ////          only screen and (min-resolution: 192dpi),
+  ////          only screen and (min-resolution: 2dppx) {
+  ////            background: url(../images/retina/footer-xing-mobile.png) no-repeat left;
+  ////            background-size: 16px;
+  ////          }
+  ////          @media (max-width: 568px) {
+  ////            background-size: 30px;
+  ////          }
+  ////          @media (max-width: 1024px) {
+  ////            background-size: 32px 32px;
+  ////          }
+  ////        }
+  ////
+  ////        &.youtube {
+  ////          background: transparent url(../images/standard/footer-youtube.png) no-repeat 0 50%;
+  ////          min-height: 16px;
+  ////          @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  ////          only screen and (min--moz-device-pixel-ratio: 2),
+  ////          only screen and (-o-min-device-pixel-ratio: 2/1),
+  ////          only screen and (min-device-pixel-ratio: 2),
+  ////          only screen and (min-resolution: 192dpi),
+  ////          only screen and (min-resolution: 2dppx) {
+  ////            background: url(../images/retina/footer-youtube.png) no-repeat left;
+  ////            background-size: 16px;
+  ////          }
+  ////          @media (max-width: 568px) {
+  ////            background-size: 30px;
+  ////          }
+  ////          @media (max-width: 1024px) {
+  ////            background-size: 32px 32px;
+  ////          }
+  ////        }
+  ////
+  //      }
+  //    }
+  //  }
+  //  @media screen and (min-width: 569px) and (max-width: 1024px) {
+  //    width: auto;
+  //    ul.menu li a {
+  //      width: 35px;
+  //      height: auto;
+  //      text-indent: -9999px;
+  //      @media (max-width: 1024px) {
+  //        width: 64px;
+  //        height: 54px;
+  //      }
+  //    }
+  //    h2 {
+  //      display: none;
+  //    }
+  //  }
+  //  @media (max-width: 568px) {
+  //    ul.menu li a {
+  //      text-indent: 0px;
+  //      width: auto;
+  //    }
+  //
+  //  }
+  //}
+
+  //.region-footer-middle {
+  //  width: 75%;
+  //  float: left;
+  //
+  //  ul.menu {
+  //    margin-right: 20px;
+  //    a {
+  //      display: block;
+  //      //font-size: .75em;
+  //      //line-height: 1.80em;
+  //      color: #666666;
+  //      text-decoration: none;
+  //      @media screen and (min-width: 569px) and (max-width: 1024px) {
+  //        line-height: 2.81em;
+  //      }
+  //      @media (max-width: 568px) {
+  //        font-size: 1em;
+  //      }
+  //    }
+  //  }
+  //  .block {
+  //    width: 25%;
+  //  }
+  //
+  //  @media screen and (min-width: 569px) and (max-width: 1024px) {
+  //    width: 84%;
+  //
+  //    .block {
+  //      width: 25%;
+  //    }
+  //  }
+  //  @media (max-width: 568px) {
+  //    .block {
+  //      width: 100%;
+  //    }
+  //  }
+  //}
+
+  //.block-menu {
+  //  float: left;
+  //  display: block;
+  //
+  //  ul {
+  //    margin: 0;
+  //    padding: 0;
+  //    li {
+  //      list-style: none;
+  //    }
+  //  }
+  //}
+
+  //h2 {
+  //  //font-size: .857143em;
+  //  //line-height: 1.250000;
+  //  a {
+  //    cursor: default;
+  //    color: #666666;
+  //    text-transform: uppercase;
+  //    font-weight: 400;
+  //    font-size: .85em;
+  //  }
+  //}
+  //@media screen and (min-width: 569px) and (max-width: 1024px) {
+  //  //padding: 2em;
+  //}
+  //@media (max-width: 568px) {
+  //  padding: 0;
+  //
+  //  h2.block-title {
+  //    margin: 0;
+  //    padding: 0;
+  //    a:visited, a:link {
+  //      display: block;
+  //      width: 100%;
+  //      height: 55px;
+  //      color: #434343;
+  //      padding: 0 0 0 35px;
+  //      margin: 0 0 1px 0;
+  //      font-size: 1.2em;
+  //      line-height: 55px;
+  //    }
+  //    span {
+  //      color: #434343;
+  //      cursor: pointer;
+  //      display: block;
+  //      font-size: 1.2em;
+  //      font-weight: 400;
+  //      height: 55px;
+  //      line-height: 55px;
+  //      margin: 0 0 1px;
+  //      padding: 0 0 0 35px;
+  //      text-transform: uppercase;
+  //      width: 100%;
+  //    }
+  //  }
+  //  #footer-first, #footer-middle {
+  //    width: 100%;
+  //    height: 55px;
+  //    float: none;
+  //  }
+  //
+  //  #footer-middle {
+  //    ul.menu li {
+  //      padding: 1em;
+  //    }
+  //  }
+  //
+  //  .block-content {
+  //    padding: 14px 57px;
+  //
+  //    a:link, a:visited {
+  //      color: #1858a8;
+  //    }
+  //  }
+  //  h2 {
+  //    background: url(../images/standard/footer-mobile-bg.png) #edede9 right no-repeat;
+  //    display: block;
+  //    width: 100%;
+  //  }
+  //  h2.expanded {
+  //    background: url(../images/standard/footer-mobile-bg-active.png) #edede9 right no-repeat;
+  //  }
+  //  .block .block-content {
+  //    display: none;
+  //  }
+  //
+  //  &.over {
+  //    margin-left: 80%;
+  //    transition: .2s;
+  //  }
+  //}
+}
+
+// WHAT IS THIS MAPPED TO?
+
+//.bottom-bar {
+//  background: #edede9;
+//  border: 0;
+//  margin: 0 0 24px 0;
+//  padding: 0 32px;
+//  font-size: .75em;
+//  color: #666666;
+//  a {
+//    text-decoration: none;
+//    color: #1858a8;
+//  }
+//  a:hover, a:focus, a:visited {
+//    @media (max-width: 568px) {
+//      text-decoration: none;
+//      color: #1858a8;
+//    }
+//  }
+//  .row {
+//    background: inherit;
+//  }
+//  h2.block-title {
+//    display: none;
+//  }
+//
+//  ul {
+//    list-style: none;
+//    padding: 0;
+//    margin: 0;
+//
+//    li {
+//      float: left;
+//      border-right: 1px solid #666666;
+//      line-height: 1em;
+//      margin: 10px 0;
+//
+//      &.last {
+//        border-right: 1px solid #666666;
+//      }
+//
+//      a {
+//        color: #666666;
+//        padding: 0 15px;
+//        display: block;
+//        @media (max-width: 568px) {
+//          padding: 0 24px;
+//        }
+//      }
+//      a:hover, a:focus, a:visited {
+//        @media (max-width: 568px) {
+//          color: inherit;
+//        }
+//      }
+//    }
+//  }
+//
+//
+//  .cc {
+//    padding: 1em 0 2em 15px;
+//    clear: both;
+//    img {
+//      padding-right: 25px;
+//      padding-top: 3px;
+//      float: left;
+//      height: auto;
+//      width: auto;
+//    }
+//
+//  }
+//
+//  @media screen and (min-width: 569px) and (max-width: 1024px) {
+//    padding: 1em;
+//  }
+//  @media (max-width: 568px) {
+//    padding: 10px 10px 0 10px;
+//    margin: 0;
+//  }
+//}

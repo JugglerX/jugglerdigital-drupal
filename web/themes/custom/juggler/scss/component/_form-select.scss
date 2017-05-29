@@ -1,0 +1,30 @@
+select {
+  max-width: 100%;
+  display: block;
+  color: #000000;
+  font-weight: 200;
+  font-size: $form-font-size;
+  font-family: $base-font;
+  line-height: $form-line-height;
+  border: 1px solid #cacaca;
+  cursor: pointer;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  left: 0;
+  background-color: #ffffff;
+  background-position: right;
+  background-repeat: no-repeat;
+  border-radius: 0px;
+  padding: $form-padding;
+  height: $form-height;
+  margin: 0 0 10px 0;
+  &:disabled {
+    background-color: #EAEAEA;
+    border-color: #CCCCCC;
+  }
+  &:focus {
+    outline: 0;
+  }
+}

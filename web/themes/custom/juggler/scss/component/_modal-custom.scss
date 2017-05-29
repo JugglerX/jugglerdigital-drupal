@@ -1,0 +1,18 @@
+#gpsModalWrapper {
+  html.ios & {
+    iframe {
+      @media #{$small-only} {
+        height: 885px;
+      }
+      @media #{$small-medium-only} {
+        height: 883px;
+      }
+      @media #{$medium-up} {
+        height: 883px;
+      }
+      @media #{$large-up} {
+        height: 883px;
+      }
+    }
+  }
+}

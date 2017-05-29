@@ -1,0 +1,172 @@
+.btn {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 200;
+  padding: 11px 15px 10px 15px;
+  background-color: $primary-color;
+  border-color: $primary-color;
+  color: #FFFFFF;
+  text-align: left;
+  border-style: solid;
+  border-width: 0;
+  cursor: pointer;
+  font-family: FrutigerNext,Arial,"メイリオ",Meiryo,sans-serif;
+  line-height: normal;
+  margin: 0 0 15px 0;
+  text-decoration: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+  display: inline-block;
+  padding-top: 0.625rem;
+  padding-right: 1.25rem;
+  padding-bottom: 0.6875rem;
+  padding-left: 1.25rem;
+  font-size: 1rem;
+  transition: background-color 300ms ease-out;
+  &:link,
+  &:visited {
+    color: #FFF;
+  }
+  &:hover,
+  &:focus {
+    background-color: #275666;
+    color: #FFF;
+    text-decoration: none;
+  }
+  &.secondary {
+    background-color: $secondary-color;
+  }
+  &.cancel {
+    background-color: #6e706f;
+  }
+  &.full {
+    padding: 11px 15px 10px 15px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  &.expand {
+    display: block;
+  }
+  &.small {
+    padding: 6px 11px 5px 11px;
+  }
+  &.medium {
+    padding: 11px 15px 10px 15px;
+  }
+  &.large {
+    padding: 16px 20px 15px 20px;
+  }
+  &.left {
+    text-align: left;
+  }
+  &.center {
+    text-align: center;
+  }
+  &.back {
+    padding-left: 34px;
+    &:after {
+      position: absolute;
+      content: "\f104";
+      width: 14px;
+      top: 45%;
+      left: 0.9rem;
+      color: white;
+      display: inline-block;
+      font-family: 'FontAwesome';
+      vertical-align: middle;
+      font-size: 20px;
+      line-height: 20px;
+      transform: translateY(-50%);
+    }
+  }
+  &.arrow {
+    padding-right: 34px;
+    &:after {
+      position: absolute;
+      content: "\f105";
+      width: 14px;
+      top: 44%;
+      right: 0.5rem;
+      color: white;
+      display: inline-block;
+      font-family: 'FontAwesome';
+      vertical-align: middle;
+      font-size: 20px;
+      line-height: 20px;
+      transform: translateY(-50%);
+    }
+  }
+  &.no-arrow {
+    padding: 11px 15px 10px 15px;
+    &:after {
+      content: "";
+    }
+  }
+  &.external {
+    padding-right: 34px;
+    background-image: url(../images/standard/external-link-white.png);
+    background-repeat: no-repeat;
+    background-position: calc(100% + -14px) 45%;;
+  }
+  &.right {
+    float: right;
+  }
+  &.left {
+    float: left;
+  }
+  &.full-on-mobile {
+    @media #{$small-only} {
+      float: none;
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  &.no-margin {
+    margin: 0;
+  }
+  &.no-bottom-margin,
+  &.no-margin-bottom,
+  &.button-no-margin-bottom {
+    margin-bottom: 0;
+  }
+  &.button-margin-right {
+    margin-right: 10px;
+  }
+  &.button-margin-left {
+    margin-left: 10px;
+  }
+  &.button-next-to-input {
+    padding: 7px 15px 6px 15px;
+  }
+  .fa {
+    margin-left: 8px;
+  }
+  &.edit-contribution-button {
+    display: block;
+    margin-bottom: 10px;
+    @media #{$small-only} {
+      float: none;
+      margin-bottom: 15px;
+    }
+  }
+  &.button-margin-bottom-on-mobile {
+    @media #{$small-only} {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.close-button {
+  position: absolute;
+  right: rem-calc(21);
+  top: rem-calc(28);
+  width: rem-calc(16);
+  height: rem-calc(16);
+}
+
+// Mixins
+@mixin btn() {
+  @extend .btn;
+}

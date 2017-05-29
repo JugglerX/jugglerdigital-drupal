@@ -1,0 +1,16 @@
+.form-required:after {
+  content: '*';
+  color: red;
+  //vertical-align: super;
+  display: inline-block;
+  /* Use a background image to prevent screen readers from announcing the text. */
+  //background-image: url(../../../../misc/icons/ee0000/required.svg);
+  //background-repeat: no-repeat;
+  //background-size: 6px 6px;
+  //width: 6px;
+  //height: 6px;
+}
+
+label.form-required:after {
+  margin: 0 0 0 5px;
+}

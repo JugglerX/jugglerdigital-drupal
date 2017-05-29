@@ -1,0 +1,21 @@
+{
+  "name": "asm",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-bless": "^1.0.2",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-css-metrics": "^0.1.2",
+    "grunt-sass": "^1.1.0",
+    "grunt-stripcomments": "^0.6.0",
+    "load-grunt-tasks": "~0.6.0",
+    "time-grunt": "^1.2.2"
+  },
+  "scripts": {
+    "preinstall": "npm prune"
+  }
+}

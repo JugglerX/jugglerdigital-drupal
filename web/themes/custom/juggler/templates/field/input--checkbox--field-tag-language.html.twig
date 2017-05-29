@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+
+#}
+<input data-parsley-multiple="field_tag_language"
+       data-parsley-class-handler="#edit-field-tag-language--wrapper"
+       data-parsley-errors-container="#edit-field-tag-language-wrapper"
+        {{ attributes | without('data-parsley-multiple') }} />{{ children }}
+{#<input required data-parsley-errors-container="#edit-field-tag-language" name="field_tag_language" {{ attributes | without('name')}} />{{ children }}#}
+
+
+

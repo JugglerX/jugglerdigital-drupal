@@ -1,0 +1,24 @@
+asm.small:
+  label: small
+  mediaQuery: ''
+  weight: 0
+  multipliers:
+    - 1x
+asm.medium:
+  label: medium
+  mediaQuery: 'only screen and (min-width: 768px)'
+  weight: 1
+  multipliers:
+    - 1x
+asm.large:
+  label: large
+  mediaQuery: 'only screen and (min-width: 1025px)'
+  weight: 2
+  multipliers:
+    - 1x
+asm.extralarge:
+  label: extra-large
+  mediaQuery: 'only screen and (max-width: 5000px) and (min-width: 1441px)'
+  weight: 2
+  multipliers:
+    - 1x

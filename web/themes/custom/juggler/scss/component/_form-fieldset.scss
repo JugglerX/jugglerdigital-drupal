@@ -1,0 +1,11 @@
+fieldset {
+  // fix fieldset width bug in chrome
+  min-width: 0;
+}
+
+html.firefox {
+  fieldset {
+    // fix fieldset width bug in firefox
+    display: table-cell;
+  }
+}

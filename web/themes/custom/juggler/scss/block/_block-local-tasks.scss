@@ -1,0 +1,59 @@
+.block-local-tasks {
+  ul {
+    @include clearfix;
+    font-weight: 400;
+    font-family: $base-font;
+    font-size: 14px;
+    line-height: 18px;
+    vertical-align: middle;
+    border-bottom: none;
+    z-index: 140;
+    padding: 0;
+    margin: 0 0 10px 0;
+    border-right: none;
+    list-style: none;
+    li {
+      float: left;
+      display: block;
+      text-decoration: none;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      &:first-of-type {
+        a {
+          border-top-left-radius: 3px;
+          border-bottom-left-radius: 3px;
+        }
+      }
+      &:last-of-type {
+        a {
+          border-top-right-radius: 3px;
+          border-bottom-right-radius: 3px;
+          border-right: none;
+        }
+      }
+      a {
+        padding: 8px 15px;
+        font-size: 14px;
+        font-weight: 200;
+        display: block;
+        background: #000;
+        color: #FFF;
+        text-decoration: none;
+        border-right: 2px groove #666;
+        &:hover {
+          background: #333;
+          color: #FFF;
+          text-decoration: none;
+        }
+        &.active,
+        &.is-active {
+          background: #000;
+          background-image: linear-gradient(rgba(255, 255, 255, 0.25) 20%, transparent 200%);
+          color: #FFF;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

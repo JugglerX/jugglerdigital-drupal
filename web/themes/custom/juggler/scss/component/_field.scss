@@ -1,0 +1,30 @@
+.field {
+
+  .field__label {
+
+  }
+  .field__item {
+
+  }
+}
+
+.field {
+  margin-bottom: 5px;
+}
+.field__label {
+  font-weight: bold;
+  color: #656565;
+  margin-bottom: 5px;
+}
+.field--label-inline {
+  .field__label {
+    display: inline-block;
+  }
+  .field__item {
+    display: inline-block;
+  }
+  .field__items {
+    display: inline-block;
+    float: none;
+  }
+}

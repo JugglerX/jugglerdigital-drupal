@@ -6,6 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Ajgl\\Twig\\Extension\\BreakpointExtension' => $vendorDir . '/ajgl/breakpoint-twig-extension/src/BreakpointExtension.php',
+    'Ajgl\\Twig\\Extension\\SymfonyBundle\\AjglBreakpointTwigExtensionBundle' => $vendorDir . '/ajgl/breakpoint-twig-extension/src/SymfonyBundle/AjglBreakpointTwigExtensionBundle.php',
+    'Ajgl\\Twig\\Extension\\SymfonyBundle\\DependencyInjection\\AjglBreakpointTwigExtensionExtension' => $vendorDir . '/ajgl/breakpoint-twig-extension/src/SymfonyBundle/DependencyInjection/AjglBreakpointTwigExtensionExtension.php',
     'Alchemy\\Zippy\\Adapter\\AbstractAdapter' => $vendorDir . '/alchemy/zippy/src/Adapter/AbstractAdapter.php',
     'Alchemy\\Zippy\\Adapter\\AbstractBinaryAdapter' => $vendorDir . '/alchemy/zippy/src/Adapter/AbstractBinaryAdapter.php',
     'Alchemy\\Zippy\\Adapter\\AbstractTarAdapter' => $vendorDir . '/alchemy/zippy/src/Adapter/AbstractTarAdapter.php',

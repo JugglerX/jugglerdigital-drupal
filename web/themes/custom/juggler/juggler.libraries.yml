@@ -1,0 +1,56 @@
+global-css:
+  css:
+    theme:
+      css/style.css: {}
+
+global-js:
+  js:
+    js/scripts.min.js: {}
+
+loglevel:
+  version: "1.4.1"
+  js:
+    /libraries/loglevel/loglevel.min.js: {}
+
+js-cookie:
+  version: "1.x"
+  js:
+    /libraries/js-cookie/js-cookie.min.js: {}
+
+tooltipster:
+  version: "1.0.x"
+  js:
+    /libraries/tooltipster/js/tooltipster.bundle.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+foundation6:
+  version: "1.0.x"
+  js:
+    js/foundation6/js/foundation.core.js: {}
+    js/foundation6/js/foundation.reveal.js: {}
+    js/foundation6/js/foundation.util.keyboard.js: {}
+    js/foundation6/js/foundation.util.box.js: {}
+    js/foundation6/js/foundation.util.triggers.js: {}
+    js/foundation6/js/foundation.util.mediaQuery.js: {}
+    js/foundation6/js/foundation.util.motion.js: {}
+    js/foundation6/js/foundation.equalizer.js: {}
+    js/foundation6/foundation_init.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+
+modernizr:
+  version: "1.0.x"
+  js:
+    /libraries/modernizr/modernizr-custom.js: {}
+
+detectizr:
+  version: "1.0.x"
+  js:
+    /libraries/detectizr/detectizr.min.js: {}
+  dependencies:
+      - juggler/modernizr

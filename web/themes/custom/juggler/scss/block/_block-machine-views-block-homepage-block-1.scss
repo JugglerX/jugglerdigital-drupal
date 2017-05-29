@@ -1,0 +1,33 @@
+.block-machine-views-block-homepage-block-1 {
+  background-size: cover;
+  .field--name-field-hero-image {
+  }
+  .field--name-field-hero-heading {
+    text-align: center;
+    @extend .h1;
+    margin: 0;
+    padding-top: 120px;
+    color: #FFF;
+    font-weight: 600;
+  }
+  .field--name-field-hero-subheading {
+    text-align: center;
+    @extend .h2;
+    margin: 0;
+    padding-top: 10px;
+    color: #FFF;
+    font-weight: 200;
+  }
+  .node--view-mode-hero {
+    div:last-child {
+      padding-bottom: 150px;
+    }
+    .contextual {
+      padding-bottom: 0 !important;
+    }
+  }
+}
+
+
+
+

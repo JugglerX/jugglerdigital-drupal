@@ -1,0 +1,37 @@
+textarea {
+  display: block;
+  color: #000000;
+  line-height: 19px;
+  margin-right: 0;
+  text-decoration: none;
+  font-weight: 200;
+  font-family: $base-font;
+  border: 1px solid #cccccc;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 0px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+  height: 160px;
+  padding: 8px;
+}
+
+textarea {
+  height: auto;
+  min-height: 50px;
+}
+
+textarea:focus {
+  -webkit-box-shadow: 0 0 5px #999999;
+  -moz-box-shadow: 0 0 5px #999999;
+  box-shadow: 0 0 5px #999999;
+  border-color: #999999;
+  background: #fafafa;
+  border-color: #999999;
+  outline: none;
+}

@@ -1,0 +1,20 @@
+.block-logo{
+  @include grid-column(3);
+  .logo {
+    float: left;
+    height: 23px;
+    width: 140px;
+    background-image: url('../images/logo.png');
+    background-repeat: no-repeat;
+    @media #{$small-only} {
+      height: 18px;
+      width: 100px;
+    }
+  }
+}
+
+#block-logo {
+  .field--name-body {
+    float: left;
+  }
+}

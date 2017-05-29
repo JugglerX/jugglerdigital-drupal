@@ -1,0 +1,26 @@
+label {
+  color: #4d4d4d;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 4px;
+  font-size: $form-font-size;
+  line-height: $form-line-height;
+  &.inline {
+    display: inline-block !important;
+  }
+}
+legend {
+  color: #4d4d4d;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 4px;
+  font-size: $form-font-size;
+  line-height: $form-line-height;
+  &.inline {
+    display: inline-block !important;
+  }
+}
+details {
+  padding: 20px;
+  border: 1px solid #CCC;
+}

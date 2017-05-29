@@ -1,0 +1,47 @@
+name: Juggler Digital
+type: theme
+description: Drupal 8 Theme for Juggler Digital
+package: Other
+core: 8.x
+
+base theme: classy
+
+# Add libraries.
+libraries:
+  - juggler/global-css
+  - juggler/global-js
+  - juggler/modernizr
+  - juggler/detectizr
+
+# Remove stylesheets.
+stylesheets-remove:
+  - core/assets/vendor/normalize-css/normalize.css
+  - core/modules/system/css/system.module.css
+  - core/modules/system/css/system.theme.css
+  - core/modules/views/css/views.module.css
+  - core/themes/classy/css/components/form.css
+  - core/themes/classy/css/components/field.css
+  - core/themes/classy/css/components/dropbutton.css
+
+# Add your regions below. Defaults to those defined in Drupal core.
+regions:
+  top: Top
+  header: Header
+  sub_header: 'Sub Header'
+  global_search: 'Global Search'
+  hero: Hero
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  above_content: 'Above Content'
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  canyon: 'Canyon'
+  footer: 'Footer'
+  footer_first: 'Footer First'
+  footer_middle: 'Footer Middle'
+  footer_last: 'Footer Last'
+  bottom: 'Bottom'
+
+
+

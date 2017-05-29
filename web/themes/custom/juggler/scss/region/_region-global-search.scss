@@ -1,0 +1,7 @@
+.layout-global-search {
+  background: $primary-color;
+  padding: 12px 0 12px 0;
+  @media #{$small-only} {
+    padding: 0;
+  }
+}

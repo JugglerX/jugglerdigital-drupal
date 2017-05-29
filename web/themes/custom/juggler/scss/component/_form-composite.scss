@@ -1,0 +1,21 @@
+.form-composite {
+  legend {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+  .form-item {
+    label {
+      font-weight: 400;
+      margin: 0;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    input {
+      margin: 0;
+      margin-right: 3px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
