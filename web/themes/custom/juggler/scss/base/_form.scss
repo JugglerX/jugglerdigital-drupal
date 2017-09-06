@@ -1,0 +1,49 @@
+input {
+  border: 1px solid #CACACA;
+  border-radius: 0;
+  &.inline {
+    display: inline-block !important;
+  }
+}
+
+input[type='text'],
+input[type='password'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='week'],
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='time'],
+input[type='url'] {
+  position: relative;
+  left: 0;
+  display: block;
+  max-width: 100%;
+  height: 36px;
+  margin-right: 0;
+  margin-bottom: 10px;
+  padding: 7px;
+  transition: box-shadow 0.45s, border-color 0.45s ease-in-out;
+  text-decoration: none;
+  color: #000000;
+  border: 1px solid #CCCCCC;
+  border-radius: 0;
+  background-color: #FFFFFF;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: $form-font-size;
+  font-weight: 200;
+  line-height: $form-line-height;
+
+  appearance: none;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 5px #999999;
+  }
+  &[disabled] {
+    background-color: #DDDDDD;
+  }
+}

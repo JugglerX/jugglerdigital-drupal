@@ -1,117 +1,90 @@
-.table {
+@mixin table($border: true, $striped: true, $condensed: false) {
   width: 100%;
-  margin: 0 0 10px;
-  caption {
-    text-align: left; /* LTR */
-  }
-  [dir="rtl"] caption {
-    text-align: right;
-  }
-  th {
-    text-align: left; /* LTR */
-    padding: 10px 12px;
-  }
-  [dir="rtl"] th {
-    text-align: right;
-  }
-  thead th {
-    background: #f5f5f2;
-    border: solid #bfbfba;
-    border-width: 1px 0;
-    color: #333;
-    text-transform: uppercase;
-  }
-  tr {
-    border-bottom: 1px solid #e6e4df;
-    padding: 0.1em 0.6em;
-  }
-  thead > tr {
-    border-bottom: 1px solid #000;
-  }
-  tbody tr:hover,
-  tbody tr:focus {
-    background: #f7fcff;
-  }
+  max-width: 100%;
+  margin-bottom: 18px;
+  border-spacing: 0;
+  border-collapse: collapse;
 
-  /* See colors.css */
-  tbody tr.color-warning:hover,
-  tbody tr.color-warning:focus {
-    background: #fdf8ed;
-  }
-  tbody tr.color-error:hover,
-  tbody tr.color-error:focus {
-    background: #fcf4f2;
-  }
-  td,
-  th {
-    vertical-align: middle;
-  }
+  th,
   td {
-    padding: 10px 12px;
-    text-align: left; /* LTR */
-  }
-  [dir="rtl"] td {
-    text-align: right;
-  }
-  th > a {
-    position: relative;
-    display: block;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #DDDDDD;
+    line-height: 18px;
   }
 
-  /* 1. Must match negative bottom padding of the parent <th> */
-  th > a:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: -10px; /* 1. */
-    left: 0;
-    right: 0;
-    border-bottom: 2px solid transparent;
-    -webkit-transition: all 0.1s;
-    transition: all 0.1s;
-  }
-  th.is-active > a {
-    color: #004875;
-  }
-  th.is-active img {
-    position: absolute;
-    right: 0; /* LTR */
-    top: 50%;
-  }
-  [dir="rtl"] th.is-active img {
-    right: auto;
-    left: 0;
-  }
-  th.is-active > a:after {
-    border-bottom-color: #004875;
-  }
-  th > a:hover,
-  th > a:focus,
-  th.is-active > a:hover,
-  th.is-active > a:focus {
-    color: #008ee6;
-    text-decoration: none;
-  }
-  th > a:hover:after,
-  th > a:focus:after,
-  th.is-active > a:hover:after,
-  th.is-active > a:focus:after {
-    border-bottom-color: #008ee6;
-  }
-  td .item-list ul {
-    margin: 0;
-  }
-  /* This is required to win over specificity of [dir="rtl"] .item-list ul */
-  [dir="rtl"] td .item-list ul {
-    margin: 0;
-  }
-  td.is-active {
-    background: none;
+  th {
+    font-weight: bold;
   }
 
-  /* Force browsers to calculate the width of a 'select all' <th> element. */
-  th.select-all {
-    width: 1px;
+  thead th {
+    vertical-align: bottom;
   }
+
+  thead:first-child tr th,
+  thead:first-child tr td {
+    border-top: 0;
+  }
+
+  tbody + tbody {
+    border-top: 2px solid #DDDDDD;
+  }
+
+  @if $condensed {
+    th,
+    td {
+      padding: 4px 5px;
+    }
+  }
+
+  @if $border {
+    border: 1px solid #DDDDDD;
+    border-collapse: separate;
+    //border-collapse: collapsed;
+    border-radius: 4px;
+    th + th,
+    td + td,
+    th + td,
+    td + th {
+      border-left: 1px solid #DDDDDD;
+    }
+    thead:first-child tr:first-child th,
+    tbody:first-child tr:first-child th,
+    tbody:first-child tr:first-child td {
+      border-top: 0;
+    }
+    thead:first-child tr:first-child th:first-child,
+    tbody:first-child tr:first-child td:first-child {
+      border-radius: 4px 0 0 0;
+    }
+    thead:first-child tr:first-child th:last-child,
+    tbody:first-child tr:first-child td:last-child {
+      border-radius: 0 4px 0 0;
+    }
+    thead:last-child tr:last-child th:first-child,
+    tbody:last-child tr:last-child td:first-child {
+      border-radius: 0 0 0 4px;
+    }
+    thead:last-child tr:last-child th:last-child,
+    tbody:last-child tr:last-child td:last-child {
+      border-radius: 0 0 4px 0;
+    }
+  }
+
+  @if $striped {
+    tbody tr:nth-child(odd) td,
+    tbody tr:nth-child(odd) th {
+      background-color: #F9F9F9;
+    }
+  }
+
+  tbody tr:hover td,
+  tbody tr:hover th {
+    background-color: #F5F5F5;
+  }
+}
+
+table {
+  @include table();
 }

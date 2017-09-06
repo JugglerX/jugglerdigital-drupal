@@ -1,0 +1,33 @@
+body.front {
+  .node--type-page {
+    .field--name-node-title {
+      //display: none;
+    }
+  }
+  .block-id-content {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #333333;
+      font-family: $custom-font;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 38px;
+    }
+
+    .node--type-page {
+      .group-left {
+        @include grid-column(12);
+      }
+      .group-right {
+        @include grid-column(12);
+      }
+    }
+  }
+}
+

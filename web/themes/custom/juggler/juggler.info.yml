@@ -10,8 +10,8 @@ base theme: classy
 libraries:
   - juggler/global-css
   - juggler/global-js
-  - juggler/modernizr
-  - juggler/detectizr
+  - juggler/tooltipster
+  - juggler/scrollmagic
 
 # Remove stylesheets.
 stylesheets-remove:
@@ -36,6 +36,7 @@ regions:
   sidebar_first: 'Sidebar first'
   sidebar_second: 'Sidebar second'
   canyon: 'Canyon'
+  content_lower: 'Content Lower'
   footer: 'Footer'
   bottom: 'Bottom'
 

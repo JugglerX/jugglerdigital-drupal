@@ -1,0 +1,15 @@
+.ds-2col-75-25 {
+  @include grid-row(nest);
+  .group-left {
+    @include grid-column(9);
+    @media #{$small-only} {
+      @include grid-column(12);
+    }
+  }
+  .group-right {
+    @include grid-column(3);
+    @media #{$small-only} {
+      @include grid-column(12);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+
+.field {
+  margin-bottom: 5px;
+}
+.field__label {
+  margin-bottom: 5px;
+  color: #656565;
+  font-weight: bold;
+}
+.field--label-inline {
+  .field__label {
+    display: inline-block;
+  }
+  .field__item {
+    display: inline-block;
+  }
+  .field__items {
+    display: inline-block;
+    float: none;
+  }
+}

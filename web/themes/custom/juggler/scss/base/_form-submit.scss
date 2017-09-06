@@ -1,0 +1,25 @@
+.button.form-submit {
+  display: inline-block;
+  padding: 7px 24px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #666666;
+  border: 1px solid #DCDCDC;
+  border-radius: 3px;
+  background: linear-gradient(to bottom, #F9F9F9 5%, #E9E9E9 100%);
+  background-color: #F9F9F9;
+  box-shadow: inset 0 1px 0 0 #FFFFFF;
+  font-family: $button-font-family;
+  font-size: $form-font-size;
+  font-weight: bold;
+
+  appearance: none;
+  &:hover {
+    background: linear-gradient(to bottom, #E9E9E9 5%, #F9F9F9 100%);
+    background-color: #E9E9E9;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}

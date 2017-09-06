@@ -6,47 +6,37 @@
  */
 
 /**
- * Implements hook_preprocess_html().
+ * Implements hook_preprocess_html() for html.html.twig
  */
 function juggler_preprocess_html(&$variables) {
-  // Get currently active user and his roles.
+
+  // Role Classes
   $account = \Drupal::currentUser();
   $roles = $account->getRoles();
-  // The getRoles() method will return us the machine names, so there is no need
-  // to process roles names additionally. However, I suggest prefixing the names
-  // with "role-", so it's more obvious.
   foreach ($roles as $role) {
     $variables['attributes']['class'][] = 'role-' . $role;
   }
 
-  // Body Classes
+  // URL Path Classes
   $path_unaliased = \Drupal::service('path.current')->getPath();
-  $path_unaliased_array = explode('/', $path_unaliased);
   $path_aliased = \Drupal::service('path.alias_manager')->getAliasByPath($path_unaliased);
   $path_aliased_array = explode('/', $path_aliased);
 
-  $path = str_replace('/', '-', $path_aliased);
-  $path = substr($path, 1);
+  $path_classes_array = [];
+  $current_path = "path";
 
-  $variables['path'] = 'path-' . $path;
-  $variables['section'] = 'section-' .$path_aliased_array[1];
+  foreach ($path_aliased_array as $path_chunk) {
+    if ($path_chunk != "" || $path_chunk != null) {
+      $current_path = $current_path . '-' . strtolower($path_chunk);
+      $path_classes_array[] = $current_path;
+    }
+  }
 
-}
+  $variables['path'] = implode(" ", $path_classes_array);
 
-/**
- * Implements hook_page_attachments_alter().
- */
-function juggler_page_attachments_alter(array &$page) {
-  // Tell IE to use latest rendering engine (not to use compatibility mode).
-  /*$ie_edge = [
-    '#type' => 'html_tag',
-    '#tag' => 'meta',
-    '#attributes' => [
-    'http-equiv' => 'X-UA-Compatible',
-    'content' => 'IE=edge',
-    ],
-  ];
-  $page['#attached']['html_head'][] = [$ie_edge, 'ie_edge'];*/
+  if (!empty($path_aliased_array[1])) {
+    $variables['section'] = 'section-' .$path_aliased_array[1];
+  }
 }
 
 /**
@@ -54,28 +44,56 @@ function juggler_page_attachments_alter(array &$page) {
  */
 function juggler_preprocess_page(array &$variables) {
 
+  // URL Path Classes
+  $path_unaliased = \Drupal::service('path.current')->getPath();
+  $path_aliased = \Drupal::service('path.alias_manager')->getAliasByPath($path_unaliased);
+  $path_aliased_array = explode('/', $path_aliased);
+
+  $path_classes_array = [];
+  $current_path = "page";
+
+  foreach ($path_aliased_array as $path_chunk) {
+    if ($path_chunk != "" || $path_chunk != null) {
+      $current_path = $current_path . '-' . strtolower($path_chunk);
+      $variables['attributes']['class'][] = $current_path;
+    }
+  }
 }
 
 /**
  * Implements hook_theme_suggestions_page_alter().
  */
 function juggler_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  // Add content type suggestions.
+  if ($node = \Drupal::request()->attributes->get('node')) {
+    array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
+  }
 
+  // Page Template Suggestions
+  // Converts existing suggestions array to lowercase
+  // Merges into existing suggestions array
+  $path_unaliased = \Drupal::service('path.current')->getPath();
+  $path_aliased = \Drupal::service('path.alias_manager')->getAliasByPath($path_unaliased);
+  $path_aliased_array = explode('/', $path_aliased);
+
+  $current_path = "page";
+
+  foreach ($suggestions as $key => $suggestion) {
+    $suggestions[$key] = strtolower($suggestion);
+  }
+
+  foreach ($path_aliased_array as $path_chunk) {
+    if ($path_chunk != "" || $path_chunk != null) {
+      $current_path = $current_path . '__' . strtolower($path_chunk);
+      if (!in_array($current_path, $suggestions)) {
+        $suggestions[] = $current_path;
+      }
+    }
+  }
 }
 
 /**
- * Implements hook_theme_suggestions_node_alter().
- */
-function juggler_theme_suggestions_node_alter(array &$suggestions, array $variables) {
-  /*$node = $variables['elements']['#node'];
-
-  if ($variables['elements']['#view_mode'] == "full") {
-
-  }*/
-}
-
-/**
- * Implements hook_preprocess_HOOK() for Block document templates.
+ * Implements hook_preprocess_block() for block.html.twig
  */
 function juggler_preprocess_block(array &$variables) {
   // Add a clearfix class to system branding blocks.
@@ -87,82 +105,78 @@ function juggler_preprocess_block(array &$variables) {
 
   // Add region as variable
   $variables['machine_name'] = $variables['elements']['#id'];
+  $variables['base_plugin_id'] = $variables['elements']['#base_plugin_id'];
+  $variables['derivative_plugin_id'] = $variables['elements']['#derivative_plugin_id'];
   $variables['region'] = $block->getRegion();
 }
 
 /**
- * Implements hook_theme_suggestions_field_alter().
+ * Implements hook_theme_suggestions_block_alter().
  */
-function juggler_theme_suggestions_field_alter(array &$suggestions, array $variables) {
-  /*$element = $variables['element'];
-  $suggestions[] = 'field__' . $element['#view_mode'];
-  $suggestions[] = 'field__' . $element['#view_mode'] . '__' . $element['#field_name'];*/
+function juggler_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  $block_id = $variables['elements']['#id'];
+  $block = \Drupal\block\Entity\Block::load($block_id);
+
+  // Add region as suggestion
+  $region = $block->getRegion();
+  $suggestions[] = 'block__region-' . $region;
+
+  // Add classes based on the block id
+  switch ($block_id) {
+    // block id/machine name
+    case 'account_menu':
+      $suggestions[] = 'block__my_account_menu';
+      break;
+  }
+
+  $path_unaliased = \Drupal::service('path.current')->getPath();
+  $path_aliased = \Drupal::service('path.alias_manager')->getAliasByPath($path_unaliased);
+  $path_aliased_array = explode('/', $path_aliased);
+
+  $current_path = "";
+
+  foreach ($path_aliased_array as $path_chunk) {
+    if ($path_chunk != "" || $path_chunk != null) {
+      $current_path = $current_path . '_' . strtolower($path_chunk);
+      if (!in_array($current_path, $suggestions)) {
+        $suggestions[] = 'block__region-' . $region . '__page' . $current_path;
+      }
+    }
+  }
+
+  $current_path = "";
+
+  foreach ($path_aliased_array as $path_chunk) {
+    if ($path_chunk != "" || $path_chunk != null) {
+      $current_path = $current_path . '_' . strtolower($path_chunk);
+      if (!in_array('page', $suggestions)) {
+        $suggestions[] = 'block__' . 'page' . $current_path;
+      }
+    }
+  }
+
+  $current_path = "";
+
+  foreach ($path_aliased_array as $path_chunk) {
+    if ($path_chunk != "" || $path_chunk != null) {
+      $current_path = $current_path . '_' . strtolower($path_chunk);
+      if (!in_array('page', $suggestions)) {
+        $suggestions[] = 'block__' . 'page' . $current_path . '__' . $block_id;
+      }
+    }
+  }
 }
 
 /**
- * Implements hook_theme_suggestions_field_alter().
- */
-function juggler_theme_suggestions_fieldset_alter(array &$suggestions, array $variables) {
-  /*$element = $variables['element'];
-  if (isset($element['#attributes']['class']) && in_array('form-composite', $element['#attributes']['class'])) {
-    $suggestions[] = 'fieldset__form_composite';
-  }*/
-}
-
-/**
- * Implements hook_preprocess_node().
+ * Implements hook_preprocess_node() for node.html.twig.
  */
 function juggler_preprocess_node(array &$variables) {
-  // Default to turning off byline/submitted.
-  //$variables['display_submitted'] = FALSE;
+  $variables['nid'] = $variables['elements']['#node']->id();
+  $variables['node_id'] = 'node-id-' . $variables['elements']['#node']->id();
 }
 
 /**
- * Implements hook_theme_suggestions_views_view_alter().
+ * Implements hook_theme_suggestions_node_alter().
  */
-function juggler_theme_suggestions_views_view_alter(array &$suggestions, array $variables) {
-
-}
-
-/**
- * Implements hook_preprocess_form().
- */
-function juggler_preprocess_form(array &$variables) {
-  //$variables['attributes']['novalidate'] = 'novalidate';
-}
-
-/**
- * Implements hook_preprocess_select().
- */
-function juggler_preprocess_select(array &$variables) {
-  //$variables['attributes']['class'][] = 'select-chosen';
-}
-
-/**
- * Implements hook_preprocess_field().
- */
-function juggler_preprocess_field(array &$variables, $hook) {
-  switch ($variables['element']['#field_name']) {}
-}
-
-/**
- * Implements hook_preprocess_details().
- */
-function juggler_preprocess_details(array &$variables) {
-  /*$variables['attributes']['class'][] = 'details';
-  $variables['summary_attributes']['class'] = 'summary';*/
-}
-
-/**
- * Implements hook_theme_suggestions_details_alter().
- */
-function juggler_theme_suggestions_details_alter(array &$suggestions, array $variables) {
-
-}
-
-/**
- * Implements hook_preprocess_menu_local_task().
- */
-function juggler_preprocess_menu_local_task(array &$variables) {
-  //$variables['element']['#link']['url']->setOption('attributes', ['class'=>'rounded']);
+function juggler_theme_suggestions_node_alter(array &$suggestions, array $variables) {
 }

@@ -1,0 +1,49 @@
+.block-id-hero-service {
+  .field--name-field-hero {
+    display: none;
+  }
+  .field--name-field-hero-heading {
+    float: left;
+    width: 400px;
+    margin: 0;
+    padding-top: 50px;
+    color: #FFFFFF;
+    font-weight: 400;
+    @media #{$small-only} {
+      width: 80%;
+      padding-top: 40px;
+    }
+    h1,
+    h2,
+    p {
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #FFFFFF;
+      font-family: $custom-font;
+      font-size: 40px;
+      font-weight: 200;
+      line-height: 48px;
+      strong {
+        color: $primary-color;
+        font-weight: 200;
+      }
+    }
+  }
+  .field--name-field-hero-subheading {
+    @extend %h2;
+    float: right;
+    width: 300px;
+    margin: 0;
+    margin-top: 150px;
+    margin-bottom: 40px;
+    padding: 20px;
+    color: #FFFFFF;
+    border-bottom: 5px solid $primary-color;
+    background: rgba(0, 0, 0, 0.1);
+    font-weight: 200;
+    @media #{$small-only} {
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+  }
+}

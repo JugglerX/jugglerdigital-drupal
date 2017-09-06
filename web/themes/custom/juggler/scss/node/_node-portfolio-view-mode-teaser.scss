@@ -1,24 +1,97 @@
-.node--type-portfolio.node--view-mode-full {
-  @include grid-row();
+.node--type-portfolio.node--view-mode-teaser {
+  //@include grid-row(nest);
+  position: relative;
+  background: #18344c;
+  display: flex;
+  flex-direction: row;
+  @media #{$small-only} {
+    flex-direction: column;
+  }
   .group-left {
-    @include grid-column(3);
+    flex: 3 0 0;
+    //padding: 30px;
+    //float: left;
+    .group-left-inner {
+
+    }
+    @media #{$small-only} {
+      flex: 1 0 100%;
+    }
   }
   .group-right {
-    @include grid-column(9);
-  }
-  .field--name-field-logo {
-    max-width: 200px;
-    img {
-      max-width: 100%;
-      height: auto;
+    flex: 1 0 0;
+    padding: 30px;
+    //float: left;
+    background: #FFFFFF;
+    @media #{$small-only} {
+      flex: 1 0 100%;
     }
+    .group-right-inner {
+    }
+  }
+  .field--name-field-portfolio-type {
+    color: #FFF;
+    font-size: 20px;
+    border-top: 2px rgba(255,255,255,0.5) solid;
+    position: absolute;
+    z-index: 2;
+    top: 30px;
+    left: 30px;
+    span {
+      border-top: 2px #FF3B5D solid;
+      line-height: 30px;
+      display: block;
+      margin-top: -2px;
+      font-size: 12px;
+      text-transform: uppercase;
+      width: fit-content;
+    }
+  }
+  .field--name-field-company-title {
+    font-size: 20px;
+    line-height: 22px;
+    margin-bottom: 0;
+    position: absolute;
+    z-index: 2;
+    bottom: 30px;
+    left: 30px;
+    color: #FFFFFF;
   }
   .field--name-node-title {
-    margin-bottom: 10px;
-    h2 {
-      margin: 0;
-      font-size: 28px;
-      line-height: 34px;
+    margin-bottom: 0;
+    position: absolute;
+    z-index: 2;
+    bottom: 60px;
+    left: 30px;
+    color: #FFFFFF;
+    font-size: 34px;
+    line-height: 34px;
+  }
+  .field--name-field-hero-image {
+    overflow: hidden;
+    margin: 0;
+    &:hover {
+      img {
+        opacity: 0.3;
+      }
+    }
+    img {
+      //width: 100%;
+      //height: auto;
+      //display: none;
+      z-index: 1;
+      opacity: 0;
+      filter: contrast(2);
+      transition-timing-function: ease-out;
+      transition-duration: 300ms;
+      transition-property: opacity;
     }
   }
+  .field--name-field-icon {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+
 }

@@ -7,6 +7,7 @@ use Consolidation\OutputFormatters\Options\FormatterOptions;
 use Consolidation\OutputFormatters\StructuredData\AssociativeList;
 use Consolidation\OutputFormatters\StructuredData\RowsOfFields;
 use Consolidation\OutputFormatters\StructuredData\PropertyList;
+use Consolidation\OutputFormatters\StructuredData\ListDataFromKeys;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputInterface;
@@ -47,8 +48,31 @@ one: a
 two: b
 three: c
 EOT;
-
         $this->assertFormattedOutputMatches($expected, 'yaml', $data);
+
+        $expected = <<<EOT
+a
+b
+c
+EOT;
+        $this->assertFormattedOutputMatches($expected, 'list', $data);
+
+        $data = new ListDataFromKeys($data);
+
+        $expected = <<<EOT
+one: a
+two: b
+three: c
+EOT;
+        $this->assertFormattedOutputMatches($expected, 'yaml', $data);
+
+        $expected = <<<EOT
+one
+two
+three
+EOT;
+
+        $this->assertFormattedOutputMatches($expected, 'list', $data);
     }
 
     function testNestedYaml()
@@ -564,6 +588,54 @@ EOT;
  ----------------------------------- ---------------------------------------
 EOT;
         $options->setWidth(78);
+        $this->assertFormattedOutputMatches($expected, 'table', $data, $options);
+    }
+
+    function testWrappingLotsOfColumns()
+    {
+        $options = new FormatterOptions();
+
+        $data = [
+            [
+                'id' => '4d87b545-b4c3-4ece-9908-20c5c5e67e81',
+                'name' => '123456781234567812345678123456781234567812345678',
+                'service_level' => 'business',
+                'framework' => 'wordpress-network',
+                'owner' => '8558a08d-8059-45f6-9c4b-908299a025ee',
+                'created' => '2017-05-24 19:28:45',
+                'memberships' => 'b3a42ba5-755d-42ca-9109-21bde32809d0: Team,9bfaaf50-ece3-4460-acb8-dc1b8dd536e8: pantheon-engineering-canary-sites',
+                'frozen' => 'false',
+            ],
+            [
+                'id' => '3d87b545-b4c3-4ece-9908-20c5c5e67e80',
+                'name' => 'build-tools-136',
+                'service_level' => 'free',
+                'framework' => 'drupal8',
+                'owner' => '7558a08d-8059-45f6-9c4b-908299a025ef',
+                'created' => '2017-05-24 19:28:45',
+                'memberships' => '5ae1fa30-8cc4-4894-8ca9-d50628dcba17: ci-for-drupal-8-composer',
+                'frozen' => 'false',
+            ]
+        ];
+        $data = new RowsOfFields($data);
+
+        $expected = <<<EOT
+ ------------- ---------------- --------------- ----------- ------------- --------- ------------------------------------ --------
+  Id            Name             Service_level   Framework   Owner         Created   Memberships                          Frozen
+ ------------- ---------------- --------------- ----------- ------------- --------- ------------------------------------ --------
+  4d87b545-b4   12345678123456   business        wordp       8558a08d-80   2017-0    b3a42ba5-755d-42ca-9109-21bde32809   false
+  c3-4ece-990   78123456781234                   ress-       59-45f6-9c4   5-24      d0:
+  8-20c5c5e67   56781234567812                   netwo       b-908299a02   19:28:    Team,9bfaaf50-ece3-4460-acb8-dc1b8
+  e81           345678                           rk          5ee           45        dd536e8:
+                                                                                     pantheon-engineering-canary-sites
+  3d87b545-b4   build-tools-13   free            drupa       7558a08d-80   2017-0    5ae1fa30-8cc4-4894-8ca9-d50628dcba   false
+  c3-4ece-990   6                                l8          59-45f6-9c4   5-24      17: ci-for-drupal-8-composer
+  8-20c5c5e67                                                b-908299a02   19:28:
+  e80                                                        5ef           45
+ ------------- ---------------- --------------- ----------- ------------- --------- ------------------------------------ --------
+EOT;
+
+        $options->setWidth(125);
         $this->assertFormattedOutputMatches($expected, 'table', $data, $options);
     }
 

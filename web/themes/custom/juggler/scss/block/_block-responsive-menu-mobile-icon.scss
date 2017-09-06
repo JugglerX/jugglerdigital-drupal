@@ -1,0 +1,38 @@
+.block-id-responsivemenumobileicon {
+  float: right;
+  span.icon {
+    left: 0;
+    background: #000000;
+  }
+  .responsive-menu-toggle-icon {
+    width: 30px;
+    height: 24px;
+    &:before {
+      top: 4px;
+    }
+    &:after {
+      top: 10px;
+    }
+    span {
+      .icon {
+        top: 16px;
+      }
+      label {
+        position: absolute;
+        top: 2px;
+        left: 40px;
+        //top: 6px;
+        //left: 33px;
+        display: none;
+        text-transform: uppercase;
+        color: #000000;
+        font-size: 17px;
+      }
+    }
+  }
+  &:before,
+  &:after {
+    left: 0;
+    background: #000000;
+  }
+}

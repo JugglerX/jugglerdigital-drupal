@@ -1,0 +1,12 @@
+.form-required {
+  &:after {
+    display: inline-block;
+    content: '*';
+    color: #FF0000;
+  }
+}
+label.form-required {
+  &:after {
+    margin: 0 0 0 5px;
+  }
+}

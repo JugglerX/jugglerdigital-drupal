@@ -14,6 +14,8 @@ namespace Symfony\Component\VarDumper\Tests;
 use Symfony\Component\VarDumper\Cloner\VarCloner;
 use Symfony\Component\VarDumper\Dumper\CliDumper;
 use Symfony\Component\VarDumper\Test\VarDumperTestCase;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 /**
  * @author Nicolas Grekas <p@tchwork.com>
@@ -45,7 +47,7 @@ class CliDumperTest extends VarDumperTestCase
         $closure54 = '';
         $r = defined('HHVM_VERSION') ? '' : '#%d';
 
-        if (PHP_VERSION_ID >= 50400) {
+        if (\PHP_VERSION_ID >= 50400) {
             $closure54 = <<<EOTXT
 
     class: "Symfony\Component\VarDumper\Tests\CliDumperTest"
@@ -141,8 +143,22 @@ EOTXT
         $var[] = &$v;
         $var[''] = 2;
 
-        $this->assertDumpMatchesFormat(
-            <<<'EOTXT'
+        if (\PHP_VERSION_ID >= 70200) {
+            $this->assertDumpMatchesFormat(
+                <<<'EOTXT'
+array:4 [
+  0 => {}
+  1 => &1 null
+  2 => &1 null
+  "" => 2
+]
+EOTXT
+                ,
+                $var
+            );
+        } else {
+            $this->assertDumpMatchesFormat(
+                <<<'EOTXT'
 array:4 [
   "0" => {}
   "1" => &1 null
@@ -150,9 +166,10 @@ array:4 [
   "" => 2
 ]
 EOTXT
-            ,
-            $var
-        );
+                ,
+                $var
+            );
+        }
     }
 
     public function testObjectCast()
@@ -160,16 +177,28 @@ EOTXT
         $var = (object) array(1 => 1);
         $var->{1} = 2;
 
-        $this->assertDumpMatchesFormat(
-            <<<'EOTXT'
+        if (\PHP_VERSION_ID >= 70200) {
+            $this->assertDumpMatchesFormat(
+                <<<'EOTXT'
+{
+  +"1": 2
+}
+EOTXT
+                ,
+                $var
+            );
+        } else {
+            $this->assertDumpMatchesFormat(
+                <<<'EOTXT'
 {
   +1: 1
   +"1": 2
 }
 EOTXT
-            ,
-            $var
-        );
+                ,
+                $var
+            );
+        }
     }
 
     public function testClosedResource()
@@ -202,14 +231,14 @@ EOTXT
     }
 
     /**
-     * @requires function Twig_Template::getSourceContext
+     * @requires function Twig\Template::getSourceContext
      */
     public function testThrowingCaster()
     {
         $out = fopen('php://memory', 'r+b');
 
         require_once __DIR__.'/Fixtures/Twig.php';
-        $twig = new \__TwigTemplate_VarDumperFixture_u75a09(new \Twig_Environment(new \Twig_Loader_Filesystem()));
+        $twig = new \__TwigTemplate_VarDumperFixture_u75a09(new Environment(new FilesystemLoader()));
 
         $dumper = new CliDumper();
         $dumper->setColors(false);
@@ -225,7 +254,7 @@ EOTXT
             ':stream' => eval('return function () use ($twig) {
                 try {
                     $twig->render(array());
-                } catch (\Twig_Error_Runtime $e) {
+                } catch (\Twig\Error\RuntimeError $e) {
                     throw $e->getPrevious();
                 }
             };'),
@@ -265,16 +294,16 @@ stream resource {@{$ref}
             """
         }
       }
-      %d. Twig_Template->displayWithErrorHandling() ==> __TwigTemplate_VarDumperFixture_u75a09->doDisplay(): {
+      %d. Twig%cTemplate->displayWithErrorHandling() ==> __TwigTemplate_VarDumperFixture_u75a09->doDisplay(): {
         src: {
           %sTemplate.php:%d: """
             try {\\n
                 \$this->doDisplay(\$context, \$blocks);\\n
-            } catch (Twig_Error \$e) {\\n
+            } catch (Twig%sError \$e) {\\n
             """
         }
       }
-      %d. Twig_Template->display() ==> Twig_Template->displayWithErrorHandling(): {
+      %d. Twig%cTemplate->display() ==> Twig%cTemplate->displayWithErrorHandling(): {
         src: {
           %sTemplate.php:%d: """
             {\\n
@@ -283,7 +312,7 @@ stream resource {@{$ref}
             """
         }
       }
-      %d. Twig_Template->render() ==> Twig_Template->display(): {
+      %d. Twig%cTemplate->render() ==> Twig%cTemplate->display(): {
         src: {
           %sTemplate.php:%d: """
             try {\\n
@@ -292,7 +321,7 @@ stream resource {@{$ref}
             """
         }
       }
-      %d. %slosure%s() ==> Twig_Template->render(): {
+      %d. %slosure%s() ==> Twig%cTemplate->render(): {
         src: {
           %sCliDumperTest.php:%d: """
 %A
@@ -416,7 +445,7 @@ EOTXT
      */
     public function testBuggyRefs()
     {
-        if (PHP_VERSION_ID >= 50600) {
+        if (\PHP_VERSION_ID >= 50600) {
             $this->markTestSkipped('PHP 5.6 fixed refs counting');
         }
 

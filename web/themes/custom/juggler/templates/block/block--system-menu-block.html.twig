@@ -34,10 +34,10 @@
 
 {% set classes = [
 'block',
-'block-menu',
-'block-machine-' ~ machine_name|clean_class,
-'navigation',
-'menu--' ~ derivative_plugin_id|clean_class,
+'block-id-' ~ machine_name|clean_class,
+'block-' ~ base_plugin_id|clean_class,
+'block-region' ~ region|clean_class,
+'menu-' ~ derivative_plugin_id|clean_class,
 ]
 %}
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}

@@ -33,7 +33,13 @@
     "drupal/views_block_filter_block": "1.x-dev",
     "drush/drush": "~8",
     "rvtraveller/qs-composer-installer": "^1.1",
-    "webflo/drupal-core-strict": "^8"
+    "webflo/drupal-core-strict": "^8",
+    "drupal/advagg": "^3.1",
+    "drupal/exclude_node_title": "^1.0@beta",
+    "drupal/image_effects": "^1.0",
+    "drupal/redirect": "^1.0@alpha",
+    "drupal/slick": "^1.0",
+    "drupal/slick_views": "^1.0@RC"
   },
   "require-dev": {
     "mikey179/vfsstream": "^1.2",

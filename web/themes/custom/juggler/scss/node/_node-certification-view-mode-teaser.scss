@@ -1,0 +1,44 @@
+.node--type-certification.node--view-mode-teaser {
+  min-height: 206px;
+  background-color: #FFFFFF;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.3);
+  .field--name-field-certification-image {
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+    vertical-align: middle;
+    img {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+    }
+  }
+  .field--name-node-title {
+    margin: 0;
+    padding: 10px 10px 0 10px;
+    border-top: 1px solid #CCCCCC;
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+      color: #000000;
+      font-family: $base-font;
+      font-size: 15px;
+      font-weight: 600;
+      font-style: normal;
+      line-height: 20px;
+    }
+  }
+  .field--name-body {
+    margin: 0;
+    padding: 0 10px 10px 10px;
+    p {
+      margin-top: 0;
+      margin-bottom: 0;
+      color: #666666;
+      font-family: $base-font;
+      font-size: 15px;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 20px;
+    }
+  }
+}

@@ -20,9 +20,8 @@ js-cookie:
 tooltipster:
   version: "1.0.x"
   js:
-    /libraries/tooltipster/js/tooltipster.bundle.js: {}
+    /libraries/tooltipster/js/tooltipster.bundle.min.js: {}
   dependencies:
-    - core/drupal
     - core/jquery
     - core/jquery.once
 
@@ -39,7 +38,6 @@ foundation6:
     js/foundation6/js/foundation.equalizer.js: {}
     js/foundation6/foundation_init.js: {}
   dependencies:
-    - core/drupal
     - core/jquery
     - core/jquery.once
 
@@ -54,3 +52,8 @@ detectizr:
     /libraries/detectizr/detectizr.min.js: {}
   dependencies:
       - juggler/modernizr
+
+scrollmagic:
+  version: "2.0.5"
+  js:
+    /libraries/scrollmagic/scrollmagic/minified/ScrollMagic.min.js: {}

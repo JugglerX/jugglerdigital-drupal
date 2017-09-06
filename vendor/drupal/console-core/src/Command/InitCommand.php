@@ -10,10 +10,9 @@ namespace Drupal\Console\Core\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Process\ProcessBuilder;
 use Symfony\Component\Finder\Finder;
-use Symfony\Component\Console\Command\Command;
-use Drupal\Console\Core\Command\Shared\CommandTrait;
 use Drupal\Console\Core\Utils\ConfigurationManager;
 use Drupal\Console\Core\Generator\InitGenerator;
 use Drupal\Console\Core\Utils\ShowFile;
@@ -26,8 +25,6 @@ use Drupal\Console\Core\Style\DrupalStyle;
  */
 class InitCommand extends Command
 {
-    use CommandTrait;
-
     /**
      * @var ShowFile
      */
@@ -61,6 +58,11 @@ class InitCommand extends Command
         'learning' => false,
         'generate_inline' => false,
         'generate_chain' => false
+    ];
+
+    private $directories = [
+      'chain',
+      'sites',
     ];
 
     /**
@@ -149,7 +151,7 @@ class InitCommand extends Command
             '/tmp'
         );
 
-        $this->configParameters['learning'] = $io->confirm(
+        $this->configParameters['chain'] = $io->confirm(
             $this->trans('commands.init.questions.chain'),
             false
         );
@@ -159,7 +161,7 @@ class InitCommand extends Command
             false
         );
 
-        $this->configParameters['chain'] = $io->confirm(
+        $this->configParameters['learning'] = $io->confirm(
             $this->trans('commands.init.questions.learning'),
             false
         );
@@ -206,7 +208,7 @@ class InitCommand extends Command
             )
         );
         if (!$this->configParameters['chain']) {
-            $finder->exclude('chain');
+            $finder->exclude('chain/optional');
         }
         if (!$this->configParameters['sites']) {
             $finder->exclude('sites');
@@ -226,6 +228,19 @@ class InitCommand extends Command
                 $destination,
                 $configFile->getRelativePathname()
             );
+
+            $destinationFile = str_replace(
+                'chain/optional/',
+                'chain/',
+                $destinationFile
+            );
+
+            $fs = new Filesystem();
+            foreach ($this->directories as $directory) {
+                if (!$fs->exists($destination.$directory)) {
+                    $fs->mkdir($destination.$directory);
+                }
+            }
 
             if ($this->copyFile($sourceFile, $destinationFile, $override)) {
                 $copiedFiles[] = $destinationFile;

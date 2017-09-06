@@ -1,20 +1,30 @@
-.block-logo{
+.block-id-logo {
   @include grid-column(3);
+  @media #{$small-only} {
+    @include grid-column(6);
+  }
   .logo {
     float: left;
-    height: 23px;
-    width: 140px;
+    width: 90px;
+    height: 32px;
     background-image: url('../images/logo.png');
     background-repeat: no-repeat;
+    background-size: contain;
     @media #{$small-only} {
-      height: 18px;
-      width: 100px;
+      float: left;
+      width: 188px;
+      height: 24px;
+      background-image: url('../images/logo-mobile.png');
+      background-repeat: no-repeat;
+      background-size: 188px 24px;
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
   }
-}
-
-#block-logo {
-  .field--name-body {
-    float: left;
+  .field {
+    margin: 0;
   }
 }
