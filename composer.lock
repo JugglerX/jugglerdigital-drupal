@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7f4a82e65161ba5e736fb1caebbf179d",
+    "content-hash": "07450632d5694a967ac4c8f7cf6cc955",
     "packages": [
         {
             "name": "ajgl/breakpoint-twig-extension",
@@ -2072,83 +2072,6 @@
             }
         },
         {
-            "name": "drupal/devel",
-            "version": "dev-1.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/devel",
-                "reference": "fc46942128b215206a611ca83160389da6b7aa3e"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "suggest": {
-                "symfony/var-dumper": "Pretty print complex values better with var-dumper available"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.0-rc2+33-dev",
-                    "datestamp": "1500938043",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Moshe Weitzman",
-                    "homepage": "https://github.com/weitzman",
-                    "email": "weitzman@tejasa.com",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Hans Salvisberg",
-                    "homepage": "https://www.drupal.org/u/salvis",
-                    "email": "drupal@salvisberg.com",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Luca Lusso",
-                    "homepage": "https://www.drupal.org/u/lussoluca",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Marco (willzyx)",
-                    "homepage": "https://www.drupal.org/u/willzyx",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "See contributors",
-                    "homepage": "https://www.drupal.org/node/3236/committers"
-                },
-                {
-                    "name": "salvis",
-                    "homepage": "https://www.drupal.org/user/82964"
-                },
-                {
-                    "name": "willzyx",
-                    "homepage": "https://www.drupal.org/user/1043862"
-                }
-            ],
-            "description": "Various blocks, pages, and functions for developers.",
-            "homepage": "http://drupal.org/project/devel",
-            "support": {
-                "source": "http://cgit.drupalcode.org/devel",
-                "issues": "http://drupal.org/project/devel",
-                "irc": "irc://irc.freenode.org/drupal-contribute"
-            },
-            "time": "2017-08-29 01:14:35"
-        },
-        {
             "name": "drupal/ds",
             "version": "3.1.0",
             "source": {
@@ -2448,58 +2371,6 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/image_effects"
             }
-        },
-        {
-            "name": "drupal/libraries",
-            "version": "dev-3.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/libraries",
-                "reference": "061ead081c92a6209b09eaf23b4e3103f360946e"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-3.x": "3.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-3.x-dev",
-                    "datestamp": "1487978583"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Pol",
-                    "homepage": "https://www.drupal.org/user/47194"
-                },
-                {
-                    "name": "rjacobs",
-                    "homepage": "https://www.drupal.org/user/422459"
-                },
-                {
-                    "name": "sun",
-                    "homepage": "https://www.drupal.org/user/54136"
-                },
-                {
-                    "name": "tstoeckler",
-                    "homepage": "https://www.drupal.org/user/107158"
-                }
-            ],
-            "description": "Allows version-dependent and shared usage of external libraries in Drupal.",
-            "homepage": "http://drupal.org/project/libraries",
-            "support": {
-                "source": "http://cgit.drupalcode.org/libraries",
-                "issues": "http://drupal.org/project/issues/libraries",
-                "irc": "irc://irc.freenode.org/drupal-contribute"
-            },
-            "time": "2017-03-15 17:04:08"
         },
         {
             "name": "drupal/metatag",
@@ -2982,52 +2853,6 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/twig_xdebug"
             }
-        },
-        {
-            "name": "drupal/views_block_filter_block",
-            "version": "dev-1.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/views_block_filter_block",
-                "reference": "ca039afb46ae9603e8c034a2ecd8c7e261af6c7f"
-            },
-            "require": {
-                "drupal/core": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.x-dev",
-                    "datestamp": "1495707184"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Yogesh Pawar",
-                    "homepage": "https://www.drupal.org/user/2922907"
-                },
-                {
-                    "name": "iamEAP",
-                    "homepage": "https://www.drupal.org/user/1467594"
-                },
-                {
-                    "name": "sumitmadan",
-                    "homepage": "https://www.drupal.org/user/1538790"
-                }
-            ],
-            "description": "Provides blocks for Views exposed filters on View blocks.",
-            "homepage": "https://www.drupal.org/project/views_block_filter_block",
-            "support": {
-                "source": "http://cgit.drupalcode.org/views_block_filter_block"
-            },
-            "time": "2017-05-25 11:05:23"
         },
         {
             "name": "drush/drush",
@@ -8392,14 +8217,11 @@
     "stability-flags": {
         "drupal/better_exposed_filters": 15,
         "drupal/ctools": 15,
-        "drupal/devel": 20,
         "drupal/exclude_node_title": 10,
         "drupal/field_group": 5,
-        "drupal/libraries": 20,
         "drupal/pathauto": 5,
         "drupal/redirect": 15,
-        "drupal/slick_views": 5,
-        "drupal/views_block_filter_block": 20
+        "drupal/slick_views": 5
     },
     "prefer-stable": true,
     "prefer-lowest": false,
