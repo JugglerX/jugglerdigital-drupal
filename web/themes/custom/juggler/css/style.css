@@ -1511,7 +1511,7 @@ body.front .block-id-content .node--type-page .group-right {
   display: flex;
   flex-direction: row;
   overflow: hidden;
-  box-shadow: 5px 0px 5px rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 @media only screen and (max-width: 767px) {
@@ -1524,10 +1524,14 @@ body.front .block-id-content .node--type-page .group-right {
   flex: 5 0 0;
   position: relative;
   overflow: hidden;
-  min-height: 450px;
+  min-height: 480px;
   transition-timing-function: ease-out;
   transition-duration: 300ms;
   transition-property: background;
+}
+
+.node--type-portfolio.node--view-mode-teaser > .group-left:hover {
+  background-color: #244460;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1612,7 +1616,8 @@ body.front .block-id-content .node--type-page .group-right {
   }
 }
 
-.node--type-portfolio.node--view-mode-teaser .field--name-field-hero-image:hover img {
+.node--type-portfolio.node--view-mode-teaser .field--name-field-hero-image.show-screenshot img {
+  animation: scaleUp .7s ease both;
   opacity: 1;
 }
 
@@ -1620,17 +1625,7 @@ body.front .block-id-content .node--type-page .group-right {
   z-index: 1;
   opacity: 0;
   width: 100%;
-  border-radius: 5px;
   height: auto;
-}
-
-.node--type-portfolio.node--view-mode-teaser .group-left:hover {
-  background-color: #244460;
-}
-
-.node--type-portfolio.node--view-mode-teaser .group-left:hover .field--name-field-hero-image img {
-  animation: scaleUp .7s ease both;
-  opacity: 1;
 }
 
 .node--type-portfolio.node--view-mode-teaser .field--name-body h3 {

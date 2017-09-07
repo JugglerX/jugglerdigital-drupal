@@ -50,6 +50,27 @@ console.log('Scripts.js');
       }).setClassToggle('.view-portfolio', 'scrolled-into-view')
         .addTo(controller); // assign the scene to the controller
 
+      new ScrollMagic.Scene({
+        triggerElement: '.view-portfolio .views-row:nth-of-type(1) .node--type-portfolio',
+        offset: 100,
+        duration: 10000
+      }).setClassToggle('.view-portfolio .views-row:nth-of-type(1) .node--type-portfolio .field--name-field-hero-image', 'show-screenshot')
+        .addTo(controller);
+
+      new ScrollMagic.Scene({
+        triggerElement: '.view-portfolio .views-row:nth-of-type(2) .node--type-portfolio',
+        offset: 100,
+        duration: 10000
+      }).setClassToggle('.view-portfolio .views-row:nth-of-type(2) .node--type-portfolio .field--name-field-hero-image', 'show-screenshot')
+        .addTo(controller);
+
+      new ScrollMagic.Scene({
+        triggerElement: '.view-portfolio .views-row:nth-of-type(3) .node--type-portfolio',
+        offset: 100,
+        duration: 10000
+      }).setClassToggle('.view-portfolio .views-row:nth-of-type(3) .node--type-portfolio .field--name-field-hero-image', 'show-screenshot')
+        .addTo(controller);
+
     }
   };
 
