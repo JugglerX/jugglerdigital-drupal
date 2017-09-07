@@ -1,20 +1,28 @@
+@-webkit-keyframes scaleUp {
+  from { opacity: 0; -webkit-transform: scale(.8); }
+}
+@keyframes scaleUp {
+  from { opacity: 0; -webkit-transform: scale(.8); transform: scale(.8) translateY(100px); }
+}
+
 .node--type-portfolio.node--view-mode-teaser {
-  //@include grid-row(nest);
   position: relative;
   background: #18344c;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
+  box-shadow: 5px 0px 5px rgba(255,255,255,0.3);
   @media #{$small-only} {
     flex-direction: column;
   }
   > .group-left {
     flex: 5 0 0;
     position: relative;
-    //padding: 30px;
-    //float: left;
-    .group-left-inner {
-
-    }
+    overflow: hidden;
+    min-height: 450px;
+    transition-timing-function: ease-out;
+    transition-duration: 300ms;
+    transition-property: background;
     @media #{$small-only} {
       flex: 1 0 100%;
     }
@@ -22,22 +30,19 @@
   > .group-right {
     flex: 3 0 0;
     padding: 30px;
-    //float: left;
     background: #FFFFFF;
     @media #{$small-only} {
       flex: 1 0 100%;
     }
-    .group-right-inner {
-    }
   }
   .field--name-field-portfolio-type {
-    color: #FFF;
+    color: #FFFFFF;
     font-size: 20px;
-    border-top: 2px rgba(255,255,255,0.5) solid;
-    position: absolute;
     z-index: 2;
-    top: 30px;
-    left: 30px;
+    padding: 30px 30px 0 30px;
+    //position: absolute;
+    //top: 30px;
+    //left: 30px;
     span {
       border-top: 2px #FF3B5D solid;
       line-height: 30px;
@@ -49,67 +54,128 @@
     }
   }
   .field--name-field-company-title {
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 700;
     line-height: 22px;
     margin-bottom: 0;
-    position: absolute;
+    margin-top: 10px;
+    padding: 0 30px 0 30px;
     z-index: 2;
-    bottom: 30px;
-    left: 30px;
     color: #FFFFFF;
+    //position: absolute;
+    //bottom: 30px;
+    //left: 30px;
   }
   .field--name-node-title {
     margin-bottom: 0;
-    position: absolute;
-    z-index: 2;
-    bottom: 60px;
-    left: 30px;
+    margin-top: 30px;
     color: #FFFFFF;
     font-size: 34px;
+    font-weight: 300;
     line-height: 34px;
+    padding: 0 30px 0 30px;
+    z-index: 2;
+    //position: absolute;
+    //bottom: 60px;
+    //left: 30px;
   }
   .field--name-field-hero-image {
     overflow: hidden;
     margin: 0;
+    position: absolute;
+    bottom: -100px;
+    left: 30px;
+    padding-right: 30px;
+    @media #{$medium-only} {
+      bottom: -20px;
+      left: 30px;
+      padding-right: 30px;
+    }
+    @media #{$small-only} {
+      bottom: -20px;
+      left: 30px;
+      padding-right: 30px;
+    }
     &:hover {
       img {
-        opacity: 0.3;
+        opacity: 1;
       }
     }
     img {
-      //width: 100%;
-      //height: auto;
-      //display: none;
       z-index: 1;
       opacity: 0;
-      filter: contrast(2);
-      transition-timing-function: ease-out;
-      transition-duration: 300ms;
-      transition-property: opacity;
+      //filter: contrast(2);
+      //transition-timing-function: ease-out;
+      //transition-duration: 300ms;
+      //transition-property: opacity;
+      width: 100%;
+      border-radius: 5px;
+      height: auto;
+    }
+  }
+  .group-left {
+    &:hover {
+      background-color: lighten($primary-color, 10%);
+      .field--name-field-hero-image {
+        img {
+          animation: scaleUp .7s ease both;
+          opacity: 1;
+        }
+      }
     }
   }
   .field--name-body {
     h3 {
       margin-bottom: 14px;
-      color: $primary-color;
-      font-family: $custom-font;
-      font-size: 20px;
+      color: #212121;
       font-weight: 400;
-      line-height: 28px;
+      line-height: 30px;
+      display: block;
+      font-size: 16px;
+      text-transform: uppercase;
     }
     p {
       font-size: 14px;
       line-height: 20px;
       color: #666;
     }
+    ul {
+      font-size: 14px;
+      line-height: 20px;
+      color: #666;
+      list-style: none;
+      margin: 0;
+      li {
+        background-image: url('../images/dot.png');
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: 20px;
+        padding-left: 25px;
+        line-height: 18px;
+        list-style: none;
+        margin-bottom: 10px;
+      }
+    }
+    hr {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
 
   }
-  .field--name-field-icon {
-    float: left;
-    margin-right: 10px;
-    margin-bottom: 10px;
+  .field--name-field-website {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    a {
+      @include btn;
+      text-transform: lowercase;
+    }
   }
   .field--name-field-tag-phases {
+    //position: absolute;
+    //top: 73px;
+    //left: 30px;
+    //z-index: 2;
     .field-item {
       margin-bottom: 5px;
     }
@@ -122,7 +188,7 @@
         width: auto;
       }
       .field--name-taxonomy-term-title {
-        color: #999;
+        color: #678cb1;
         line-height: 24px;
       }
       .field--name-field-phase-icon {

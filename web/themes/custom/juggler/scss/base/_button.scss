@@ -9,14 +9,13 @@
   text-transform: uppercase;
   color: #FFFFFF;
   border: 1px;
-  border-color: $primary-color;
+  border-color: $secondary-color;
   border-radius: 3px;
   outline: none;
-  background-color: $primary-color;
+  background-color: $secondary-color;
   font-family: $custom-font;
   font-size: 14px;
   font-weight: 200;
-
   appearance: none;
   &:link,
   &:visited {
@@ -66,7 +65,6 @@
 }
 .form-submit {
   @include btn;
-
   appearance: none;
 }
 .btn {

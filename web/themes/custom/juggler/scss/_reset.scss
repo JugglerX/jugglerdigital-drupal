@@ -1,15 +1,14 @@
-html,
+html {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  border: 0;
+}
+
 span,
 applet,
 object,
 iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
 blockquote,
 pre,
 abbr,
@@ -41,9 +40,6 @@ center,
 dl,
 dt,
 dd,
-ol,
-ul,
-li,
 fieldset,
 form,
 label,
@@ -84,6 +80,10 @@ a {
   margin: 0;
   padding: 0;
   vertical-align: baseline;
+}
+ul {
+  padding: 0;
+  margin: 0;
 }
 article,
 aside,
