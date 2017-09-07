@@ -1,0 +1,40 @@
+.block-id-testimonials-homepage {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  .block-title {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #999999;
+    font-size: 28px;
+    font-weight: 400;
+    @media #{$small-only} {
+      width: auto;
+      font-size: 24px;
+      line-height: 28px;
+    }
+  }
+  .node--type-page {
+    .field--name-node-title {
+      display: block;
+      width: 70%;
+      margin: 0 auto;
+      text-align: center;
+      h1 {
+        color: #999999;
+        font-size: 28px;
+        font-weight: 200;
+      }
+    }
+  }
+}
+
+.region-canyon {
+  .block-id-certifications-homepage {
+    .block-title {
+      color: #FFFFFF;
+    }
+  }
+}

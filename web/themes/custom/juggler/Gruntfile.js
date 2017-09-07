@@ -3,7 +3,7 @@ module.exports = function (grunt) {
   require('time-grunt')(grunt);
 
   var jsLibs = [
-    "js/scripts.js"
+    'js/scripts.js'
   ];
 
   grunt.initConfig({
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
     jshint: {
       all: [
         'Gruntfile.js',
-        jsLibs
+        [jsLibs],
       ]
     },
 
@@ -61,7 +61,7 @@ module.exports = function (grunt) {
         map: false
       },
       css: {
-        src: 'css/autodesk.css'
+        src: 'css/style.css'
       }
     },
 
@@ -69,7 +69,7 @@ module.exports = function (grunt) {
       css: {
         options: {},
         files: {
-          'blessed/autodesk.css': 'css/autodesk.css'
+          'blessed/style.css': 'css/style.css'
         }
       }
     },
@@ -77,18 +77,8 @@ module.exports = function (grunt) {
     cssmetrics: {
       dev: {
         src: [
-          'css/autodesk.css'
+          'css/style.css'
         ]
-      }
-    },
-
-    removescsscomments: {
-      your_target: {
-        options: {
-          singleline: true,
-          multiline: true
-        },
-        src: ['scss/**/*.scss']
       }
     },
 
@@ -99,20 +89,60 @@ module.exports = function (grunt) {
         },
         options: {
           watchTask: true,
-          proxy: "service-market.autodesk.com",
-          injectChanges: false
+          proxy: 'http://figurit.dev',
+          injectChanges: true
         }
+      }
+    },
+
+    stylelint: {
+      stylelint: {
+        options: {
+          configFile: 'scss/.stylelint.json',
+          formatter: 'string',
+          ignoreDisables: false,
+          failOnError: true,
+          outputFile: '',
+          reportNeedlessDisables: false,
+          syntax: ''
+        },
+        src: [
+          'scss/**/*.scss'
+        ]
+      }
+    },
+
+    // https://github.com/sasstools/grunt-sass-lint
+    // https://github.com/sasstools/sass-lint/tree/master/docs/rules
+    sasslint: {
+      options: {
+        configFile: 'scss/.sass-lint.yml'
+      },
+      target: ['scss/**/*.scss']
+    },
+
+    eslint: {
+      options: {
+        configFile: '.eslintrc.json'
+        // rulePaths: ['conf/rules']
+      },
+      target: ['js/scripts.js']
+    },
+
+    // https://github.com/csscomb/csscomb.js/blob/dev/doc/options.md
+    csscomb: {
+      options: {
+        config: 'scss/.csscomb.json'
+      },
+      files: {
+        expand: true,
+        src: 'scss/**/*.scss'
       }
     }
 
-
-
-
-
   });
 
-  grunt.registerTask('build', ['sass', 'autoprefixer', 'jshint', 'uglify']);
+  grunt.registerTask('build', ['sasslint', 'eslint', 'sass', 'autoprefixer', 'uglify']);
   grunt.registerTask('default', ['build']);
-  grunt.registerTask('sync', ['browserSync','watch']);
-  // grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.registerTask('sync', ['browserSync', 'watch', 'sasslint']);
 };

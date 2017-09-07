@@ -1,0 +1,23 @@
+.slick__slide {
+  .node {
+    margin: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.3);
+  }
+}
+.slick-dots {
+  bottom: -30px;
+}
+.slick__arrow {
+  .slick-arrow {
+    &:before {
+      color: $secondary-color;
+    }
+    &:after {
+      color: $secondary-color;
+    }
+  }
+}
+.slick-dotted.slick-slider {
+  margin-bottom: 40px;
+}

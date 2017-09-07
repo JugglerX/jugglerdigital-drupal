@@ -1,0 +1,13 @@
+.view.view-services {
+  .view-content {
+    @include grid-row(nest);
+    .views-row {
+      @include grid-column(6);
+      min-height: 150px;
+      margin-bottom: 10px;
+      @media #{$small-only} {
+        @include grid-column(12);
+      }
+    }
+  }
+}

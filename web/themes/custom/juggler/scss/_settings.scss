@@ -1,27 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,Open+Sans:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600');
+
+//font-family: 'Open Sans', sans-serif;
+//font-family: 'Lato', sans-serif;
 
 $base-font-size: 15px;
 $base-line-height: 24px;
-$base-font-color: #333;
-$custom-font-color: #333;
-
-$base-font: "Open+Sans", "helvetica", "arial";
-$custom-font: "Montserrat", "helvetica", "arial";
-
-$primary-color: #224469;
-$secondary-color: #1B96D4;
-
+$base-font-color: #333333;
+$custom-font-color: #333333;
+$base-font: 'Open Sans', 'helvetica', 'arial', sans-serif;
+$custom-font: 'Lato', 'helvetica', 'arial', sans-serif;
+$primary-color: #162A3B;
+$secondary-color: #FF3B5D;
 $link-color: $primary-color;
 $link-color-hover: lighten($primary-color, 10%);
-
 $white: #FFFFFF;
-$black: #000000; 
+$black: #000000;
 $gray: #666666;
-
 $form-font-size: 15px;
 $form-line-height: 24px;
 $form-padding: 6px;
 $form-height: 36px;
-
 $button-font-size: $base-font-size;
 $button-font-family: $base-font;

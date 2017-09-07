@@ -72,23 +72,21 @@
 #}
 {%
 set classes = [
-'node',
-'node--type-' ~ node.bundle|clean_class,
-node.isPromoted() ? 'node--promoted',
-node.isSticky() ? 'node--sticky',
-not node.isPublished() ? 'node--unpublished',
-view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 ]
 %}
+
+
 {{ attach_library('classy/node') }}
-<div {{ attributes.addClass(classes) |without('role','about','content','data-history-node-id') }}>
+<div id={{ node_id  }} {{ attributes.addClass(classes) |without('role','about','content','data-history-node-id') }}>
 
   {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
+
   {{ title_suffix }}
 
   {% if display_submitted %}

@@ -1,0 +1,18 @@
+.node--type-service.node--view-mode-teaser {
+  .group-left {
+    float: left;
+    width: 110px;
+  }
+  .group-right {
+    float: left;
+    width: calc(100% - 110px);
+  }
+  .field--name-node-title {
+    margin-bottom: 10px;
+  }
+  .field--name-field-icon {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}

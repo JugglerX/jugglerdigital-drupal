@@ -1,88 +1,86 @@
 @import 'reset';
 @import 'settings';
 
+@import 'grid/clearfix';
 @import 'grid/breakpoints';
 @import 'grid/grid';
 
-@import 'region/region.scss';
-@import 'region/region-top.scss';
-@import 'region/region-header.scss';
-@import 'region/region-global-search.scss';
-@import 'region/region-hero.scss';
-@import 'region/region-highlighted.scss';
-@import 'region/region-content.scss';
-@import 'region/region-above-content.scss';
-@import 'region/region-sidebar-first.scss';
-@import 'region/region-footer.scss';
-@import 'region/region-bottom.scss';
+@import 'base/form';
+@import 'base/form-item';
+@import 'base/form-label';
+@import 'base/form-select';
+@import 'base/form-textarea';
+@import 'base/form-composite';
+@import 'base/form-submit';
+@import 'base/form-tabledrag';
+@import 'base/form-fieldset';
+@import 'base/form-file';
+@import 'base/form-filter-wrapper';
+@import 'base/form-required';
+@import 'base/field';
 
-@import 'component/colorbox';
-@import 'component/fonts';
+@import 'base/button';
+//@import 'component/fonts';
 @import 'component/type';
-@import 'component/form';
-@import 'component/form-item';
-@import 'component/form-label';
-@import 'component/form-select';
-@import 'component/form-textarea';
-@import 'component/form-composite';
-@import 'component/form-checkbox';
-@import 'component/form-submit';
-@import 'component/form-tabledrag';
-@import 'component/form-fieldset';
-@import 'component/form-file';
-@import 'component/form-filter-wrapper';
-@import 'component/form-required';
-@import 'component/button';
-@import 'component/poster';
-@import 'component/hero';
-@import 'component/field';
+@import 'component/type-body';
 @import 'component/table';
-@import 'component/throbber';
 @import 'component/description';
-@import 'component/selectize';
-@import 'component/modal';
-@import 'component/tooltipster';
-@import 'component/highlight';
-@import 'component/parsley';
-@import 'component/dropbutton';
-@import 'component/chosen';
-@import 'component/ext';
+@import 'component/slick';
 
-@import 'block/block-local-tasks';
-@import 'block/block-account-menu';
-@import 'block/block-main-menu';
-@import 'block/block-user-menu';
-@import 'block/block-submenu';
-@import 'block/block-responsive-menu-toggle';
-@import 'block/block-horizontalmenu';
-@import 'block/block-logo';
-@import 'block/block-machine-views-block-homepage-block-1';
+@import 'region/layout';
+@import 'region/layout-top';
+@import 'region/layout-header';
+@import 'region/layout-canyon';
+@import 'region/layout-hero';
+@import 'region/region';
+@import 'region/region-content';
+
+@import 'page/page';
+@import 'page/front';
+
+@import 'view/view-services';
+@import 'view/view-certifications';
+@import 'view/view-testimonials';
+@import 'view/view-portfolio';
 
 @import 'node/node';
-@import 'node/node-page-view-mode-full';
+@import 'node/node-certification-view-mode-teaser';
+@import 'node/node-service-view-mode-teaser';
 @import 'node/node-portfolio-view-mode-teaser';
 
-@import 'page/path-frontpage';
+@import 'ds/ds-1col-fullwidth-hero-footer';
+@import 'ds/ds-1col-hero';
+@import 'ds/ds-2col';
+@import 'ds/ds-2col-75-25';
 
-/* Setup */
+@import 'block/block-local-tasks';
+@import 'block/block-contact-details-top';
+@import 'block/block-hero-homepage';
+@import 'block/block-hero-service';
+@import 'block/block-hero-basic';
+@import 'block/block-services-homepage';
+@import 'block/block-certifications-homepage';
+@import 'block/block-certifications-homepage-carousel';
+@import 'block/block-testimonials-homepage';
+@import 'block/block-user-account-menu';
+@import 'block/block-primary-menu';
+@import 'block/block-footer-menu';
+@import 'block/block-user-account-menu';
+@import 'block/block-horizontalmenu';
+@import 'block/block-logo';
+@import 'block/block-responsive-menu-mobile-icon';
+
+
 body {
+  @include display-breakpoint;
   margin: 0;
   padding: 0;
+  color: #333333;
   font-family: $base-font;
   font-size: $base-font-size;
-  color: #333;
+  background: #F6F6F6;
 }
 
 * {
   box-sizing: border-box;
 }
-
-body {
-  @include display-breakpoint;
-}
-
-
-  img {
-    width: 100%;
-    height: auto;
-  }

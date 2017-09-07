@@ -1,0 +1,22 @@
+.ds-1col-hero {
+  .ds-hero {
+    overflow: hidden;
+    height: 350px;
+    background-color: $primary-color;
+    background-size: cover;
+    .ds-row {
+      @include grid-row();
+      .ds-column {
+        @include grid-column(12);
+      }
+    }
+  }
+  .ds-middle {
+    .ds-row {
+      @include grid-row();
+      .ds-column {
+        @include grid-column(9);
+      }
+    }
+  }
+}

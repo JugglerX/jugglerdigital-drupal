@@ -154,20 +154,11 @@ class TextDescriptor extends Descriptor
         $command->getSynopsis(false);
         $command->mergeApplicationDefinition(false);
         $this->writeText($command->trans('commands.list.messages.usage'), $options);
-        foreach (array_merge([$command->getSynopsis(true)], $command->getAliases(), $command->getUsages()) as $usage) {
-            $this->writeText('  '.$usage, $options);
-            $this->writeText("\n");
-        }
-        if ($examples) {
-            $this->writeText("\n");
-            $this->writeText("<comment>Examples:</comment>", $options);
-            foreach ($examples as $example) {
-                $this->writeText("\n");
-                $this->writeText('  '.$example['description']);
-                $this->writeText("\n");
-                $this->writeText('  '.$example['execution']);
+        foreach (array_merge([$command->getSynopsis(true)], $command->getAliases(), $command->getUsages()) as $key => $usage) {
+            if ($key > 0) {
                 $this->writeText("\n");
             }
+            $this->writeText('  '.$usage, $options);
         }
 
         $this->writeText("\n");
@@ -177,6 +168,21 @@ class TextDescriptor extends Descriptor
             $this->describeInputDefinition($definition, $options);
             $this->writeText("\n");
         }
+
+        if ($examples) {
+            $this->writeText("\n");
+            $this->writeText("<comment>Examples:</comment>", $options);
+            foreach ($examples as $key => $example) {
+                $this->writeText("\n");
+                if ($key != 0) {
+                    $this->writeText("\n");
+                }
+                $this->writeText('  <info>'.$example['description'].'</info>');
+                $this->writeText("\n");
+                $this->writeText('  '.$example['execution']);
+            }
+        }
+
         if ($help = $command->getProcessedHelp()) {
             $this->writeText("\n");
             $this->writeText($command->trans('commands.list.messages.help'), $options);
@@ -203,7 +209,7 @@ class TextDescriptor extends Descriptor
                 $this->writeText("$help\n\n", $options);
             }
             $this->writeText($application->trans('commands.list.messages.usage'), $options);
-            $this->writeText($application->trans('commands.list.messages.usage_details'), $options);
+            $this->writeText($application->trans('commands.list.messages.usage-details'), $options);
             $options['application'] = $application;
             $this->describeInputDefinition(new InputDefinition($application->getDefinition()->getOptions()), $options);
             $this->writeText("\n");
@@ -248,14 +254,20 @@ class TextDescriptor extends Descriptor
                             implode(',', $description->getCommand($name)->getAliases())
                         );
                     }
+
                     $spacingWidth = $width - strlen($name.$alias);
+                    if($spacingWidth < 0) {
+                        $spacingWidth = 0;
+                    }
+
                     $this->writeText(
                         sprintf(
                             '  <info>%s</info> <comment>%s</comment> %s%s',
                             $name,
                             $alias,
                             str_repeat(' ', $spacingWidth),
-                            $description->getCommand($name)->getDescription()
+                            $description->getCommand($name)->getDescription(
+                            )
                         ),
                         $options
                     );

@@ -24,8 +24,12 @@
  */
 #}
 
-{#node_type ? 'page-node-type-' ~ node_type|clean_class,#}
-{#not root_path ? 'path-frontpage' : 'path-' ~ root_path|clean_class,#}
+{#
+  not page.sidebar_first and not page.sidebar_second ? 'no-sidebars',
+  page.sidebar_first and not page.sidebar_second ? 'sidebar-first',
+  page.sidebar_second and not page.sidebar_first ? 'sidebar-second',
+  page.sidebar_first and page.sidebar_second ? 'both-sidebars',
+#}
 
 {%
   set body_classes = [
@@ -33,12 +37,11 @@
     path ? : path,
     section ? : section,
     db_offline ? 'db-offline',
-    not page.sidebar_first and not page.sidebar_second ? 'no-sidebars',
-    page.sidebar_first and not page.sidebar_second ? 'sidebar-first',
-    page.sidebar_second and not page.sidebar_first ? 'sidebar-second',
-    page.sidebar_first and page.sidebar_second ? 'both-sidebars'
+    role,
+    not root_path ? 'front'
   ]
 %}
+
 <!DOCTYPE html>
 <html{{ html_attributes.without('prefix') }}>
   <head>
@@ -46,15 +49,10 @@
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token }}">
     <js-placeholder token="{{ placeholder_token }}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,Lato:400" rel="stylesheet">
   </head>
   <body{{ attributes.addClass(body_classes) }}>
-    {#
-      Keyboard navigation/accessibility link to main content section in
-      page.html.twig.
-    #}
-    {#<a href="#main-content" class="visually-hidden focusable skip-link">#}
-      {#{{ 'Skip to main content'|t }}#}
-    {#</a>#}
+
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}

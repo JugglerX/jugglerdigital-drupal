@@ -3,9 +3,9 @@
   ul.horizontal-menu {
     li {
       > a {
-        color: #ffffff;
         padding-top: 10px;
         padding-bottom: 10px;
+        color: #FFFFFF;
       }
     }
     li.menu-item {
@@ -24,18 +24,17 @@
       }
     }
     ul.sub-nav {
-      //display: block !important;
-      background: #FFF;
-      border: 1px solid #EAEAEA;
-      border-bottom: none;
-      box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.2);
       width: 100%;
+      border: 1px solid #EAEAEA;
+      border-bottom: 0;
+      background: #FFFFFF;
+      box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.2);
       li {
         border-bottom: 1px solid #EAEAEA;
         a {
-          color: $primary-color;
           padding-top: 10px;
           padding-bottom: 10px;
+          color: $primary-color;
         }
       }
     }

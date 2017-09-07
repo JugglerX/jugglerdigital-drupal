@@ -1,0 +1,41 @@
+.block-id-primarymenu {
+  @include grid-column(9);
+  @media #{$small-only} {
+    display: none;
+  }
+  ul.menu {
+    @include clearfix;
+    z-index: 140;
+    float: right;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    border-bottom: 0;
+    font-family: $base-font;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    li {
+      display: block;
+      float: left;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      a {
+        display: block;
+        padding: 7px 13px;
+        text-decoration: none;
+        color: $secondary-color;
+        background: none;
+        &:hover {
+          text-decoration: underline;
+          color: $secondary-color;
+        }
+        &.active {
+          text-decoration: underline;
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.block-id-hero-homepage {
+  .view {
+    @include grid-row();
+  }
+  .view-content {
+    @include grid-column(12);
+  }
+  h2 {
+    margin-top: 140px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    font-family: $custom-font;
+    font-size: 54px;
+    font-weight: 300;
+    line-height: 62px;
+    strong {
+      color: $primary-color;
+      font-weight: 300;
+    }
+  }
+  p {
+    color: #FFFFFF;
+    font-family: $custom-font;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 28px;
+  }
+
+}

@@ -1,0 +1,29 @@
+select {
+  position: relative;
+  left: 0;
+  display: block;
+  max-width: 100%;
+  height: $form-height;
+  margin: 0 0 10px 0;
+  padding: $form-padding;
+  cursor: pointer;
+  color: #000000;
+  border: 1px solid #CACACA;
+  border-radius: 0;
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  background-position: right;
+  font-family: $base-font;
+  font-size: $form-font-size;
+  font-weight: 200;
+  line-height: $form-line-height;
+
+  appearance: none;
+  &:disabled {
+    border-color: #CCCCCC;
+    background-color: #EAEAEA;
+  }
+  &:focus {
+    outline: 0;
+  }
+}

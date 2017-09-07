@@ -1,0 +1,30 @@
+.view.view-portfolio {
+  //margin-top: -130px;
+  //visibility: hidden;
+  //transition-property: all;
+  //transition-duration: 0.3s;
+  //transition-timing-function: ease-in-out;
+  //transition-delay: 0s;
+  //opacity: 0;
+  margin-top: -170px;
+  //transition-timing-function: cubic-bezier(.175,.885,.32,1.275);
+  transition-timing-function: ease-out;
+  transition-duration: 300ms;
+  //opacity: 0;
+  transition-property: opacity,transform;
+  transform: translateY(100px);
+  &.scrolled-into-view {
+    //visibility: visible;
+    //opacity: 1;
+    margin-top: -170px;
+    //opacity: 1;
+    transform: translate(0);
+  }
+  .view-content {
+    @include grid-row(nest);
+    .views-row {
+      @include grid-column(12);
+      margin-bottom: 30px;
+    }
+  }
+}

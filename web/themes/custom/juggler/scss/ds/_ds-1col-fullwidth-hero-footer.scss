@@ -1,0 +1,12 @@
+.ds-1col-fullwidth-hero-footer {
+  @include grid-row();
+
+
+
+  .group-middle-fixed {
+    @include grid-column(3);
+  }
+  .group-footer-fullwidth {
+    @include grid-column(9);
+  }
+}

@@ -1,0 +1,18 @@
+.ds-2col {
+  > .group-left {
+    float: left; /* LTR */
+    width: 50%;
+    @media #{$small-only} {
+      float: none;
+      width: auto;
+    }
+  }
+  > .group-right {
+    float: left; /* LTR */
+    width: 50%;
+    @media #{$small-only} {
+      float: none;
+      width: auto;
+    }
+  }
+}

@@ -1,18 +1,17 @@
-console.log("Scripts.js");
+console.log('Scripts.js');
 
 (function ($, Drupal) {
 
   Drupal.behaviors.foundation5 = {
-    attach: function(context) {
+    attach: function (context) {
     }
-
   };
 
   Drupal.behaviors.tooltipster = {
-    attach: function(context) {
+    attach: function (context) {
       $('.tooltipster-text').tooltipster({
         animation: 'fade',
-        delay: [300,100],
+        delay: [300, 100],
         trigger: 'custom',
         triggerOpen: {
           mouseenter: true,
@@ -25,10 +24,53 @@ console.log("Scripts.js");
           tap: true
         },
         interactive: true,
-        side: "right",
+        side: 'right',
         arrow: true,
         maxWidth: 250
       });
+    }
+  };
+
+  Drupal.behaviors.scrollmagic = {
+    attach: function (context) {
+      // init controller
+      var controller = new ScrollMagic.Controller({
+      });
+
+      new ScrollMagic.Scene({
+        duration: 8000,	// the scene should last for a scroll distance of 100px
+        offset: 80		// start this scene after scrolling for 50px
+      }).setClassToggle('.layout-header', 'scrolled-into-view')
+        .addTo(controller); // assign the scene to the controller
+
+      new ScrollMagic.Scene({
+        duration: 8000,	// the scene should last for a scroll distance of 100px
+        offset: 150		// start this scene after scrolling for 50px
+        // reverse: false
+      }).setClassToggle('.view-portfolio', 'scrolled-into-view')
+        .addTo(controller); // assign the scene to the controller
+
+      new ScrollMagic.Scene({
+        triggerElement: '.view-portfolio .views-row:nth-of-type(1) .node--type-portfolio',
+        offset: 100,
+        duration: 10000
+      }).setClassToggle('.view-portfolio .views-row:nth-of-type(1) .node--type-portfolio .field--name-field-hero-image', 'show-screenshot')
+        .addTo(controller);
+
+      new ScrollMagic.Scene({
+        triggerElement: '.view-portfolio .views-row:nth-of-type(2) .node--type-portfolio',
+        offset: 100,
+        duration: 10000
+      }).setClassToggle('.view-portfolio .views-row:nth-of-type(2) .node--type-portfolio .field--name-field-hero-image', 'show-screenshot')
+        .addTo(controller);
+
+      new ScrollMagic.Scene({
+        triggerElement: '.view-portfolio .views-row:nth-of-type(3) .node--type-portfolio',
+        offset: 100,
+        duration: 10000
+      }).setClassToggle('.view-portfolio .views-row:nth-of-type(3) .node--type-portfolio .field--name-field-hero-image', 'show-screenshot')
+        .addTo(controller);
+
     }
   };
 
