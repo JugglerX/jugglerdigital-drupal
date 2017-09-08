@@ -5,18 +5,18 @@
   }
   .logo {
     float: left;
-    width: 90px;
-    height: 32px;
+    width: 162px;
+    height: 37px;
     background-image: url('../images/logo.png');
     background-repeat: no-repeat;
     background-size: contain;
     @media #{$small-only} {
       float: left;
-      width: 188px;
-      height: 24px;
+      width: 164px;
+      height: 18px;
       background-image: url('../images/logo-mobile.png');
       background-repeat: no-repeat;
-      background-size: 188px 24px;
+      background-size: 164px 18px;
     }
     a {
       display: block;

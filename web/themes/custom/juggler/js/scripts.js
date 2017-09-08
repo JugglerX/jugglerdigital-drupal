@@ -31,6 +31,14 @@ console.log('Scripts.js');
     }
   };
 
+  Drupal.behaviors.hamburger = {
+    attach: function (context) {
+      $('#hamburger').click(function () {
+        $(this).toggleClass('open');
+      });
+    }
+  };
+
   Drupal.behaviors.scrollmagic = {
     attach: function (context) {
       // init controller
@@ -45,29 +53,32 @@ console.log('Scripts.js');
 
       new ScrollMagic.Scene({
         duration: 8000,	// the scene should last for a scroll distance of 100px
-        offset: 150		// start this scene after scrolling for 50px
-        // reverse: false
+        offset: 150,		// start this scene after scrolling for 50px
+        reverse: false
       }).setClassToggle('.view-portfolio', 'scrolled-into-view')
         .addTo(controller); // assign the scene to the controller
 
       new ScrollMagic.Scene({
         triggerElement: '.view-portfolio .views-row:nth-of-type(1) .node--type-portfolio',
         offset: 100,
-        duration: 10000
+        duration: 10000,
+        reverse: false
       }).setClassToggle('.view-portfolio .views-row:nth-of-type(1) .node--type-portfolio .field--name-field-hero-image', 'show-screenshot')
         .addTo(controller);
 
       new ScrollMagic.Scene({
         triggerElement: '.view-portfolio .views-row:nth-of-type(2) .node--type-portfolio',
         offset: 100,
-        duration: 10000
+        duration: 10000,
+        reverse: false
       }).setClassToggle('.view-portfolio .views-row:nth-of-type(2) .node--type-portfolio .field--name-field-hero-image', 'show-screenshot')
         .addTo(controller);
 
       new ScrollMagic.Scene({
         triggerElement: '.view-portfolio .views-row:nth-of-type(3) .node--type-portfolio',
         offset: 100,
-        duration: 10000
+        duration: 10000,
+        reverse: false
       }).setClassToggle('.view-portfolio .views-row:nth-of-type(3) .node--type-portfolio .field--name-field-hero-image', 'show-screenshot')
         .addTo(controller);
 

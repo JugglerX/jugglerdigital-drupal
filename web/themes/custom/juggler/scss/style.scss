@@ -18,14 +18,15 @@
 @import 'base/form-filter-wrapper';
 @import 'base/form-required';
 @import 'base/field';
-
 @import 'base/button';
+ 
 //@import 'component/fonts';
 @import 'component/type';
 @import 'component/type-body';
 @import 'component/table';
 @import 'component/description';
-@import 'component/slick';
+//@import 'component/slick';
+@import 'component/hamburger';
 
 @import 'region/layout';
 @import 'region/layout-top';
@@ -38,35 +39,27 @@
 @import 'page/page';
 @import 'page/front';
 
-@import 'view/view-services';
-@import 'view/view-certifications';
-@import 'view/view-testimonials';
+//@import 'view/view-services';
+//@import 'view/view-certifications';
+//@import 'view/view-testimonials';
 @import 'view/view-portfolio';
 
 @import 'node/node';
-@import 'node/node-certification-view-mode-teaser';
-@import 'node/node-service-view-mode-teaser';
+//@import 'node/node-certification-view-mode-teaser';
+//@import 'node/node-service-view-mode-teaser';
 @import 'node/node-portfolio-view-mode-teaser';
 
-@import 'ds/ds-1col-fullwidth-hero-footer';
-@import 'ds/ds-1col-hero';
+//@import 'ds/ds-1col-fullwidth-hero-footer';
+//@import 'ds/ds-1col-hero';
 @import 'ds/ds-2col';
-@import 'ds/ds-2col-75-25';
+//@import 'ds/ds-2col-75-25';
 
 @import 'block/block-local-tasks';
-@import 'block/block-contact-details-top';
 @import 'block/block-hero-homepage';
 @import 'block/block-hero-service';
 @import 'block/block-hero-basic';
-@import 'block/block-services-homepage';
-@import 'block/block-certifications-homepage';
-@import 'block/block-certifications-homepage-carousel';
-@import 'block/block-testimonials-homepage';
-@import 'block/block-user-account-menu';
 @import 'block/block-primary-menu';
 @import 'block/block-footer-menu';
-@import 'block/block-user-account-menu';
-@import 'block/block-horizontalmenu';
 @import 'block/block-logo';
 @import 'block/block-responsive-menu-mobile-icon';
 
