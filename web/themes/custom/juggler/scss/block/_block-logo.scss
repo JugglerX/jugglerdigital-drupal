@@ -10,13 +10,14 @@
     background-image: url('../images/logo.png');
     background-repeat: no-repeat;
     background-size: contain;
+    margin: 13px 0 12px 4px;
     @media #{$small-only} {
       float: left;
-      width: 164px;
+      width: 173px;
       height: 18px;
       background-image: url('../images/logo-mobile.png');
       background-repeat: no-repeat;
-      background-size: 164px 18px;
+      background-size: contain;
     }
     a {
       display: block;

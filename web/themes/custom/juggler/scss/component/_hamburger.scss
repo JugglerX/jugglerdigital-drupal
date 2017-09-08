@@ -1,22 +1,30 @@
-.hamburger {
+#hamburger {
+  float: right;
   position: relative;
-  width: 60px;
-  height: 45px;
-  margin: 50px auto;
+  width: 25px;
+  height: 18px;
+  margin: 13px 13px 12px 13px;
   cursor: pointer;
   transition: 0.5s ease-in-out;
   transform: rotate(0deg);
+  z-index: 20;
+  @media #{$medium-up} {
+    display: none;
+  }
+  &.open {
+    z-index: 110;
+  }
   span {
     position: absolute;
     left: 0;
     display: block;
     width: 100%;
-    height: 9px;
+    height: 3px;
     transition: 0.25s ease-in-out;
     transform: rotate(0deg);
     opacity: 1;
-    border-radius: 9px;
-    background: #D3531A;
+    border-radius: 3px;
+    background: $secondary-color;
   }
   span:nth-child(1) {
     top: 0;
@@ -24,18 +32,18 @@
   }
 
   span:nth-child(2) {
-    top: 18px;
+    top: 8px;
     transform-origin: left center;
   }
 
   span:nth-child(3) {
-    top: 36px;
+    top: 16px;
     transform-origin: left center;
   }
 
   &.open span:nth-child(1) {
-    top: -3px;
-    left: 8px;
+    top: -2px;
+    left: 3px;
     transform: rotate(45deg);
   }
 
@@ -45,8 +53,8 @@
   }
 
   &.open span:nth-child(3) {
-    top: 39px;
-    left: 8px;
+    top: 16px;
+    left: 3px;
     transform: rotate(-45deg);
   }
 }

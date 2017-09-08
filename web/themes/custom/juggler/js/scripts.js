@@ -33,8 +33,16 @@ console.log('Scripts.js');
 
   Drupal.behaviors.hamburger = {
     attach: function (context) {
-      $('#hamburger').click(function () {
-        $(this).toggleClass('open');
+      $('#hamburger').on('click', function (e) {
+        console.log($(this));
+        console.log($(this).hasClass('open'));
+        if ($(this).hasClass('open')) {
+          $(this).removeClass('open');
+          $('#block-primarymenu').removeClass('open');
+        } else {
+          $(this).addClass('open');
+          $('#block-primarymenu').addClass('open');
+        }
       });
     }
   };

@@ -1,6 +1,6 @@
 juggler.small:
   label: small
-  mediaQuery: ''
+  mediaQuery: 'only screen'
   weight: 0
   multipliers:
     - 1x

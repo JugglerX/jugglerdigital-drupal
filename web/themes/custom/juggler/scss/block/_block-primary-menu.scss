@@ -1,8 +1,5 @@
 .block-id-primarymenu {
   @include grid-column(9);
-  @media #{$small-only} {
-    display: none;
-  }
   ul.menu {
     @include clearfix;
     z-index: 140;
@@ -34,6 +31,64 @@
         &.active {
           text-decoration: underline;
           color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+
+.block-id-primarymenu {
+  @media #{$small-only} {
+    display: none;
+    &.open {
+      display: block;
+    }
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(22,42,59, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    ul.menu {
+      position: relative;
+      top: 25%; /* 25% from the top */
+      width: 100%; /* 100% width */
+      text-align: center; /* Centered text/links */
+      margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+      z-index: 140;
+      float: right;
+      padding: 0;
+      vertical-align: middle;
+      border-bottom: 0;
+      font-family: $base-font;
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 36px;
+      li {
+        display: block;
+        float: none;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        a {
+          display: block;
+          padding: 7px 13px;
+          text-decoration: none;
+          color: $secondary-color;
+          background: none;
+          &:hover {
+            text-decoration: underline;
+            color: $secondary-color;
+          }
+          &.active {
+            text-decoration: underline;
+            color: $secondary-color;
+          }
         }
       }
     }

@@ -1,10 +1,4 @@
 .block-id-hero-homepage {
-  //.view {
-  //  @include grid-row();
-  //}
-  //.view-content {
-  //  @include grid-column(12);
-  //}
   h2 {
     margin-top: 140px;
     margin-bottom: 40px;
@@ -15,6 +9,8 @@
     line-height: 62px;
     @media #{$small-only} {
       margin-top: 80px;
+      font-size: 50px;
+      line-height: 56px;
     }
     strong {
       color: $primary-color;
@@ -27,5 +23,9 @@
     font-size: 20px;
     font-weight: 300;
     line-height: 28px;
+    @media #{$small-only} {
+      font-size: 18px;
+      line-height: 26px;
+    }
   }
 }
