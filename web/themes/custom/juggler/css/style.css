@@ -1248,7 +1248,7 @@ body.front .block-id-content .node--type-page .group-right {
   transform: translateY(100px);
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .view.view-portfolio {
     margin-top: -150px;
   }
@@ -1306,7 +1306,7 @@ body.front .block-id-content .node--type-page .group-right {
   background: #18344C;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .node--type-portfolio.node--view-mode-teaser {
     flex-direction: column;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -1327,7 +1327,7 @@ body.front .block-id-content .node--type-page .group-right {
   background-color: #244460;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .node--type-portfolio.node--view-mode-teaser > .group-left {
     flex: 1 0 100%;
   }
@@ -1339,7 +1339,7 @@ body.front .block-id-content .node--type-page .group-right {
   background: #FFFFFF;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .node--type-portfolio.node--view-mode-teaser > .group-right {
     flex: 1 0 100%;
   }
@@ -1401,9 +1401,17 @@ body.front .block-id-content .node--type-page .group-right {
   }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .node--type-portfolio.node--view-mode-teaser .field--name-field-hero-image {
     bottom: -20px;
+    left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .node--type-portfolio.node--view-mode-teaser .field--name-field-hero-image {
+    bottom: -60px;
     left: 30px;
     padding-right: 30px;
   }
@@ -1529,7 +1537,7 @@ body.front .block-id-content .node--type-page .group-right {
   width: 50%;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .ds-2col > .group-left {
     float: none;
     width: auto;
@@ -1541,7 +1549,7 @@ body.front .block-id-content .node--type-page .group-right {
   width: 50%;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .ds-2col > .group-right {
     float: none;
     width: auto;
@@ -1608,7 +1616,7 @@ body.front .block-id-content .node--type-page .group-right {
   line-height: 62px;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .block-id-hero-homepage h2 {
     margin-top: 80px;
     font-size: 50px;
@@ -1629,7 +1637,7 @@ body.front .block-id-content .node--type-page .group-right {
   line-height: 28px;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .block-id-hero-homepage p {
     font-size: 18px;
     line-height: 26px;
@@ -1649,7 +1657,7 @@ body.front .block-id-content .node--type-page .group-right {
   font-weight: 400;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .block-id-hero-service .field--name-field-hero-heading {
     width: 80%;
     padding-top: 40px;
@@ -1688,7 +1696,7 @@ body.front .block-id-content .node--type-page .group-right {
   font-weight: 200;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .block-id-hero-service .field--name-field-hero-subheading {
     margin-top: 30px;
     margin-bottom: 20px;
@@ -1708,7 +1716,7 @@ body.front .block-id-content .node--type-page .group-right {
   font-weight: 400;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .block-id-hero-basic .field--name-field-hero-heading {
     width: 80%;
     padding-top: 40px;
@@ -1747,7 +1755,7 @@ body.front .block-id-content .node--type-page .group-right {
   font-weight: 200;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .block-id-hero-basic .field--name-field-hero-subheading {
     margin-top: 30px;
     margin-bottom: 20px;
@@ -1806,7 +1814,7 @@ body.front .block-id-content .node--type-page .group-right {
   color: #FF3B5D;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .block-id-primarymenu {
     display: none;
     /* Height & width depends on how you want to reveal the overlay (see JS below) */
@@ -1891,7 +1899,7 @@ body.front .block-id-content .node--type-page .group-right {
   }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .block-id-footermenu {
     float: left;
     padding-right: 10px;
@@ -1945,7 +1953,7 @@ body.front .block-id-content .node--type-page .group-right {
   width: 25%;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .block-id-logo {
     float: left;
     padding-right: 10px;
@@ -1964,7 +1972,7 @@ body.front .block-id-content .node--type-page .group-right {
   margin: 13px 0 12px 4px;
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 767px) {
   .block-id-logo .logo {
     float: left;
     width: 173px;
@@ -2058,28 +2066,21 @@ body:after {
 @media only screen {
   body:after {
     content: 'small-up';
-    background: red;
+    background: #FFA500;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body:after {
+    content: "small - 0, 767px";
+    background: #FFA500;
   }
 }
 
 @media only screen and (max-width: 420px) {
   body:after {
-    content: "small - 0, 420px";
+    content: "tiny - 0, 420px";
     background: red;
-  }
-}
-
-@media only screen and (min-width: 421px) {
-  body:after {
-    content: 'small-medium-up';
-    background: #FFA500;
-  }
-}
-
-@media only screen and (min-width: 421px) and (max-width: 767px) {
-  body:after {
-    content: "small-medium - 421px, 767px";
-    background: #FFA500;
   }
 }
 

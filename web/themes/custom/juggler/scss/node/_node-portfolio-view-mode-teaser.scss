@@ -98,6 +98,11 @@
       left: 30px;
       padding-right: 30px;
     }
+    @media #{$tiny-only} {
+      bottom: -60px;
+      left: 30px;
+      padding-right: 30px;
+    }
     &.show-screenshot {
       img {
         animation: scaleUp 0.7s ease both;
