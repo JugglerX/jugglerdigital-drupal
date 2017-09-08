@@ -11,7 +11,7 @@
   transition-timing-function: ease-out;
   transition-duration: 300ms;
   //opacity: 0;
-  transition-property: opacity,transform;
+  transition-property: opacity, transform;
   transform: translateY(100px);
   &.scrolled-into-view {
     //visibility: visible;

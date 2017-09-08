@@ -16,6 +16,7 @@
   font-family: $custom-font;
   font-size: 14px;
   font-weight: 200;
+
   appearance: none;
   &:link,
   &:visited {
@@ -65,6 +66,7 @@
 }
 .form-submit {
   @include btn;
+
   appearance: none;
 }
 .btn {
