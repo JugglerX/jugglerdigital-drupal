@@ -1093,7 +1093,7 @@ table tbody tr:hover th {
 }
 
 .region-canyon {
-  padding: 65px 0 50px 0;
+  padding: 65px 0 55px 0;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1106,6 +1106,16 @@ table tbody tr:hover th {
   height: 650px;
   background: #162A3B;
   background-size: cover;
+}
+
+.region-content-lower {
+  padding: 65px 0 55px 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .region-content-lower {
+    padding: 25px 0 10px 0;
+  }
 }
 
 .region {
@@ -1294,13 +1304,21 @@ body.front .block-id-content .node--type-page .group-right {
 .view.view-portfolio-small .view-header h2 {
   color: #FFFFFF;
   font-family: "Lato", "helvetica", "arial", sans-serif;
-  font-size: 54px;
+  font-size: 36px;
   font-weight: 300;
-  line-height: 62px;
+  line-height: 44px;
+  margin: 0;
+  margin-bottom: 3px;
 }
 
 .view.view-portfolio-small .view-header p {
-  color: #FFF;
+  color: #FFFFFF;
+  font-family: "Lato", "helvetica", "arial", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 26px;
+  margin: 0;
+  margin-bottom: 30px;
 }
 
 .view.view-portfolio-small .view-content {
@@ -1338,6 +1356,26 @@ body.front .block-id-content .node--type-page .group-right {
 
 .view.view-portfolio-small .views-field-title {
   color: #FFFFFF;
+}
+
+.view.view-side-projects .view-header h2 {
+  color: #162A3B;
+  font-family: "Lato", "helvetica", "arial", sans-serif;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 44px;
+  margin: 0;
+  margin-bottom: 3px;
+}
+
+.view.view-side-projects .view-header p {
+  color: #162A3B;
+  font-family: "Lato", "helvetica", "arial", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 26px;
+  margin: 0;
+  margin-bottom: 30px;
 }
 
 .view.view-side-projects .view-content {
@@ -1719,6 +1757,7 @@ body.front .block-id-content .node--type-page .group-right {
 .node--type-side-project.node--view-mode-teaser {
   background: #FFFFFF;
   padding: 20px;
+  min-height: 200px;
 }
 
 .node--type-side-project.node--view-mode-teaser .field--name-node-title {
@@ -1761,13 +1800,6 @@ body.front .block-id-content .node--type-page .group-right {
   background-position: left;
   background-size: 20px;
   line-height: 18px;
-}
-
-.node--type-side-project.node--view-mode-teaser .field--name-field-github {
-  width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .ds-2col > .group-left {

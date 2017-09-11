@@ -1,6 +1,7 @@
 .node--type-side-project.node--view-mode-teaser {
   background: #FFFFFF;
   padding: 20px;
+  min-height: 200px;
   .field--name-node-title {
     margin-bottom: 0;
     font-size: 34px;
@@ -41,9 +42,9 @@
     }
   }
   .field--name-field-github {
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    //width: 100%;
+    //white-space: nowrap;
+    //overflow: hidden;
+    //text-overflow: ellipsis;
   }
 }

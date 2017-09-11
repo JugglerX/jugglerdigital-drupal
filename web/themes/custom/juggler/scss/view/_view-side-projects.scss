@@ -1,4 +1,24 @@
 .view.view-side-projects {
+  .view-header {
+    h2 {
+      color: $primary-color;
+      font-family: $custom-font;
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 44px;
+      margin: 0;
+      margin-bottom: 3px;
+    }
+    p {
+      color: $primary-color;
+      font-family: $custom-font;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 26px;
+      margin: 0;
+      margin-bottom: 30px;
+    }
+  }
   .view-content {
     @include grid-row(nest);
     .views-row {

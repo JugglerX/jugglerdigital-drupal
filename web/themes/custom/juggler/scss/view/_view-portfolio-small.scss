@@ -2,13 +2,21 @@
   .view-header {
     h2 {
       color: #FFFFFF;
-      font-family: "Lato", "helvetica", "arial", sans-serif;
-      font-size: 54px;
+      font-family: $custom-font;
+      font-size: 36px;
       font-weight: 300;
-      line-height: 62px;
+      line-height: 44px;
+      margin: 0;
+      margin-bottom: 3px;
     }
     p {
-      color: #FFF;
+      color: #FFFFFF;
+      font-family: $custom-font;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 26px;
+      margin: 0;
+      margin-bottom: 30px;
     }
   }
   .view-content {
