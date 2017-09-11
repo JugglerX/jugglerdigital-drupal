@@ -7,10 +7,10 @@
     float: left;
     width: 162px;
     height: 37px;
+    margin: 13px 0 12px 4px;
     background-image: url('../images/logo.png');
     background-repeat: no-repeat;
     background-size: contain;
-    margin: 13px 0 12px 4px;
     @media #{$small-only} {
       float: left;
       width: 173px;

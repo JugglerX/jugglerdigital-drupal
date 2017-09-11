@@ -1,13 +1,13 @@
 #hamburger {
-  float: right;
   position: relative;
+  z-index: 20;
+  float: right;
   width: 25px;
   height: 18px;
   margin: 13px 13px 12px 13px;
   cursor: pointer;
   transition: 0.5s ease-in-out;
   transform: rotate(0deg);
-  z-index: 20;
   @media #{$medium-up} {
     display: none;
   }
