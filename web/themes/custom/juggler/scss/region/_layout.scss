@@ -1,3 +1,7 @@
 .layout {
   @include clearfix;
 }
+.region {
+  @include clearfix;
+  position: relative;
+}

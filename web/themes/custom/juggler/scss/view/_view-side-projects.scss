@@ -27,6 +27,9 @@
       @media #{$small-only} {
         @include grid-column(12);
       }
+      @media #{$medium-only} {
+        @include grid-column(6);
+      }
     }
   }
   .views-field-title {

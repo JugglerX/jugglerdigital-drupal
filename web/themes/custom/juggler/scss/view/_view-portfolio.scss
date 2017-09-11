@@ -12,6 +12,7 @@
   transition-duration: 300ms;
   transition-property: opacity, transform;
   transform: translateY(100px);
+  padding-bottom: 40px;
   @media #{$small-only} {
     margin-top: -150px;
   }
@@ -23,7 +24,9 @@
     .views-row {
       @include grid-column(12);
       margin-bottom: 30px;
-
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
 }

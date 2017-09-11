@@ -1066,6 +1066,16 @@ table tbody tr:hover th {
   content: '';
 }
 
+.region {
+  position: relative;
+}
+
+.region:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
 .layout-top {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -1098,7 +1108,7 @@ table tbody tr:hover th {
 
 @media only screen and (max-width: 767px) {
   .region-canyon {
-    padding: 25px 0 10px 0;
+    padding: 20px 0 10px 0;
   }
 }
 
@@ -1122,16 +1132,6 @@ table tbody tr:hover th {
   .region-content-lower {
     padding: 25px 0 10px 0;
   }
-}
-
-.region {
-  position: relative;
-}
-
-.region:after {
-  display: block;
-  clear: both;
-  content: '';
 }
 
 .region-content {
@@ -1272,6 +1272,7 @@ body.front .block-id-content .node--type-page .group-right {
   transition-duration: 300ms;
   transition-property: opacity, transform;
   transform: translateY(100px);
+  padding-bottom: 40px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1305,6 +1306,10 @@ body.front .block-id-content .node--type-page .group-right {
   padding-left: 10px;
   width: 100%;
   margin-bottom: 30px;
+}
+
+.view.view-portfolio .view-content .views-row:last-of-type {
+  margin-bottom: 0;
 }
 
 .view.view-portfolio-small .view-header h2 {
@@ -1416,6 +1421,15 @@ body.front .block-id-content .node--type-page .group-right {
   }
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .view.view-side-projects .view-content .views-row {
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 50%;
+  }
+}
+
 .view.view-side-projects .views-field-title {
   color: #FFFFFF;
 }
@@ -1491,6 +1505,7 @@ body.front .block-id-content .node--type-page .group-right {
   margin: 30px 0 0 30px;
   font-size: 20px;
   display: inline-block;
+  display: none;
 }
 
 .node--type-portfolio.node--view-mode-teaser .field--name-field-portfolio-type span {
@@ -1505,11 +1520,11 @@ body.front .block-id-content .node--type-page .group-right {
 }
 
 .node--type-portfolio.node--view-mode-teaser .field--name-field-drupal-version {
-  margin: 30px 0 0 -4px;
+  margin: 30px 0 0 30px;
   display: inline-block;
   width: fit-content;
   text-transform: uppercase;
-  border-top: 2px #2b5784 solid;
+  border-top: 2px #FF3B5D solid;
   font-size: 12px;
   line-height: 30px;
   padding: 0 3px 0 3px;
@@ -1566,7 +1581,7 @@ body.front .block-id-content .node--type-page .group-right {
 
 @media only screen and (max-width: 380px) {
   .node--type-portfolio.node--view-mode-teaser .field--name-field-hero-image {
-    bottom: -60px;
+    bottom: -20px;
     left: 30px;
     padding-right: 30px;
   }
@@ -1589,6 +1604,7 @@ body.front .block-id-content .node--type-page .group-right {
   margin-bottom: 14px;
   text-transform: uppercase;
   color: #212121;
+  font-family: "Open Sans", "helvetica", "arial", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 30px;
@@ -1597,7 +1613,11 @@ body.front .block-id-content .node--type-page .group-right {
 .node--type-portfolio.node--view-mode-teaser .field--name-body p {
   color: #666666;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 26px;
+}
+
+.node--type-portfolio.node--view-mode-teaser .field--name-body p strong {
+  color: #212121;
 }
 
 .node--type-portfolio.node--view-mode-teaser .field--name-body p:last-of-type {
@@ -1764,7 +1784,7 @@ body.front .block-id-content .node--type-page .group-right {
 .node--type-side-project.node--view-mode-teaser {
   background: #FFFFFF;
   padding: 20px;
-  min-height: 200px;
+  min-height: 260px;
 }
 
 .node--type-side-project.node--view-mode-teaser .field--name-node-title {
@@ -1909,6 +1929,13 @@ body.front .block-id-content .node--type-page .group-right {
   }
 }
 
+@media only screen and (max-width: 380px) {
+  .block-id-hero-homepage .field--name-body h2 {
+    font-size: 40px;
+    line-height: 44px;
+  }
+}
+
 .block-id-hero-homepage .field--name-body h2 strong {
   color: #162A3B;
   font-weight: 300;
@@ -1920,12 +1947,20 @@ body.front .block-id-content .node--type-page .group-right {
   font-size: 20px;
   font-weight: 300;
   line-height: 28px;
+  width: 85%;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .block-id-hero-homepage .field--name-body p {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 767px) {
   .block-id-hero-homepage .field--name-body p {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 24px;
+    width: 100%;
   }
 }
 
