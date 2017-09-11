@@ -1,18 +1,19 @@
 .block-id-hero-homepage {
   margin-top: 140px;
   margin-bottom: 40px;
+  @media #{$small-only} {
+    margin-top: 110px;
+    margin-bottom: 60px;
+  }
   .field--name-body {
-    max-height: 310px;
     h2 {
       color: #FFFFFF;
-      font-family: $custom-font;
       font-size: 54px;
       font-weight: 300;
       line-height: 62px;
       @media #{$small-only} {
-        //margin-top: 80px;
-        font-size: 50px;
-        line-height: 56px;
+        font-size: 48px;
+        line-height: 54px;
       }
       strong {
         color: $primary-color;
@@ -21,13 +22,13 @@
     }
     p {
       color: #FFFFFF;
-      font-family: $custom-font;
+      font-family: $base-font;
       font-size: 20px;
       font-weight: 300;
       line-height: 28px;
       @media #{$small-only} {
-        font-size: 18px;
-        line-height: 26px;
+        font-size: 17px;
+        line-height: 24px;
       }
     }
   }

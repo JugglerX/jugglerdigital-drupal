@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400|Open+Sans:300,400,600");
 html {
   margin: 0;
   padding: 0;
@@ -1108,6 +1108,12 @@ table tbody tr:hover th {
   background-size: cover;
 }
 
+@media only screen and (max-width: 380px) {
+  .layout-hero {
+    height: 610px;
+  }
+}
+
 .region-content-lower {
   padding: 65px 0 55px 0;
 }
@@ -1313,7 +1319,7 @@ body.front .block-id-content .node--type-page .group-right {
 
 .view.view-portfolio-small .view-header p {
   color: #FFFFFF;
-  font-family: "Lato", "helvetica", "arial", sans-serif;
+  font-family: "Open Sans", "helvetica", "arial", sans-serif;
   font-size: 18px;
   font-weight: 300;
   line-height: 26px;
@@ -1370,7 +1376,7 @@ body.front .block-id-content .node--type-page .group-right {
 
 .view.view-side-projects .view-header p {
   color: #162A3B;
-  font-family: "Lato", "helvetica", "arial", sans-serif;
+  font-family: "Open Sans", "helvetica", "arial", sans-serif;
   font-size: 18px;
   font-weight: 300;
   line-height: 26px;
@@ -1517,7 +1523,7 @@ body.front .block-id-content .node--type-page .group-right {
   padding: 0 30px 0 30px;
   color: #FFFFFF;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 22px;
 }
 
@@ -1530,6 +1536,7 @@ body.front .block-id-content .node--type-page .group-right {
   font-size: 34px;
   font-weight: 300;
   line-height: 34px;
+  font-family: "Lato", "helvetica", "arial", sans-serif;
 }
 
 .node--type-portfolio.node--view-mode-teaser .field--name-field-hero-image {
@@ -1557,7 +1564,7 @@ body.front .block-id-content .node--type-page .group-right {
   }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 380px) {
   .node--type-portfolio.node--view-mode-teaser .field--name-field-hero-image {
     bottom: -60px;
     left: 30px;
@@ -1881,13 +1888,15 @@ body.front .block-id-content .node--type-page .group-right {
   margin-bottom: 40px;
 }
 
-.block-id-hero-homepage .field--name-body {
-  max-height: 310px;
+@media only screen and (max-width: 767px) {
+  .block-id-hero-homepage {
+    margin-top: 110px;
+    margin-bottom: 60px;
+  }
 }
 
 .block-id-hero-homepage .field--name-body h2 {
   color: #FFFFFF;
-  font-family: "Lato", "helvetica", "arial", sans-serif;
   font-size: 54px;
   font-weight: 300;
   line-height: 62px;
@@ -1895,8 +1904,8 @@ body.front .block-id-content .node--type-page .group-right {
 
 @media only screen and (max-width: 767px) {
   .block-id-hero-homepage .field--name-body h2 {
-    font-size: 50px;
-    line-height: 56px;
+    font-size: 48px;
+    line-height: 54px;
   }
 }
 
@@ -1907,7 +1916,7 @@ body.front .block-id-content .node--type-page .group-right {
 
 .block-id-hero-homepage .field--name-body p {
   color: #FFFFFF;
-  font-family: "Lato", "helvetica", "arial", sans-serif;
+  font-family: "Open Sans", "helvetica", "arial", sans-serif;
   font-size: 20px;
   font-weight: 300;
   line-height: 28px;
@@ -1915,8 +1924,8 @@ body.front .block-id-content .node--type-page .group-right {
 
 @media only screen and (max-width: 767px) {
   .block-id-hero-homepage .field--name-body p {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 17px;
+    line-height: 24px;
   }
 }
 
@@ -2357,9 +2366,9 @@ body:after {
   }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 380px) {
   body:after {
-    content: "tiny - 0, 420px";
+    content: "tiny - 0, 380px";
     background: red;
   }
 }

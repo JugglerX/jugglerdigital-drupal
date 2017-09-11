@@ -76,7 +76,7 @@
     padding: 0 30px 0 30px;
     color: #FFFFFF;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 22px;
     //position: absolute;
     //bottom: 30px;
@@ -91,6 +91,7 @@
     font-size: 34px;
     font-weight: 300;
     line-height: 34px;
+    font-family: $custom-font;
     //position: absolute;
     //bottom: 60px;
     //left: 30px;
@@ -135,7 +136,6 @@
       opacity: 0;
     }
   }
-
   .field--name-body {
     h3 {
       display: block;
