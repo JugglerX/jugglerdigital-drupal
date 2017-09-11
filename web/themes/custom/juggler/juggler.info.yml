@@ -12,6 +12,7 @@ libraries:
   - juggler/global-js
   - juggler/tooltipster
   - juggler/scrollmagic
+  - juggler/readmore
 
 # Remove stylesheets.
 stylesheets-remove:

@@ -1,31 +1,34 @@
 .block-id-hero-homepage {
-  h2 {
-    margin-top: 140px;
-    margin-bottom: 40px;
-    color: #FFFFFF;
-    font-family: $custom-font;
-    font-size: 54px;
-    font-weight: 300;
-    line-height: 62px;
-    @media #{$small-only} {
-      margin-top: 80px;
-      font-size: 50px;
-      line-height: 56px;
-    }
-    strong {
-      color: $primary-color;
+  margin-top: 140px;
+  margin-bottom: 40px;
+  .field--name-body {
+    max-height: 310px;
+    h2 {
+      color: #FFFFFF;
+      font-family: $custom-font;
+      font-size: 54px;
       font-weight: 300;
+      line-height: 62px;
+      @media #{$small-only} {
+        //margin-top: 80px;
+        font-size: 50px;
+        line-height: 56px;
+      }
+      strong {
+        color: $primary-color;
+        font-weight: 300;
+      }
     }
-  }
-  p {
-    color: #FFFFFF;
-    font-family: $custom-font;
-    font-size: 20px;
-    font-weight: 300;
-    line-height: 28px;
-    @media #{$small-only} {
-      font-size: 18px;
-      line-height: 26px;
+    p {
+      color: #FFFFFF;
+      font-family: $custom-font;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 28px;
+      @media #{$small-only} {
+        font-size: 18px;
+        line-height: 26px;
+      }
     }
   }
 }

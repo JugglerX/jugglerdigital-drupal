@@ -57,3 +57,8 @@ scrollmagic:
   version: "2.0.5"
   js:
     /libraries/scrollmagic/scrollmagic/minified/ScrollMagic.min.js: {}
+
+readmore:
+  version: "2.1.0"
+  js:
+    /libraries/readmore/readmore.min.js: {}

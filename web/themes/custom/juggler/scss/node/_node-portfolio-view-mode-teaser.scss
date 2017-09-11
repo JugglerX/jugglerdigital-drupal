@@ -10,6 +10,7 @@
   overflow: hidden;
   flex-direction: row;
   background: #18344C;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   @media #{$small-only} {
     flex-direction: column;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -34,26 +35,39 @@
     padding: 30px;
     background: #FFFFFF;
     @media #{$small-only} {
+      padding: 20px;
       flex: 1 0 100%;
     }
   }
   .field--name-field-portfolio-type {
     z-index: 2;
-    padding: 30px 30px 0 30px;
-    color: #FFFFFF;
+    margin: 30px 0 0 30px;
     font-size: 20px;
+    display: inline-block;
     //position: absolute;
     //top: 30px;
     //left: 30px;
     span {
       display: block;
       width: fit-content;
-      margin-top: -2px;
       text-transform: uppercase;
       border-top: 2px #FF3B5D solid;
       font-size: 12px;
       line-height: 30px;
+      padding: 0 3px 0 3px;
+      color: #FFFFFF;
     }
+  }
+  .field--name-field-drupal-version {
+    margin: 30px 0 0 -4px;
+    display: inline-block;
+    width: fit-content;
+    text-transform: uppercase;
+    border-top: 2px #2b5784 solid;
+    font-size: 12px;
+    line-height: 30px;
+    padding: 0 3px 0 3px;
+    color: #FFFFFF;
   }
   .field--name-field-company-title {
     z-index: 2;
@@ -136,6 +150,9 @@
       color: #666666;
       font-size: 14px;
       line-height: 20px;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
     ul {
       margin: 0;

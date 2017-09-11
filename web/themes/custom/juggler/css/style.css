@@ -1093,7 +1093,13 @@ table tbody tr:hover th {
 }
 
 .region-canyon {
-  padding: 30px 0 30px 0;
+  padding: 65px 0 50px 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .region-canyon {
+    padding: 25px 0 10px 0;
+  }
 }
 
 .layout-hero {
@@ -1285,6 +1291,18 @@ body.front .block-id-content .node--type-page .group-right {
   margin-bottom: 30px;
 }
 
+.view.view-portfolio-small .view-header h2 {
+  color: #FFFFFF;
+  font-family: "Lato", "helvetica", "arial", sans-serif;
+  font-size: 54px;
+  font-weight: 300;
+  line-height: 62px;
+}
+
+.view.view-portfolio-small .view-header p {
+  color: #FFF;
+}
+
 .view.view-portfolio-small .view-content {
   width: auto;
   max-width: none;
@@ -1306,6 +1324,16 @@ body.front .block-id-content .node--type-page .group-right {
   padding-left: 10px;
   width: 33.3333333333%;
   margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+  .view.view-portfolio-small .view-content .views-row {
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
+    padding: 0 20px 0 20px;
+  }
 }
 
 .view.view-portfolio-small .views-field-title {
@@ -1335,6 +1363,15 @@ body.front .block-id-content .node--type-page .group-right {
   margin-bottom: 20px;
 }
 
+@media only screen and (max-width: 767px) {
+  .view.view-side-projects .view-content .views-row {
+    float: left;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 100%;
+  }
+}
+
 .view.view-side-projects .views-field-title {
   color: #FFFFFF;
 }
@@ -1362,6 +1399,7 @@ body.front .block-id-content .node--type-page .group-right {
   overflow: hidden;
   flex-direction: row;
   background: #18344C;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (max-width: 767px) {
@@ -1399,25 +1437,39 @@ body.front .block-id-content .node--type-page .group-right {
 
 @media only screen and (max-width: 767px) {
   .node--type-portfolio.node--view-mode-teaser > .group-right {
+    padding: 20px;
     flex: 1 0 100%;
   }
 }
 
 .node--type-portfolio.node--view-mode-teaser .field--name-field-portfolio-type {
   z-index: 2;
-  padding: 30px 30px 0 30px;
-  color: #FFFFFF;
+  margin: 30px 0 0 30px;
   font-size: 20px;
+  display: inline-block;
 }
 
 .node--type-portfolio.node--view-mode-teaser .field--name-field-portfolio-type span {
   display: block;
   width: fit-content;
-  margin-top: -2px;
   text-transform: uppercase;
   border-top: 2px #FF3B5D solid;
   font-size: 12px;
   line-height: 30px;
+  padding: 0 3px 0 3px;
+  color: #FFFFFF;
+}
+
+.node--type-portfolio.node--view-mode-teaser .field--name-field-drupal-version {
+  margin: 30px 0 0 -4px;
+  display: inline-block;
+  width: fit-content;
+  text-transform: uppercase;
+  border-top: 2px #2b5784 solid;
+  font-size: 12px;
+  line-height: 30px;
+  padding: 0 3px 0 3px;
+  color: #FFFFFF;
 }
 
 .node--type-portfolio.node--view-mode-teaser .field--name-field-company-title {
@@ -1501,6 +1553,10 @@ body.front .block-id-content .node--type-page .group-right {
   color: #666666;
   font-size: 14px;
   line-height: 20px;
+}
+
+.node--type-portfolio.node--view-mode-teaser .field--name-body p:last-of-type {
+  margin-bottom: 0;
 }
 
 .node--type-portfolio.node--view-mode-teaser .field--name-body ul {
@@ -1590,16 +1646,13 @@ body.front .block-id-content .node--type-page .group-right {
   height: auto;
 }
 
-.node--type-portfolio-small.node--view-mode-teaser {
-  background: #FFFFFF;
-  padding: 20px;
-}
-
-.node--type-portfolio-small.node--view-mode-teaser .field--name-node-title {
-  margin-bottom: 0;
-  font-size: 34px;
-  font-weight: 300;
-  line-height: 34px;
+.node--type-portfolio-small.node--view-mode-teaser .field--name-node-title h3 {
+  display: block;
+  margin-bottom: 2px;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
 }
 
 .view-portfolio-small-links .node--type-portfolio-small.node--view-mode-teaser .field--name-node-title {
@@ -1608,12 +1661,11 @@ body.front .block-id-content .node--type-page .group-right {
 
 .node--type-portfolio-small.node--view-mode-teaser .field--name-body h3 {
   display: block;
-  margin-bottom: 14px;
-  text-transform: uppercase;
-  color: #212121;
-  font-size: 16px;
+  margin-bottom: 5px;
+  color: #FFFFFF;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 30px;
+  line-height: 18px;
 }
 
 .node--type-portfolio-small.node--view-mode-teaser .field--name-body p {
@@ -1639,6 +1691,29 @@ body.front .block-id-content .node--type-page .group-right {
   background-position: left;
   background-size: 20px;
   line-height: 18px;
+}
+
+.node--type-portfolio-small.node--view-mode-teaser .field--name-field-tag-phases .field-item {
+  margin-bottom: 5px;
+}
+
+.node--type-portfolio-small.node--view-mode-teaser .field--name-field-tag-phases .taxonomy-term .group-left {
+  width: auto;
+  margin-right: 10px;
+}
+
+.node--type-portfolio-small.node--view-mode-teaser .field--name-field-tag-phases .taxonomy-term .group-right {
+  width: auto;
+}
+
+.node--type-portfolio-small.node--view-mode-teaser .field--name-field-tag-phases .taxonomy-term .field--name-taxonomy-term-title {
+  color: #678CB1;
+  line-height: 24px;
+}
+
+.node--type-portfolio-small.node--view-mode-teaser .field--name-field-tag-phases .taxonomy-term .field--name-field-phase-icon img {
+  width: 26px;
+  height: auto;
 }
 
 .node--type-side-project.node--view-mode-teaser {
@@ -1686,6 +1761,13 @@ body.front .block-id-content .node--type-page .group-right {
   background-position: left;
   background-size: 20px;
   line-height: 18px;
+}
+
+.node--type-side-project.node--view-mode-teaser .field--name-field-github {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .ds-2col > .group-left {
@@ -1762,9 +1844,16 @@ body.front .block-id-content .node--type-page .group-right {
   background-image: linear-gradient(rgba(255, 255, 255, 0.25) 20%, transparent 200%);
 }
 
-.block-id-hero-homepage h2 {
+.block-id-hero-homepage {
   margin-top: 140px;
   margin-bottom: 40px;
+}
+
+.block-id-hero-homepage .field--name-body {
+  max-height: 310px;
+}
+
+.block-id-hero-homepage .field--name-body h2 {
   color: #FFFFFF;
   font-family: "Lato", "helvetica", "arial", sans-serif;
   font-size: 54px;
@@ -1773,19 +1862,18 @@ body.front .block-id-content .node--type-page .group-right {
 }
 
 @media only screen and (max-width: 767px) {
-  .block-id-hero-homepage h2 {
-    margin-top: 80px;
+  .block-id-hero-homepage .field--name-body h2 {
     font-size: 50px;
     line-height: 56px;
   }
 }
 
-.block-id-hero-homepage h2 strong {
+.block-id-hero-homepage .field--name-body h2 strong {
   color: #162A3B;
   font-weight: 300;
 }
 
-.block-id-hero-homepage p {
+.block-id-hero-homepage .field--name-body p {
   color: #FFFFFF;
   font-family: "Lato", "helvetica", "arial", sans-serif;
   font-size: 20px;
@@ -1794,7 +1882,7 @@ body.front .block-id-content .node--type-page .group-right {
 }
 
 @media only screen and (max-width: 767px) {
-  .block-id-hero-homepage p {
+  .block-id-hero-homepage .field--name-body p {
     font-size: 18px;
     line-height: 26px;
   }

@@ -1,9 +1,25 @@
 .view.view-portfolio-small {
+  .view-header {
+    h2 {
+      color: #FFFFFF;
+      font-family: "Lato", "helvetica", "arial", sans-serif;
+      font-size: 54px;
+      font-weight: 300;
+      line-height: 62px;
+    }
+    p {
+      color: #FFF;
+    }
+  }
   .view-content {
     @include grid-row(nest);
     .views-row {
       @include grid-column(4);
       margin-bottom: 20px;
+      @media #{$small-only} {
+        @include grid-column(12);
+        padding: 0 20px 0 20px
+      }
     }
   }
   .views-field-title {

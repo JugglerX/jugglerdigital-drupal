@@ -4,6 +4,9 @@
     .views-row {
       @include grid-column(4);
       margin-bottom: 20px;
+      @media #{$small-only} {
+        @include grid-column(12);
+      }
     }
   }
   .views-field-title {

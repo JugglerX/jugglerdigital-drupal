@@ -47,6 +47,15 @@ console.log('Scripts.js');
     }
   };
 
+  // Drupal.behaviors.readmore = {
+  //   attach: function (context) {
+  //     $('.field--name-body').readmore({
+  //       speed: 75,
+  //       lessLink: '<a href="#">Read less</a>'
+  //     });
+  //   }
+  // };
+
   Drupal.behaviors.scrollmagic = {
     attach: function (context) {
       // init controller
