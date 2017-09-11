@@ -43,11 +43,15 @@
 //@import 'view/view-certifications';
 //@import 'view/view-testimonials';
 @import 'view/view-portfolio';
+@import 'view/view-portfolio-small';
+@import 'view/view-side-projects';
 
 @import 'node/node';
 //@import 'node/node-certification-view-mode-teaser';
 //@import 'node/node-service-view-mode-teaser';
 @import 'node/node-portfolio-view-mode-teaser';
+@import 'node/node-portfolio-small-view-mode-teaser';
+@import 'node/node-side-project-view-mode-teaser';
 
 //@import 'ds/ds-1col-fullwidth-hero-footer';
 //@import 'ds/ds-1col-hero';
@@ -63,6 +67,7 @@
 @import 'block/block-logo';
 @import 'block/block-responsive-menu-mobile-icon';
 @import 'block/block-hamburger';
+@import 'block/block-portfolio-small-links';
 
 
 body {

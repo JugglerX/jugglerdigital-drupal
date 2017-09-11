@@ -1092,6 +1092,10 @@ table tbody tr:hover th {
   background: #162A3B;
 }
 
+.region-canyon {
+  padding: 30px 0 30px 0;
+}
+
 .layout-hero {
   height: 650px;
   background: #162A3B;
@@ -1279,6 +1283,60 @@ body.front .block-id-content .node--type-page .group-right {
   padding-left: 10px;
   width: 100%;
   margin-bottom: 30px;
+}
+
+.view.view-portfolio-small .view-content {
+  width: auto;
+  max-width: none;
+  margin-top: 0;
+  margin-right: -10px;
+  margin-bottom: 0;
+  margin-left: -10px;
+}
+
+.view.view-portfolio-small .view-content:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.view.view-portfolio-small .view-content .views-row {
+  float: left;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 33.3333333333%;
+  margin-bottom: 20px;
+}
+
+.view.view-portfolio-small .views-field-title {
+  color: #FFFFFF;
+}
+
+.view.view-side-projects .view-content {
+  width: auto;
+  max-width: none;
+  margin-top: 0;
+  margin-right: -10px;
+  margin-bottom: 0;
+  margin-left: -10px;
+}
+
+.view.view-side-projects .view-content:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.view.view-side-projects .view-content .views-row {
+  float: left;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 33.3333333333%;
+  margin-bottom: 20px;
+}
+
+.view.view-side-projects .views-field-title {
+  color: #FFFFFF;
 }
 
 .node:after {
@@ -1530,6 +1588,104 @@ body.front .block-id-content .node--type-page .group-right {
 .node--type-portfolio.node--view-mode-teaser .field--name-field-tag-phases .taxonomy-term .field--name-field-phase-icon img {
   width: 26px;
   height: auto;
+}
+
+.node--type-portfolio-small.node--view-mode-teaser {
+  background: #FFFFFF;
+  padding: 20px;
+}
+
+.node--type-portfolio-small.node--view-mode-teaser .field--name-node-title {
+  margin-bottom: 0;
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 34px;
+}
+
+.view-portfolio-small-links .node--type-portfolio-small.node--view-mode-teaser .field--name-node-title {
+  color: #FFFFFF;
+}
+
+.node--type-portfolio-small.node--view-mode-teaser .field--name-body h3 {
+  display: block;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  color: #212121;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.node--type-portfolio-small.node--view-mode-teaser .field--name-body p {
+  color: #666666;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.node--type-portfolio-small.node--view-mode-teaser .field--name-body ul {
+  margin: 0;
+  list-style: none;
+  color: #666666;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.node--type-portfolio-small.node--view-mode-teaser .field--name-body ul li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  list-style: none;
+  background-image: url("../images/dot.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 20px;
+  line-height: 18px;
+}
+
+.node--type-side-project.node--view-mode-teaser {
+  background: #FFFFFF;
+  padding: 20px;
+}
+
+.node--type-side-project.node--view-mode-teaser .field--name-node-title {
+  margin-bottom: 0;
+  font-size: 34px;
+  font-weight: 300;
+  line-height: 34px;
+}
+
+.node--type-side-project.node--view-mode-teaser .field--name-body h3 {
+  display: block;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  color: #212121;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.node--type-side-project.node--view-mode-teaser .field--name-body p {
+  color: #666666;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.node--type-side-project.node--view-mode-teaser .field--name-body ul {
+  margin: 0;
+  list-style: none;
+  color: #666666;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.node--type-side-project.node--view-mode-teaser .field--name-body ul li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  list-style: none;
+  background-image: url("../images/dot.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 20px;
+  line-height: 18px;
 }
 
 .ds-2col > .group-left {
@@ -2040,6 +2196,10 @@ body.front .block-id-content .node--type-page .group-right {
   padding-left: 10px;
   width: 16.6666666667%;
   float: right;
+}
+
+.block-id-portfolio-small-links h2 {
+  color: #FFF;
 }
 
 body {

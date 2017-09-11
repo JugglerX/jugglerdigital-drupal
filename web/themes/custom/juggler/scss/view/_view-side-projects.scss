@@ -1,0 +1,14 @@
+.view.view-side-projects {
+  .view-content {
+    @include grid-row(nest);
+    .views-row {
+      @include grid-column(4);
+      margin-bottom: 20px;
+    }
+  }
+  .views-field-title {
+    color: #FFFFFF;
+  }
+  .views-field-field-website {
+  }
+}
