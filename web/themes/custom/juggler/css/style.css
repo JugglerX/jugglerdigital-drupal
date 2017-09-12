@@ -1320,6 +1320,7 @@ body.front .block-id-content .node--type-page .group-right {
   padding-right: 10px;
   padding-left: 10px;
   width: 100%;
+  padding: 0 40px 0 40px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -1368,6 +1369,7 @@ body.front .block-id-content .node--type-page .group-right {
   padding-right: 10px;
   padding-left: 10px;
   width: 33.3333333333%;
+  padding: 0 40px 0 40px;
   margin-bottom: 20px;
 }
 
@@ -1383,6 +1385,35 @@ body.front .block-id-content .node--type-page .group-right {
 
 .view.view-portfolio-small .views-field-title {
   color: #FFFFFF;
+}
+
+.view.view-side-projects .view-header {
+  width: auto;
+  max-width: none;
+  margin-top: 0;
+  margin-right: -10px;
+  margin-bottom: 0;
+  margin-left: -10px;
+}
+
+.view.view-side-projects .view-header:after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+.view.view-side-projects .view-header .views-row {
+  float: left;
+  padding-right: 10px;
+  padding-left: 10px;
+  width: 100%;
+  padding: 0 40px 0 40px;
+}
+
+@media only screen and (max-width: 767px) {
+  .view.view-side-projects .view-header .views-row {
+    padding: 0 20px 0 20px;
+  }
 }
 
 .view.view-side-projects .view-header h2 {
@@ -1434,6 +1465,7 @@ body.front .block-id-content .node--type-page .group-right {
     padding-right: 10px;
     padding-left: 10px;
     width: 100%;
+    margin-bottom: 10px;
   }
 }
 
@@ -1444,10 +1476,6 @@ body.front .block-id-content .node--type-page .group-right {
     padding-left: 10px;
     width: 50%;
   }
-}
-
-.view.view-side-projects .views-field-title {
-  color: #FFFFFF;
 }
 
 .node:after {
@@ -1804,9 +1832,21 @@ body.front .block-id-content .node--type-page .group-right {
 }
 
 .node--type-side-project.node--view-mode-teaser {
-  min-height: 260px;
+  min-height: 210px;
   padding: 20px;
   background: #FFFFFF;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .node--type-side-project.node--view-mode-teaser {
+    min-height: 180px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .node--type-side-project.node--view-mode-teaser {
+    min-height: inherit;
+  }
 }
 
 .node--type-side-project.node--view-mode-teaser .field--name-node-title {
@@ -1849,6 +1889,14 @@ body.front .block-id-content .node--type-page .group-right {
   background-position: left;
   background-size: 20px;
   line-height: 18px;
+}
+
+.node--type-side-project.node--view-mode-teaser .field--name-field-github {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #FF3B5D;
 }
 
 .ds-2col > .group-left {

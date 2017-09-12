@@ -1,5 +1,13 @@
 .view.view-side-projects {
   .view-header {
+    @include grid-row(nest);
+    .views-row {
+      @include grid-column(12);
+      padding: 0 40px 0 40px;
+      @media #{$small-only} {
+        padding: 0 20px 0 20px;
+      }
+    }
     h2 {
       margin: 0;
       margin-bottom: 3px;
@@ -26,13 +34,11 @@
       margin-bottom: 20px;
       @media #{$small-only} {
         @include grid-column(12);
+        margin-bottom: 10px;
       }
       @media #{$medium-only} {
         @include grid-column(6);
       }
     }
-  }
-  .views-field-title {
-    color: #FFFFFF;
   }
 }

@@ -1,7 +1,13 @@
 .node--type-side-project.node--view-mode-teaser {
-  min-height: 260px;
+  min-height: 210px;
   padding: 20px;
   background: #FFFFFF;
+  @media #{$medium-only} {
+    min-height: 180px;
+  }
+  @media #{$small-only} {
+    min-height: inherit;
+  }
   .field--name-node-title {
     margin-bottom: 0;
     font-size: 34px;
@@ -42,9 +48,10 @@
     }
   }
   .field--name-field-github {
-    //width: 100%;
-    //white-space: nowrap;
-    //overflow: hidden;
-    //text-overflow: ellipsis;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $secondary-color;
   }
 }
