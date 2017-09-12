@@ -1,0 +1,12 @@
+name: 'Toc.js per node'
+type: module
+description: 'Allow to override per node Toc.js settings.'
+# core: 8.x
+dependencies:
+  - toc_js
+
+# Information added by Drupal.org packaging script on 2017-08-04
+version: '8.x-1.3'
+core: '8.x'
+project: 'toc_js'
+datestamp: 1501888152

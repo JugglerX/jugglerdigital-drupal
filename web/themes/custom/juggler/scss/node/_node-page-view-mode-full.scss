@@ -1,0 +1,49 @@
+.node--type-page.node--view-mode-full {
+  position: relative;
+  display: flex;
+  > .group-left {
+    flex: 5 0 0;
+    @media #{$small-only} {
+      flex: 1 0 100%;
+    }
+  }
+  > .group-right {
+    flex: 3 0 0;
+    padding: 30px;
+    @media #{$small-only} {
+      flex: 1 0 100%;
+
+    }
+  }
+  .toc-js {
+    padding: 30px;
+    background-color: #ffffff;
+    .toc-title {
+      display: block;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      color: #212121;
+      font-family: $base-font;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 30px;
+    }
+    ul {
+      margin: 0;
+      list-style: none;
+      color: #666666;
+      font-size: 14px;
+      line-height: 20px;
+      li {
+        margin-bottom: 10px;
+        padding-left: 25px;
+        list-style: none;
+        background-image: url('../images/dot.png');
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: 20px;
+        line-height: 18px;
+      }
+    }
+  }
+}

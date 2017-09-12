@@ -49,9 +49,11 @@
 @import 'node/node-portfolio-view-mode-teaser';
 @import 'node/node-portfolio-small-view-mode-teaser';
 @import 'node/node-side-project-view-mode-teaser';
+@import 'node/node-page-view-mode-full';
 
 @import 'ds/ds-2col';
 
+@import 'block/block-pagetitle';
 @import 'block/block-local-tasks';
 @import 'block/block-hero-homepage';
 @import 'block/block-hero-service';

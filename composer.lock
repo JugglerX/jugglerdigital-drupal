@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "94459049a514a2d4dac35373bb305e00",
+    "content-hash": "f0223db508dd9e2b3613062e186b0e13",
     "packages": [
         {
             "name": "ajgl/breakpoint-twig-extension",
@@ -2812,6 +2812,53 @@
             "homepage": "https://www.drupal.org/project/smart_trim",
             "support": {
                 "source": "http://cgit.drupalcode.org/smart_trim"
+            }
+        },
+        {
+            "name": "drupal/toc_js",
+            "version": "1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/toc_js",
+                "reference": "8.x-1.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/toc_js-8.x-1.3.zip",
+                "reference": "8.x-1.3",
+                "shasum": "be44fee13475342e4327ca9ce88f17374665b317"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.3",
+                    "datestamp": "1501888144",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "flocondetoile",
+                    "homepage": "https://www.drupal.org/user/2006064"
+                }
+            ],
+            "description": "Build a hierarchical table of contents from header tags present on a node with the toc.js library.",
+            "homepage": "https://www.drupal.org/project/toc_js",
+            "support": {
+                "source": "http://cgit.drupalcode.org/toc_js"
             }
         },
         {

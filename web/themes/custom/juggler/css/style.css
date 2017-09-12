@@ -1100,8 +1100,20 @@ table tbody tr:hover th {
   }
 }
 
-.layout-hero {
+.front .layout-hero {
   height: 650px;
+  background: #162A3B;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 380px) {
+  .front .layout-hero {
+    height: 610px;
+  }
+}
+
+.layout-hero {
+  height: 250px;
   background: #162A3B;
   background-size: cover;
 }
@@ -1899,6 +1911,67 @@ body.front .block-id-content .node--type-page .group-right {
   color: #FF3B5D;
 }
 
+.node--type-page.node--view-mode-full {
+  position: relative;
+  display: flex;
+}
+
+.node--type-page.node--view-mode-full > .group-left {
+  flex: 5 0 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .node--type-page.node--view-mode-full > .group-left {
+    flex: 1 0 100%;
+  }
+}
+
+.node--type-page.node--view-mode-full > .group-right {
+  flex: 3 0 0;
+  padding: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+  .node--type-page.node--view-mode-full > .group-right {
+    flex: 1 0 100%;
+  }
+}
+
+.node--type-page.node--view-mode-full .toc-js {
+  padding: 30px;
+  background-color: #ffffff;
+}
+
+.node--type-page.node--view-mode-full .toc-js .toc-title {
+  display: block;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  color: #212121;
+  font-family: "Open Sans", "helvetica", "arial", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.node--type-page.node--view-mode-full .toc-js ul {
+  margin: 0;
+  list-style: none;
+  color: #666666;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.node--type-page.node--view-mode-full .toc-js ul li {
+  margin-bottom: 10px;
+  padding-left: 25px;
+  list-style: none;
+  background-image: url("../images/dot.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 20px;
+  line-height: 18px;
+}
+
 .ds-2col > .group-left {
   float: left;
   width: 50%;
@@ -1921,6 +1994,14 @@ body.front .block-id-content .node--type-page .group-right {
     float: none;
     width: auto;
   }
+}
+
+.block-id-pagetitle {
+  margin-top: 140px;
+}
+
+.block-id-pagetitle h1.page-title {
+  color: #FFFFFF;
 }
 
 .block-local-tasks-block {
@@ -2093,29 +2174,22 @@ body.front .block-id-content .node--type-page .group-right {
   }
 }
 
-.block-id-hero-basic .field--name-field-hero {
-  display: none;
-}
-
-.block-id-hero-basic .field--name-field-hero-heading {
-  float: left;
-  width: 400px;
-  margin: 0;
-  padding-top: 50px;
+.block-id-hero-basic-page .field--name-field-hero-title {
+  margin-top: 60px;
+  margin-bottom: 20px;
   color: #FFFFFF;
-  font-weight: 400;
+  font-family: "Lato", "helvetica", "arial", sans-serif;
+  font-size: 40px;
+  font-weight: 200;
+  line-height: 48px;
 }
 
-@media only screen and (max-width: 767px) {
-  .block-id-hero-basic .field--name-field-hero-heading {
-    width: 80%;
-    padding-top: 40px;
-  }
+.block-id-hero-basic-page .field--name-field-hero-title strong {
+  color: #162A3B;
+  font-weight: 200;
 }
 
-.block-id-hero-basic .field--name-field-hero-heading h1,
-.block-id-hero-basic .field--name-field-hero-heading h2,
-.block-id-hero-basic .field--name-field-hero-heading p {
+.block-id-hero-basic-page .field--name-field-hero-subtitle p {
   margin-top: 0;
   margin-bottom: 20px;
   color: #FFFFFF;
@@ -2125,31 +2199,9 @@ body.front .block-id-content .node--type-page .group-right {
   line-height: 48px;
 }
 
-.block-id-hero-basic .field--name-field-hero-heading h1 strong,
-.block-id-hero-basic .field--name-field-hero-heading h2 strong,
-.block-id-hero-basic .field--name-field-hero-heading p strong {
+.block-id-hero-basic-page .field--name-field-hero-subtitle p strong {
   color: #162A3B;
   font-weight: 200;
-}
-
-.block-id-hero-basic .field--name-field-hero-subheading {
-  float: right;
-  width: 300px;
-  margin: 0;
-  margin-top: 150px;
-  margin-bottom: 40px;
-  padding: 20px;
-  color: #FFFFFF;
-  border-bottom: 5px solid #162A3B;
-  background: rgba(0, 0, 0, 0.1);
-  font-weight: 200;
-}
-
-@media only screen and (max-width: 767px) {
-  .block-id-hero-basic .field--name-field-hero-subheading {
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
 }
 
 .block-id-primarymenu {

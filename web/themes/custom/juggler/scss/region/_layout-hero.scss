@@ -1,5 +1,14 @@
-.layout-hero {
+.front .layout-hero {
   height: 650px;
+  background: $primary-color;
+  background-size: cover;
+  @media #{$tiny-only} {
+    height: 610px;
+  }
+}
+
+.layout-hero {
+  height: 250px;
   background: $primary-color;
   background-size: cover;
   @media #{$tiny-only} {

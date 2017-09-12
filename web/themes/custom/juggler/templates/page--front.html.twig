@@ -75,7 +75,9 @@ page.sidebar_first and page.sidebar_second ? 'both-sidebars'
         {{ page.sidebar_first }}
       {% endif %}
 
-      {{ page.content }}
+      {% if page.content %}
+        {{ page.content }}
+      {% endif %}
 
       {% if page.sidebar_second %}
         {{ page.sidebar_second }}
