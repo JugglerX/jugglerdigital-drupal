@@ -36,6 +36,10 @@
     background: #FFFFFF;
     @media #{$small-only} {
       flex: 1 0 100%;
+      padding: 30px;
+    }
+    @media #{$tiny-only} {
+      flex: 1 0 100%;
       padding: 20px;
     }
   }
@@ -110,7 +114,7 @@
       padding-right: 30px;
     }
     @media #{$small-only} {
-      bottom: -20px;
+      bottom: -80px;
       left: 30px;
       padding-right: 30px;
     }

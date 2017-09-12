@@ -34,11 +34,13 @@
   set classes = [
     'view',
     'view-' ~ id|clean_class,
-    'view-id-' ~ id,
-    'view-display-id-' ~ display_id,
-    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'view-' ~ id|clean_class ~ '-display-id-' ~ display_id,
   ]
 %}
+
+{#'view-' ~ id|clean_class,#}
+{#dom_id ? 'js-view-dom-id-' ~ dom_id,#}
+
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if title %}
@@ -47,7 +49,9 @@
   {{ title_suffix }}
   {% if header %}
     <div class="view-header">
-      {{ header }}
+      <div class="views-row">
+        {{ header }}
+      </div>
     </div>
   {% endif %}
   {% if exposed %}

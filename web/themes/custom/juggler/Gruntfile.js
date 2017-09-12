@@ -85,11 +85,14 @@ module.exports = function (grunt) {
     browserSync: {
       dev: {
         bsFiles: {
-          src : 'css/style.css'
+          src : [
+            'css/style.css',
+            'js/scripts.js'
+          ]
         },
         options: {
           watchTask: true,
-          proxy: 'http://figurit.dev',
+          proxy: 'http://jugglerdigital.dev',
           injectChanges: true
         }
       }
@@ -142,7 +145,7 @@ module.exports = function (grunt) {
 
   });
 
-  grunt.registerTask('build', ['sasslint', 'eslint', 'sass', 'autoprefixer', 'uglify']);
+  grunt.registerTask('build', ['sasslint', 'sass', 'autoprefixer', 'uglify']);
   grunt.registerTask('default', ['build']);
-  grunt.registerTask('sync', ['browserSync', 'watch', 'sasslint']);
+  grunt.registerTask('sync', ['browserSync', 'watch']);
 };

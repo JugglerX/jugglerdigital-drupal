@@ -32,14 +32,16 @@
  */
 #}
 
+{#'block-' ~ base_plugin_id|clean_class,#}
+{#'block-region' ~ region|clean_class,#}
+{#'menu-' ~ derivative_plugin_id|clean_class,#}
+
 {% set classes = [
-'block',
-'block-id-' ~ machine_name|clean_class,
-'block-' ~ base_plugin_id|clean_class,
-'block-region' ~ region|clean_class,
-'menu-' ~ derivative_plugin_id|clean_class,
+  'block',
+  'block-id-' ~ machine_name|clean_class,
 ]
 %}
+
 {% set heading_id = attributes.id ~ '-menu'|clean_id %}
 
 <div {{ attributes.addClass(classes) }}>

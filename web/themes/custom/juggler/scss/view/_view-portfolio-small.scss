@@ -1,5 +1,12 @@
 .view.view-portfolio-small {
   .view-header {
+    @include grid-row(nest);
+    .views-row {
+      @include grid-column(12);
+      @media #{$small-only} {
+        padding: 0 20px 0 20px;
+      }
+    }
     h2 {
       margin: 0;
       margin-bottom: 3px;

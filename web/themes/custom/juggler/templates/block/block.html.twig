@@ -35,11 +35,11 @@
 {% set classes = [
     'block',
     'block-id-' ~ machine_name|clean_class,
-    'block-' ~ base_plugin_id|clean_class,
-    'block-region-' ~ region|clean_class,
   ]
 %}
 
+{#'block-region-' ~ region|clean_class,#}
+{#'block-' ~ base_plugin_id|clean_class,#}
 {#'block-' ~ derivative_plugin_id|clean_class#}
 
 <div {{ attributes.addClass(classes).removeClass('views-element-container') }}>

@@ -15,12 +15,7 @@
  */
 #}
 
-{%
-set nid = node.id ? 'node-' ~ node.id
-%}
-
-
-<div id={{ node.id ? 'node-' ~ node.id }} {{ attributes.addClass('ds-2col', 'clearfix') }}>
+<div id={{ node.id ? 'node-' ~ node.id }} {{ attributes.addClass('ds-2col') }}>
 
   {{ title_suffix.contextual_links }}
 

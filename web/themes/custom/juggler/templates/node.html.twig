@@ -81,8 +81,8 @@ set classes = [
 ]
 %}
 
-
 {{ attach_library('classy/node') }}
+
 <div id={{ node_id  }} {{ attributes.addClass(classes) |without('role','about','content','data-history-node-id') }}>
 
   {{ title_prefix }}

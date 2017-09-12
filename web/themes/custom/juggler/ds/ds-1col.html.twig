@@ -9,9 +9,19 @@
  * - ds_content: content region
  */
 #}
-<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+{%
+  set nid = node.id ? 'node-' ~ node.id
+%}
+{%
+  set classes = [
+    'ds-1col',
+  ]
+%}
+
+<div id={{ node.id ? 'node-' ~ node.id }} {{ attributes.addClass(classes) |without('data-history-node-id')}}>
   <div class="group-middle">
     {{ title_suffix.contextual_links }}
     {{ ds_content }}
   </div>
-</{{ ds_content_wrapper }}>
+</div>
