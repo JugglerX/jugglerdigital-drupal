@@ -1,23 +1,33 @@
 .node--type-page.node--view-mode-full {
   position: relative;
   display: flex;
+  flex-direction: row;
+  @media #{$small-only} {
+    flex-direction: column-reverse;
+  }
   > .group-left {
-    flex: 5 0 0;
+    flex: 6 0 0;
     @media #{$small-only} {
       flex: 1 0 100%;
     }
   }
   > .group-right {
     flex: 3 0 0;
-    padding: 30px;
     @media #{$small-only} {
       flex: 1 0 100%;
-
+      margin-bottom: 20px;
     }
   }
   .toc-js {
-    padding: 30px;
+    padding: 0 20px;
     background-color: #ffffff;
+    position: fixed;
+    top: 90px;
+    @media #{$small-only} {
+      padding: 0;
+      position: relative;
+      top: 0;
+    }
     .toc-title {
       display: block;
       margin-bottom: 14px;
@@ -35,14 +45,35 @@
       font-size: 14px;
       line-height: 20px;
       li {
-        margin-bottom: 10px;
-        padding-left: 25px;
+        margin-bottom: 8px;
+        font-size: 13px;
+        padding-left: 20px;
         list-style: none;
-        background-image: url('../images/dot.png');
+        background-image: url('../images/section.png');
         background-repeat: no-repeat;
         background-position: left;
         background-size: 20px;
         line-height: 18px;
+        a {
+          text-decoration: none;
+        }
+        &.toc-active {
+          font-weight: 600;
+        }
+        &.toc-h1 {
+          display: none;
+        }
+        &.toc-h2 {
+
+        }
+        &.toc-h3 {
+          padding-left: 30px;
+          background-image: none;
+        }
+        &.toc-h4 {
+          padding-left: 30px;
+          background-image: none;
+        }
       }
     }
   }

@@ -1,0 +1,16 @@
+body.path-process {
+
+}
+body.path-process {
+  background: #FFFFFF;
+  .layout-header {
+    background: $primary-color;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+  }
+  h1.page-title {
+    margin-bottom: 10px;
+  }
+  .region-content {
+    padding-top: 100px;
+  }
+}

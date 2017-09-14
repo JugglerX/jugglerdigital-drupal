@@ -825,8 +825,9 @@ h1 {
   margin-top: 0;
   margin-bottom: 20px;
   font-family: "Lato", "helvetica", "arial", sans-serif;
-  font-size: 40px;
-  font-weight: 400;
+  font-size: 54px;
+  font-weight: 300;
+  line-height: 62px;
 }
 
 h2 {
@@ -897,8 +898,86 @@ hr.margin-bottom {
   margin-bottom: 14px;
 }
 
-.field--name-body ul,
-.field--name-body ol {
+.region-content .field--name-body p {
+  margin-bottom: 15px;
+  color: #555555;
+  font-family: "Open Sans", "helvetica", "arial", sans-serif;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.region-content .field--name-body h1 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-family: "Lato", "helvetica", "arial", sans-serif;
+  font-size: 46px;
+  font-weight: 400;
+}
+
+.region-content .field--name-body h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-family: "Open Sans", "helvetica", "arial", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 50px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.region-content .field--name-body h3 {
+  margin-top: 0;
+  margin-bottom: 13px;
+  font-family: "Open Sans", "helvetica", "arial", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.region-content .field--name-body h4 {
+  margin-top: 0;
+  margin-bottom: 13px;
+  font-family: "Open Sans", "helvetica", "arial", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.region-content .field--name-body h5,
+.region-content .field--name-body h6 {
+  font-weight: bold;
+}
+
+.region-content .field--name-body a {
+  text-decoration: underline;
+  color: #FF3B5D;
+}
+
+.region-content .field--name-body a:hover, .region-content .field--name-body a:focus {
+  text-decoration: underline;
+}
+
+@media only screen {
+  .region-content .field--name-body .text-center-small-only {
+    text-align: center;
+  }
+}
+
+.region-content .field--name-body ul.no-bullet {
+  margin-left: 0;
+  list-style: none;
+}
+
+.region-content .field--name-body hr {
+  clear: both;
+  height: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: solid #dddddd;
+  border-width: 1px 0 0;
+}
+
+.region-content .field--name-body ul,
+.region-content .field--name-body ol {
   margin-bottom: 20px;
   margin-left: 20px;
 }
@@ -1386,6 +1465,23 @@ body.path-contact-hire .region-content .field--name-field-linkedin a {
 
 body.path-contact-hire .region-content .field--name-body {
   margin-bottom: 60px;
+}
+
+body.path-process {
+  background: #FFFFFF;
+}
+
+body.path-process .layout-header {
+  background: #162A3B;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+body.path-process h1.page-title {
+  margin-bottom: 10px;
+}
+
+body.path-process .region-content {
+  padding-top: 100px;
 }
 
 .view.view-portfolio {
@@ -2036,10 +2132,17 @@ body.path-contact-hire .region-content .field--name-body {
 .node--type-page.node--view-mode-full {
   position: relative;
   display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 767px) {
+  .node--type-page.node--view-mode-full {
+    flex-direction: column-reverse;
+  }
 }
 
 .node--type-page.node--view-mode-full > .group-left {
-  flex: 5 0 0;
+  flex: 6 0 0;
 }
 
 @media only screen and (max-width: 767px) {
@@ -2050,18 +2153,28 @@ body.path-contact-hire .region-content .field--name-body {
 
 .node--type-page.node--view-mode-full > .group-right {
   flex: 3 0 0;
-  padding: 30px;
 }
 
 @media only screen and (max-width: 767px) {
   .node--type-page.node--view-mode-full > .group-right {
     flex: 1 0 100%;
+    margin-bottom: 20px;
   }
 }
 
 .node--type-page.node--view-mode-full .toc-js {
-  padding: 30px;
+  padding: 0 20px;
   background-color: #ffffff;
+  position: fixed;
+  top: 90px;
+}
+
+@media only screen and (max-width: 767px) {
+  .node--type-page.node--view-mode-full .toc-js {
+    padding: 0;
+    position: relative;
+    top: 0;
+  }
 }
 
 .node--type-page.node--view-mode-full .toc-js .toc-title {
@@ -2084,14 +2197,37 @@ body.path-contact-hire .region-content .field--name-body {
 }
 
 .node--type-page.node--view-mode-full .toc-js ul li {
-  margin-bottom: 10px;
-  padding-left: 25px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  padding-left: 20px;
   list-style: none;
-  background-image: url("../images/dot.png");
+  background-image: url("../images/section.png");
   background-repeat: no-repeat;
   background-position: left;
   background-size: 20px;
   line-height: 18px;
+}
+
+.node--type-page.node--view-mode-full .toc-js ul li a {
+  text-decoration: none;
+}
+
+.node--type-page.node--view-mode-full .toc-js ul li.toc-active {
+  font-weight: 600;
+}
+
+.node--type-page.node--view-mode-full .toc-js ul li.toc-h1 {
+  display: none;
+}
+
+.node--type-page.node--view-mode-full .toc-js ul li.toc-h3 {
+  padding-left: 30px;
+  background-image: none;
+}
+
+.node--type-page.node--view-mode-full .toc-js ul li.toc-h4 {
+  padding-left: 30px;
+  background-image: none;
 }
 
 .ds-2col > .group-left {
@@ -2147,12 +2283,8 @@ body.path-contact-hire .region-content .field--name-body {
   }
 }
 
-.block-id-pagetitle {
-  margin-top: 140px;
-}
-
-.block-id-pagetitle h1.page-title {
-  color: #FFFFFF;
+.block-id-juggler-page-title h1.page-title {
+  text-indent: -4px;
 }
 
 .block-local-tasks-block {
@@ -2389,7 +2521,7 @@ body.path-contact-hire .region-content .field--name-body {
 
 .block-id-primarymenu ul.menu li a {
   display: block;
-  padding: 7px 13px;
+  padding: 22px 13px;
   text-decoration: none;
   color: #FF3B5D;
   background: none;
