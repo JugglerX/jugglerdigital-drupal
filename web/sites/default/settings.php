@@ -39,15 +39,9 @@ if (file_exists($local_settings)) {
  */
 $settings['install_profile'] = 'standard';
 
-if (defined('PANTHEON_ENVIRONMENT')) {
-  if (in_array($_ENV['PANTHEON_ENVIRONMENT'], array('dev', 'test', 'live'))) {
-    $settings['trusted_host_patterns'][] = "{$_ENV['PANTHEON_ENVIRONMENT']}-{$_ENV['PANTHEON_SITE_NAME']}.getpantheon.io";
-    $settings['trusted_host_patterns'][] = "{$_ENV['PANTHEON_ENVIRONMENT']}-{$_ENV['PANTHEON_SITE_NAME']}.pantheon.io";
-    $settings['trusted_host_patterns'][] = "{$_ENV['PANTHEON_ENVIRONMENT']}-{$_ENV['PANTHEON_SITE_NAME']}.pantheonsite.io";
-    $settings['trusted_host_patterns'][] = "{$_ENV['PANTHEON_ENVIRONMENT']}-{$_ENV['PANTHEON_SITE_NAME']}.panth.io";
+$settings['skip_permissions_hardening'] = FALSE;
+$settings['rebuild_access'] = FALSE;
 
-    # Replace value with custom domain(s) added in the site Dashboard
-    $settings['trusted_host_patterns'][] = '^.+.jugglerdigital.com$';
-    $settings['trusted_host_patterns'][] = '^jugglerdigital.com$';
-  }
-}
+//chmod 644 sites/default/settings.local.php
+//chmod 644 sites/default/settings.php
+//chmod 755 sites/default
