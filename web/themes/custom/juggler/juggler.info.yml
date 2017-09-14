@@ -18,9 +18,7 @@ stylesheets-remove:
   - core/modules/system/css/system.module.css
   - core/modules/system/css/system.theme.css
   - core/modules/views/css/views.module.css
-  - core/themes/classy/css/components/form.css
-  - core/themes/classy/css/components/field.css
-  - core/themes/classy/css/components/dropbutton.css
+  - core/themes/stable/css/views/views.module.css
   - core/themes/stable/css/system/components/ajax-progress.module.css
   - core/themes/stable/css/system/components/align.module.css
   - core/themes/stable/css/system/components/autocomplete-loading.module.css
@@ -41,6 +39,11 @@ stylesheets-remove:
   - core/themes/stable/css/system/components/tabledrag.module.css
   - core/themes/stable/css/system/components/tablesort.module.css
   - core/themes/stable/css/system/components/tree-child.module.css
+  - core/themes/stable/css/system/components/js.module.css
+  - core/themes/stable/css/system/components/hidden.module.css
+  - core/themes/classy/css/components/form.css
+  - core/themes/classy/css/components/field.css
+  - core/themes/classy/css/components/dropbutton.css
   - core/themes/classy/css/components/action-links.css
   - core/themes/classy/css/components/book-navigation.css
   - core/themes/classy/css/components/breadcrumb.css
@@ -76,6 +79,8 @@ stylesheets-remove:
   - core/themes/classy/css/components/textarea.css
   - core/themes/classy/css/components/ui-dialog.css
   - core/themes/classy/css/components/user.css
+  - modules/contrib/ds/css/ds-2col.css
+
 
 # Add your regions below. Defaults to those defined in Drupal core.
 regions:

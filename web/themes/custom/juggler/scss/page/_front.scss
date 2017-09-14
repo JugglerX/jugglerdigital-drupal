@@ -1,8 +1,8 @@
 body.front {
   background: #F6F6F6;
-  .node--type-page {
-    .field--name-node-title {
-      //display: none;
+  .region-content {
+    .node--type-home {
+      display: none;
     }
   }
   .block-id-content {
