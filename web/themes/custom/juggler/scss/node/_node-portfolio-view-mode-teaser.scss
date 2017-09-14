@@ -9,7 +9,8 @@
   display: flex;
   overflow: hidden;
   flex-direction: row;
-  background: #18344C;
+  //background: #18344C;
+  background: lighten($primary-color, 5%);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   @media #{$small-only} {
     flex-direction: column;

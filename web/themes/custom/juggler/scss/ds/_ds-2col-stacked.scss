@@ -1,0 +1,23 @@
+.ds-2col-stacked {
+  > .group-left {
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+    @media #{$small-only} {
+      float: none;
+      width: auto;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+  }
+  > .group-right {
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+    @media #{$small-only} {
+      float: none;
+      width: auto;
+      padding: 0;
+    }
+  }
+}

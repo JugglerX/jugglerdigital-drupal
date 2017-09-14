@@ -1266,6 +1266,128 @@ body.front .block-id-content .node--type-page .group-right {
   width: 100%;
 }
 
+body.path-contact-hire {
+  background: #162A3B;
+}
+
+body.path-contact-hire .region-content {
+  padding-top: 100px;
+}
+
+body.path-contact-hire .region-content .node h1, body.path-contact-hire .region-content .node h2, body.path-contact-hire .region-content .node p {
+  color: #ffffff;
+}
+
+body.path-contact-hire .region-content .node p.contact-intro {
+  width: 85%;
+}
+
+@media only screen and (max-width: 767px) {
+  body.path-contact-hire .region-content .node p.contact-intro {
+    width: auto;
+  }
+}
+
+body.path-contact-hire .region-content .node p.contact-email {
+  font-size: 22px;
+}
+
+@media only screen and (max-width: 380px) {
+  body.path-contact-hire .region-content .node p.contact-email {
+    font-size: 20px;
+  }
+}
+
+body.path-contact-hire .region-content .node p.contact-skype {
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 380px) {
+  body.path-contact-hire .region-content .node p.contact-skype {
+    font-size: 16px;
+  }
+}
+
+body.path-contact-hire .region-content .field--name-field-github {
+  border-radius: 6px;
+  background: #1d374e;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  background-image: url("../images/github.png");
+  background-repeat: no-repeat;
+  background-position: 20px;
+  background-size: 44px;
+}
+
+@media only screen and (max-width: 380px) {
+  body.path-contact-hire .region-content .field--name-field-github {
+    background-position: 10px;
+    background-size: 32px;
+  }
+}
+
+body.path-contact-hire .region-content .field--name-field-github:hover {
+  background-color: #244460;
+}
+
+body.path-contact-hire .region-content .field--name-field-github a {
+  padding: 30px;
+  padding-left: 80px;
+  font-size: 18px;
+  display: block;
+  text-decoration: none;
+  color: #FFF;
+}
+
+@media only screen and (max-width: 380px) {
+  body.path-contact-hire .region-content .field--name-field-github a {
+    padding: 20px;
+    padding-left: 54px;
+    font-size: 15px;
+  }
+}
+
+body.path-contact-hire .region-content .field--name-field-linkedin {
+  border-radius: 6px;
+  background: #1d374e;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  background-image: url("../images/linkedin.png");
+  background-repeat: no-repeat;
+  background-position: 20px;
+  background-size: 44px;
+}
+
+@media only screen and (max-width: 380px) {
+  body.path-contact-hire .region-content .field--name-field-linkedin {
+    background-position: 10px;
+    background-size: 32px;
+  }
+}
+
+body.path-contact-hire .region-content .field--name-field-linkedin:hover {
+  background-color: #244460;
+}
+
+body.path-contact-hire .region-content .field--name-field-linkedin a {
+  padding: 30px;
+  padding-left: 80px;
+  font-size: 18px;
+  display: block;
+  text-decoration: none;
+  color: #FFF;
+}
+
+@media only screen and (max-width: 380px) {
+  body.path-contact-hire .region-content .field--name-field-linkedin a {
+    padding: 20px;
+    padding-left: 54px;
+    font-size: 15px;
+  }
+}
+
+body.path-contact-hire .region-content .field--name-body {
+  margin-bottom: 60px;
+}
+
 .view.view-portfolio {
   margin-top: -170px;
   padding-bottom: 40px;
@@ -1512,7 +1634,7 @@ body.front .block-id-content .node--type-page .group-right {
   display: flex;
   overflow: hidden;
   flex-direction: row;
-  background: #18344C;
+  background: #1d374e;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -1996,6 +2118,35 @@ body.front .block-id-content .node--type-page .group-right {
   }
 }
 
+.ds-2col-stacked > .group-left {
+  float: left;
+  width: 50%;
+  padding-right: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .ds-2col-stacked > .group-left {
+    float: none;
+    width: auto;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+}
+
+.ds-2col-stacked > .group-right {
+  float: left;
+  width: 50%;
+  padding-left: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .ds-2col-stacked > .group-right {
+    float: none;
+    width: auto;
+    padding: 0;
+  }
+}
+
 .block-id-pagetitle {
   margin-top: 140px;
 }
@@ -2175,7 +2326,7 @@ body.front .block-id-content .node--type-page .group-right {
 }
 
 .block-id-hero-basic-page .field--name-field-hero-title {
-  margin-top: 60px;
+  margin-top: 100px;
   margin-bottom: 20px;
   color: #FFFFFF;
   font-family: "Lato", "helvetica", "arial", sans-serif;
@@ -2190,13 +2341,11 @@ body.front .block-id-content .node--type-page .group-right {
 }
 
 .block-id-hero-basic-page .field--name-field-hero-subtitle p {
-  margin-top: 0;
-  margin-bottom: 20px;
   color: #FFFFFF;
-  font-family: "Lato", "helvetica", "arial", sans-serif;
-  font-size: 40px;
-  font-weight: 200;
-  line-height: 48px;
+  font-family: "Open Sans", "helvetica", "arial", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
 }
 
 .block-id-hero-basic-page .field--name-field-hero-subtitle p strong {
