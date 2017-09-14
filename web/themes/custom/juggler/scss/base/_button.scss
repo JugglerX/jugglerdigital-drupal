@@ -16,7 +16,6 @@
   font-family: $custom-font;
   font-size: 14px;
   font-weight: 200;
-
   appearance: none;
   &:link,
   &:visited {
@@ -63,11 +62,6 @@
 }
 @mixin btn-small() {
   padding: 6px 11px 5px 11px;
-}
-.form-submit {
-  @include btn;
-
-  appearance: none;
 }
 .btn {
   @include btn;

@@ -1,23 +1,24 @@
 .layout-header {
-  //border-bottom: 1px solid #EAEAEA;
-  //background: #F5F5F5;
   position: fixed;
-  //max-width: 1200px;
   z-index: 10;
-  //left: 50%;
-  //transform: translate(-50%, 0);
   width: 100%;
-  //padding: 13px 0 12px 0;
   transition-delay: 0s;
   transition-timing-function: linear;
   transition-duration: 0.3s;
   transition-property: background, box-shadow;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+  background: $primary-color;
   &.scrolled-into-view {
-    //max-width: none;
-    //transform: translate(0,0);
-    //left: 0;
-    background: $primary-color;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.front {
+  .layout-header {
+    background: none;
+    &.scrolled-into-view {
+      background: $primary-color;
+      box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+    }
   }
 }

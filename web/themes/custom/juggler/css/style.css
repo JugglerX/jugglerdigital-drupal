@@ -579,11 +579,17 @@ textarea:focus {
 .button.form-submit:hover {
   background: linear-gradient(to bottom, #E9E9E9 5%, #F9F9F9 100%);
   background-color: #E9E9E9;
+  color: #333;
 }
 
 .button.form-submit:active {
   position: relative;
   top: 1px;
+}
+
+.button.form-submit:focus {
+  outline: none;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.1);
 }
 
 .tabledrag-handle {
@@ -661,40 +667,6 @@ label.form-required:after {
 .field--label-inline .field__items {
   display: inline-block;
   float: none;
-}
-
-.form-submit {
-  position: relative;
-  display: inline-block;
-  width: auto;
-  padding: 11px 17px 10px 17px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #FFFFFF;
-  border: 1px;
-  border-color: #FF3B5D;
-  border-radius: 3px;
-  outline: none;
-  background-color: #FF3B5D;
-  font-family: "Lato", "helvetica", "arial", sans-serif;
-  font-size: 14px;
-  font-weight: 200;
-  appearance: none;
-  appearance: none;
-}
-
-.form-submit:link, .form-submit:visited {
-  color: #FFFFFF;
-}
-
-.form-submit:hover, .form-submit:focus {
-  text-decoration: none;
-  color: #FFFFFF;
-  background-color: #2B5784;
-  background-image: none;
-  box-shadow: none;
 }
 
 .btn {
@@ -1158,9 +1130,18 @@ table tbody tr:hover th {
   transition-duration: 0.3s;
   transition-property: background, box-shadow;
   box-shadow: 0 1px 2px transparent;
+  background: #162A3B;
 }
 
 .layout-header.scrolled-into-view {
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.front .layout-header {
+  background: none;
+}
+
+.front .layout-header.scrolled-into-view {
   background: #162A3B;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
 }
@@ -1214,7 +1195,7 @@ table tbody tr:hover th {
 }
 
 .region-content {
-  padding-top: 30px;
+  padding-top: 100px;
   padding-bottom: 30px;
 }
 
@@ -1311,6 +1292,10 @@ table tbody tr:hover th {
   display: block;
   clear: both;
   content: '';
+}
+
+body.front {
+  background: #F6F6F6;
 }
 
 body.front .block-id-content {
@@ -2761,7 +2746,7 @@ body {
   margin: 0;
   padding: 0;
   color: #333333;
-  background: #F6F6F6;
+  background: #FFFFFF;
   font-family: "Open Sans", "helvetica", "arial", sans-serif;
   font-size: 15px;
 }

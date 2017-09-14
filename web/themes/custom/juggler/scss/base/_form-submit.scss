@@ -12,14 +12,18 @@
   font-family: $button-font-family;
   font-size: $form-font-size;
   font-weight: bold;
-
   appearance: none;
   &:hover {
     background: linear-gradient(to bottom, #E9E9E9 5%, #F9F9F9 100%);
     background-color: #E9E9E9;
+    color: #333;
   }
   &:active {
     position: relative;
     top: 1px;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 4px 1px rgba(0,0,0,0.1);
   }
 }
