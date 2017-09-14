@@ -42,6 +42,8 @@ $settings['install_profile'] = 'standard';
 $settings['skip_permissions_hardening'] = FALSE;
 $settings['rebuild_access'] = FALSE;
 
+$config_directories[CONFIG_SYNC_DIRECTORY] = '/config';
+
 //chmod 644 sites/default/settings.local.php
 //chmod 644 sites/default/settings.php
 //chmod 755 sites/default
