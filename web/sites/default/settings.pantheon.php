@@ -1,44 +1,10 @@
 <?php
 
 /**
- * @file
- * Pantheon configuration file.
- *
- * IMPORTANT NOTE:
- * Do not modify this file. This file is maintained by Pantheon.
- *
- * Site-specific modifications belong in settings.php, not this file. This file
- * may change in future releases and modifications would cause conflicts when
- * attempting to apply upstream updates.
- */
-
-/**
- * Version of Pantheon files.
- *
- * This is a monotonically-increasing sequence number that is
- * incremented whenever a change is made to any Pantheon file.
- * Not changed if Drupal core is updated without any change to
- * any Pantheon file.
- *
- * The Pantheon version is included in the git tag only if a
- * release is made that includes changes to Pantheon files, but
- * not to any Drupal files.
- */
-if (!defined("PANTHEON_VERSION")) {
-  define("PANTHEON_VERSION", "3");
-}
-
-/**
- * Determine whether this is a preproduction or production environment, and
- * then load the pantheon services.yml file.  This file should be named either
- * 'pantheon-production-services.yml' (for 'live' or 'test' environments)
- * 'pantheon-preproduction-services.yml' (for 'dev' or multidev environments).
+ * services.yml
  */
 $pantheon_services_file = __DIR__ . '/services.pantheon.preproduction.yml';
-if (
-  isset($_ENV['PANTHEON_ENVIRONMENT']) &&
-  ( ($_ENV['PANTHEON_ENVIRONMENT'] == 'live') || ($_ENV['PANTHEON_ENVIRONMENT'] == 'test') )
-) {
+if (isset($_ENV['PANTHEON_ENVIRONMENT']) && (($_ENV['PANTHEON_ENVIRONMENT'] == 'live') || ($_ENV['PANTHEON_ENVIRONMENT'] == 'test'))) {
   $pantheon_services_file = __DIR__ . '/services.pantheon.production.yml';
 }
 
@@ -46,61 +12,8 @@ if (file_exists($pantheon_services_file)) {
   $settings['container_yamls'][] = $pantheon_services_file;
 }
 
-/**
- * Set the default location for the 'private' directory.  Note
- * that this location is protected when running on the Pantheon
- * environment, but may be exposed if you migrate your site to
- * another environment.
- */
+
 $settings['file_private_path'] = 'sites/default/files/private';
-
-// Check to see if we are serving an installer page.
-$is_installer_url = (strpos($_SERVER['SCRIPT_NAME'], '/core/install.php') === 0);
-
-/**
- * Add the Drupal 8 CMI Directory Information directly in settings.php to make sure
- * Drupal knows all about that.
- *
- * Issue: https://github.com/pantheon-systems/drops-8/issues/2
- *
- * IMPORTANT SECURITY NOTE:  The configuration paths set up
- * below are secure when running your site on Pantheon.  If you
- * migrate your site to another environment on the public internet,
- * you should relocate these locations. See "After Installation"
- * at https://www.drupal.org/node/2431247
- *
- */
-if ($is_installer_url) {
-  $config_directories = array(
-    CONFIG_SYNC_DIRECTORY => 'sites/default/files',
-  );
-}
-else {
-  $config_directories = array(
-    CONFIG_SYNC_DIRECTORY => 'sites/default/config',
-  );
-}
-
-
-/**
- * Allow Drupal 8 to Cleanly Redirect to Install.php For New Sites.
- *
- * Issue: https://github.com/pantheon-systems/drops-8/issues/3
- *
- * c.f. https://github.com/pantheon-systems/drops-8/pull/53
- *
- */
-if (
-  isset($_ENV['PANTHEON_ENVIRONMENT']) &&
-  !$is_installer_url &&
-  (isset($_SERVER['PANTHEON_DATABASE_STATE']) && ($_SERVER['PANTHEON_DATABASE_STATE'] == 'empty')) &&
-  (empty($GLOBALS['install_state'])) &&
-  (php_sapi_name() != "cli")
-) {
-  include_once __DIR__ . '/../../core/includes/install.core.inc';
-  include_once __DIR__ . '/../../core/includes/install.inc';
-  install_goto('core/install.php');
-}
 
 /**
  * Override the $databases variable to pass the correct Database credentials
@@ -114,11 +27,10 @@ if (isset($_SERVER['PRESSFLOW_SETTINGS'])) {
   foreach ($pressflow_settings as $key => $value) {
     // One level of depth should be enough for $conf and $database.
     if ($key == 'conf') {
-      foreach($value as $conf_key => $conf_value) {
+      foreach ($value as $conf_key => $conf_value) {
         $conf[$conf_key] = $conf_value;
       }
-    }
-    elseif ($key == 'databases') {
+    } elseif ($key == 'databases') {
       // Protect default configuration but allow the specification of
       // additional databases. Also, allows fun things with 'prefix' if they
       // want to try multisite.
@@ -126,8 +38,7 @@ if (isset($_SERVER['PRESSFLOW_SETTINGS'])) {
         $databases = array();
       }
       $databases = array_replace_recursive($databases, $value);
-    }
-    else {
+    } else {
       $$key = $value;
     }
   }
@@ -150,7 +61,7 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
  *
  */
 if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
-  $config['system.file']['path']['temporary'] = $_SERVER['HOME'] .'/tmp';
+  $config['system.file']['path']['temporary'] = $_SERVER['HOME'] . '/tmp';
 }
 
 /**
@@ -180,25 +91,15 @@ if (isset($_ENV['PANTHEON_ENVIRONMENT'])) {
   $GLOBALS['conf']['container_service_providers']['PantheonServiceProvider'] = '\Pantheon\Internal\PantheonServiceProvider';
 }
 
-/**
- * The default list of directories that will be ignored by Drupal's file API.
- *
- * By default ignore node_modules and bower_components folders to avoid issues
- * with common frontend tools and recursive scanning of directories looking for
- * extensions.
- *
- * @see file_scan_directory()
- * @see \Drupal\Core\Extension\ExtensionDiscovery::scanDirectory()
- */
 if (empty($settings['file_scan_ignore_directories'])) {
   $settings['file_scan_ignore_directories'] = [
-    'node_modules',
-    'bower_components',
+      'node_modules',
+      'bower_components',
   ];
 }
 
 /**
- * Trust Host Settings
+ * Trust host settings
  */
 if (defined('PANTHEON_ENVIRONMENT')) {
   if (in_array($_ENV['PANTHEON_ENVIRONMENT'], array('dev', 'test', 'live'))) {
@@ -206,8 +107,46 @@ if (defined('PANTHEON_ENVIRONMENT')) {
     $settings['trusted_host_patterns'][] = "{$_ENV['PANTHEON_ENVIRONMENT']}-{$_ENV['PANTHEON_SITE_NAME']}.pantheon.io";
     $settings['trusted_host_patterns'][] = "{$_ENV['PANTHEON_ENVIRONMENT']}-{$_ENV['PANTHEON_SITE_NAME']}.pantheonsite.io";
     $settings['trusted_host_patterns'][] = "{$_ENV['PANTHEON_ENVIRONMENT']}-{$_ENV['PANTHEON_SITE_NAME']}.panth.io";
-    # Replace value with custom domain(s) added in the site Dashboard
     $settings['trusted_host_patterns'][] = '^.+.jugglerdigital.com$';
     $settings['trusted_host_patterns'][] = '^jugglerdigital.com$';
   }
+}
+
+/**
+ * Redirect non-www domain to www domain
+ */
+if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && php_sapi_name() != 'cli') {
+  // Redirect to https://$primary_domain in the Live environment
+  if ($_ENV['PANTHEON_ENVIRONMENT'] === 'live') {
+    /** Replace www.example.com with your registered domain name */
+    $primary_domain = 'www.jugglerdigital.com';
+  } else {
+    // Redirect to HTTPS on every Pantheon environment.
+    $primary_domain = $_SERVER['HTTP_HOST'];
+  }
+
+  if ($_SERVER['HTTP_HOST'] != $primary_domain
+      || !isset($_SERVER['HTTP_X_SSL'])
+      || $_SERVER['HTTP_X_SSL'] != 'ON') {
+
+    # Name transaction "redirect" in New Relic for improved reporting (optional)
+    if (extension_loaded('newrelic')) {
+      newrelic_name_transaction("redirect");
+    }
+
+    header('HTTP/1.0 301 Moved Permanently');
+    header('Location: https://' . $primary_domain . $_SERVER['REQUEST_URI']);
+    exit();
+  }
+  // Drupal 8 Trusted Host Settings
+  if (is_array($settings)) {
+    $settings['trusted_host_patterns'] = array('^' . preg_quote($primary_domain) . '$');
+  }
+}
+
+/**
+ * Version of Pantheon files.
+ */
+if (!defined("PANTHEON_VERSION")) {
+  define("PANTHEON_VERSION", "3");
 }
