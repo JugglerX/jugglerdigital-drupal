@@ -99,6 +99,29 @@ console.log('Scripts.js');
       }).setClassToggle('.view-portfolio .views-row:nth-of-type(3) .node--type-portfolio .field--name-field-hero-image', 'show-screenshot')
         .addTo(controller);
 
+      new ScrollMagic.Scene({
+        triggerElement: '.view-portfolio .views-row:nth-of-type(4) .node--type-portfolio',
+        offset: 100,
+        duration: 10000,
+        reverse: false
+      }).setClassToggle('.view-portfolio .views-row:nth-of-type(4) .node--type-portfolio .field--name-field-hero-image', 'show-screenshot')
+        .addTo(controller);
+
+      new ScrollMagic.Scene({
+        triggerElement: '.view-portfolio .views-row:nth-of-type(5) .node--type-portfolio',
+        offset: 100,
+        duration: 10000,
+        reverse: false
+      }).setClassToggle('.view-portfolio .views-row:nth-of-type(5) .node--type-portfolio .field--name-field-hero-image', 'show-screenshot')
+        .addTo(controller);
+
+      new ScrollMagic.Scene({
+        triggerElement: '.view-portfolio .views-row:nth-of-type(6) .node--type-portfolio',
+        offset: 100,
+        duration: 10000,
+        reverse: false
+      }).setClassToggle('.view-portfolio .views-row:nth-of-type(6) .node--type-portfolio .field--name-field-hero-image', 'show-screenshot')
+        .addTo(controller);
     }
   };
 

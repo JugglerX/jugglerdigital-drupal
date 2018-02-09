@@ -24,13 +24,22 @@
         font-weight: 300;
       }
     }
+    h3 {
+      margin-top: 0;
+      margin-bottom: 13px;
+      font-family: "Lato","helvetica","arial",sans-serif;
+      font-size: 26px;
+      font-weight: 300;
+      line-height: 35px;
+      color: #FF3B5D;
+    }
     p {
-      width: 85%;
+      width: 70%;
       color: #FFFFFF;
       font-family: $base-font;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 300;
-      line-height: 28px;
+      line-height: 26px;
       @media #{$medium-only} {
         width: 100%;
       }

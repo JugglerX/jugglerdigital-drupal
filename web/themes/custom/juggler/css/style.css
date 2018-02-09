@@ -402,6 +402,8 @@ input[type='url'] {
   font-size: 15px;
   font-weight: 200;
   line-height: 24px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -498,6 +500,8 @@ select {
   font-size: 15px;
   font-weight: 200;
   line-height: 24px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -528,6 +532,8 @@ textarea {
   font-size: 16px;
   font-weight: 200;
   line-height: 19px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -572,6 +578,8 @@ textarea:focus {
   font-family: "Open Sans", "helvetica", "arial", sans-serif;
   font-size: 15px;
   font-weight: bold;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -632,6 +640,8 @@ input.form-file {
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.125);
   font-size: 13px;
   font-weight: 200;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -686,6 +696,8 @@ label.form-required:after {
   font-family: "Lato", "helvetica", "arial", sans-serif;
   font-size: 14px;
   font-weight: 200;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
 }
 
@@ -719,6 +731,8 @@ label.form-required:after {
   font-family: "Lato", "helvetica", "arial", sans-serif;
   font-size: 14px;
   font-weight: 200;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   border-color: #6E706F;
   background-color: #6E706F;
@@ -766,6 +780,8 @@ label.form-required:after {
   font-family: "Lato", "helvetica", "arial", sans-serif;
   font-size: 14px;
   font-weight: 200;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   color: #33669B;
   border: 1px solid #33669B;
@@ -1791,8 +1807,10 @@ body.path-process .region-content {
 
 .node--type-portfolio.node--view-mode-teaser {
   position: relative;
+  display: -ms-flexbox;
   display: flex;
   overflow: hidden;
+  -ms-flex-direction: row;
   flex-direction: row;
   background: #1d374e;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -1800,6 +1818,7 @@ body.path-process .region-content {
 
 @media only screen and (max-width: 767px) {
   .node--type-portfolio.node--view-mode-teaser {
+    -ms-flex-direction: column;
     flex-direction: column;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
@@ -1808,6 +1827,7 @@ body.path-process .region-content {
 .node--type-portfolio.node--view-mode-teaser > .group-left {
   position: relative;
   overflow: hidden;
+  -ms-flex: 5 0 0;
   flex: 5 0 0;
   min-height: 480px;
   transition-timing-function: ease-out;
@@ -1821,11 +1841,13 @@ body.path-process .region-content {
 
 @media only screen and (max-width: 767px) {
   .node--type-portfolio.node--view-mode-teaser > .group-left {
+    -ms-flex: 1 0 100%;
     flex: 1 0 100%;
   }
 }
 
 .node--type-portfolio.node--view-mode-teaser > .group-right {
+  -ms-flex: 3 0 0;
   flex: 3 0 0;
   padding: 30px;
   background: #FFFFFF;
@@ -1833,6 +1855,7 @@ body.path-process .region-content {
 
 @media only screen and (max-width: 767px) {
   .node--type-portfolio.node--view-mode-teaser > .group-right {
+    -ms-flex: 1 0 100%;
     flex: 1 0 100%;
     padding: 30px;
   }
@@ -1840,6 +1863,7 @@ body.path-process .region-content {
 
 @media only screen and (max-width: 380px) {
   .node--type-portfolio.node--view-mode-teaser > .group-right {
+    -ms-flex: 1 0 100%;
     flex: 1 0 100%;
     padding: 20px;
   }
@@ -1854,6 +1878,8 @@ body.path-process .region-content {
 
 .node--type-portfolio.node--view-mode-teaser .field--name-field-portfolio-type span {
   display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   padding: 0 3px 0 3px;
   text-transform: uppercase;
@@ -1865,6 +1891,8 @@ body.path-process .region-content {
 
 .node--type-portfolio.node--view-mode-teaser .field--name-field-drupal-version {
   display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin: 30px 0 0 30px;
   padding: 0 3px 0 3px;
@@ -2016,6 +2044,8 @@ body.path-process .region-content {
   font-family: "Lato", "helvetica", "arial", sans-serif;
   font-size: 14px;
   font-weight: 200;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   text-transform: lowercase;
 }
@@ -2195,32 +2225,39 @@ body.path-process .region-content {
 
 .node--type-page.node--view-mode-full {
   position: relative;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-direction: row;
   flex-direction: row;
 }
 
 @media only screen and (max-width: 767px) {
   .node--type-page.node--view-mode-full {
+    -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
   }
 }
 
 .node--type-page.node--view-mode-full > .group-left {
+  -ms-flex: 6 0 0;
   flex: 6 0 0;
 }
 
 @media only screen and (max-width: 767px) {
   .node--type-page.node--view-mode-full > .group-left {
+    -ms-flex: 1 0 100%;
     flex: 1 0 100%;
   }
 }
 
 .node--type-page.node--view-mode-full > .group-right {
+  -ms-flex: 3 0 0;
   flex: 3 0 0;
 }
 
 @media only screen and (max-width: 767px) {
   .node--type-page.node--view-mode-full > .group-right {
+    -ms-flex: 1 0 100%;
     flex: 1 0 100%;
     margin-bottom: 20px;
   }
@@ -2439,13 +2476,23 @@ body.path-process .region-content {
   font-weight: 300;
 }
 
+.block-id-hero-homepage .field--name-body h3 {
+  margin-top: 0;
+  margin-bottom: 13px;
+  font-family: "Lato","helvetica","arial",sans-serif;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 35px;
+  color: #FF3B5D;
+}
+
 .block-id-hero-homepage .field--name-body p {
-  width: 85%;
+  width: 70%;
   color: #FFFFFF;
   font-family: "Open Sans", "helvetica", "arial", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 300;
-  line-height: 28px;
+  line-height: 26px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
@@ -2833,5 +2880,3 @@ body {
 * {
   box-sizing: border-box;
 }
-
-/*# sourceMappingURL=style.css.map */
